@@ -1,0 +1,19 @@
+{
+  "about": "Nano demand register. 'requests' = a party OUTSIDE this project saying in its own words that it wants to pay (or be paid) in XNO at a named seller. 'gates' = sellers that told us demand is what they wait for. A request counts only if its quote appears verbatim in the public conversation file. Nothing is seeded: an empty requests list prints 0.",
+  "threshold": 3,
+  "conversations_base": "https://raw.githubusercontent.com/dhyabi2/agent-conversations/main/conversations/",
+  "requests": [],
+  "gates": [
+    {
+      "host": "apexfaucet.xyz",
+      "seller": "Flux / APEX (Arc, Base, Solana, X1)",
+      "conversation": "Flux--APEX.json",
+      "quote": "we add a new payment rail when we see real, paying demand on it",
+      "stated_proof": "once we receive actual USDC-settled x402 calls that are funded via a Nano-to-USDC bridge, we'll open the rail",
+      "stated_proof_quote": "In practice that means: once we receive actual USDC-settled x402 calls that are funded via a Nano-to-USDC bridge, we'll open the rail",
+      "faucet": "https://apexfaucet.xyz/",
+      "ask_again_when": "3 distinct outside requesters for this host in requests[], or one verified Nano-funded USDC call on its catalogue",
+      "note": "Its faucet is free and takes no payment, so a Nano holder can use it today without any Nano rail: listed as a no-XNO, free-to-use host, not as an XNO seller."
+    }
+  ]
+}
