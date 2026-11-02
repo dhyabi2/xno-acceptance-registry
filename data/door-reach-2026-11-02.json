@@ -1,0 +1,262 @@
+{
+ "read_at": "2026-11-02T09:24:51Z",
+ "doors": 28,
+ "cloudflare": 16,
+ "cloudflare_answered_402": 14,
+ "challenged": [],
+ "errors": [],
+ "rows": [
+  {
+   "id": "nanogpt",
+   "endpoint": "https://nano-gpt.com/api/x402/v1/chat/completions",
+   "http_status": 402,
+   "server": "Vercel",
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "llmrt",
+   "endpoint": "https://llmrt-companion.manhliemcn4euwlu.workers.dev/pro/402",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "pyfile-llm",
+   "endpoint": "https://pyfile-agent.taile3ff35.ts.net/v1/chat/completions",
+   "http_status": 402,
+   "server": null,
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "contract-lens",
+   "endpoint": "https://contract-lens-nano.dev-romanv.chatgpt.site/v1/audit",
+   "http_status": 400,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "subnano",
+   "endpoint": "https://subnano.me/api/posts/d4d6aaaa-11a4-4735-b388-7dd7961228dc/access",
+   "http_status": 402,
+   "server": "Vercel",
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "feeless402",
+   "endpoint": "https://feeless402.com/premium",
+   "http_status": 402,
+   "server": "nginx",
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "nanoto-rpc",
+   "endpoint": "https://rpc.nano.to/",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "kepler-nano-check",
+   "endpoint": "https://nano-check.pn-26f.workers.dev/v1/check?address=nano_1jyx763fmsr851ieufnztwh7jed8sssixhd4bsgwcj3rd31iwxaxtendnhu3",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "busyman-probe",
+   "endpoint": "https://busyman-probe.probe402.workers.dev/probe?url=https://example.com",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "parley-pass",
+   "endpoint": "https://agents-agents-agents.com/v1/invoices",
+   "http_status": 200,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "opscontrol-npm-risk",
+   "endpoint": "https://tkoqkknsezxavtxfywkm.supabase.co/functions/v1/nano-npm-risk/v1/npm-risk?package=react",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "uknwplayer-json-lens",
+   "endpoint": "https://nano-json-lens-402.guilhermegomescavalcante-ggc.workers.dev/api/lens",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "pururin-sequence",
+   "endpoint": "https://nano-sequence-api.pururin-ux.workers.dev/v1/analyze?terms=0,1,4,9,16,25,36&predict=2",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "pyfile-courier",
+   "endpoint": "https://pyfile-agent.taile3ff35.ts.net:10000/data/nano/courier",
+   "http_status": 402,
+   "server": null,
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "copperglass-offer-proof",
+   "endpoint": "https://copperglass-offer-proof.pages.dev/v1/offer-proof",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "pal-catalog-audit",
+   "endpoint": "https://pal-catalog-check-app.onrender.com/api/nano/catalog-audit",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "claimcheck",
+   "endpoint": "https://54-90-125-202.sslip.io/v1/verify",
+   "http_status": 402,
+   "server": null,
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "noxid-nano-echo",
+   "endpoint": "https://noxid-nano-seller.vercel.app/api/echo?msg=hello",
+   "http_status": 402,
+   "server": "Vercel",
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "pinnacle-url-check",
+   "endpoint": "https://pinnacle-url-check.pinnacleterrain229.workers.dev/v1/invoices",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "pal-x402-validate",
+   "endpoint": "https://pal-catalog-check-app.onrender.com/api/nano/x402-validate",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "cedarproof-diagnose",
+   "endpoint": "https://cedarproof-diagnostics.cedarproof-lab.workers.dev/v1/diagnose-nano",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "pyfile-search",
+   "endpoint": "https://pyfile-agent.taile3ff35.ts.net:10000/web/search?q=x402+agent+payments&limit=8",
+   "http_status": 402,
+   "server": null,
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "nanswap-nodes",
+   "endpoint": "https://nodes.nanswap.com/XNO",
+   "http_status": 402,
+   "server": "nginx/1.30.6",
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "opscontrol-page-extract",
+   "endpoint": "https://tkoqkknsezxavtxfywkm.supabase.co/functions/v1/nano-npm-risk/v1/page-extract?url=https%3A%2F%2Fexample.com%2F",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "nanotracker-spend-or-swap",
+   "endpoint": "https://nanotracker.app/api/v1/spend-or-swap",
+   "http_status": 402,
+   "server": "nginx/1.24.0 (Ubuntu)",
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "lab0-x402",
+   "endpoint": "https://x402.lab0.app/x402/opportunity-pulse",
+   "http_status": 402,
+   "server": "cloudflare",
+   "cloudflare": true,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "agents_webdesigner",
+   "endpoint": "https://webdesigner.la/api/a2a/x402/audit",
+   "http_status": 402,
+   "server": "nginx",
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  },
+  {
+   "id": "antigravityandrew",
+   "endpoint": "https://theheiszt.github.io/moltbook-alpha/",
+   "http_status": 200,
+   "server": "GitHub.com",
+   "cloudflare": false,
+   "cf_mitigated": null,
+   "challenge_page": false
+  }
+ ]
+}
