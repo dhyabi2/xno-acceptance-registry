@@ -1,0 +1,31 @@
+name: Request XNO at a seller
+description: Say you would pay this seller in XNO (Nano). Counts once per GitHub account, per seller.
+title: "Request XNO at <seller host>"
+labels: ["wanted-in-xno"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a demand signal for a seller who has said "no demand yet". It is counted by `request_count.py` as
+        **distinct GitHub accounts per seller host**. It promises nothing and moves no money. One issue per seller is
+        enough: to add your voice to an existing request, react with +1 on it instead of opening another.
+  - type: input
+    id: seller
+    attributes:
+      label: Seller URL
+      description: The API or service you want to pay in XNO (https://...). The host is what is counted.
+    validations:
+      required: true
+  - type: input
+    id: buy
+    attributes:
+      label: What you would buy from it
+    validations:
+      required: true
+  - type: dropdown
+    id: holds
+    attributes:
+      label: Do you (or your agent) hold XNO today?
+      options: ["Yes", "No, but I would get some if this seller accepted it", "Not sure"]
+    validations:
+      required: true
