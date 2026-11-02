@@ -24,4 +24,11 @@ class T(unittest.TestCase):
     def test_amounts_are_strings(self):
         for e in R['entries']:
             for r in (e['price_raw_seen_in_402'] or []): self.assertIsInstance(r, str); self.assertTrue(r.isdigit())
+    def test_flat_file_matches_feed(self):
+        base = os.path.join(os.path.dirname(__file__), '..', 'feeds')
+        flat = json.load(open(os.path.join(base, 'nano-accepting-agents.json')))['agents']
+        feed = json.load(open(os.path.join(base, 'nano-sellers.json')))['services']
+        want = {a['payTo'] for s in feed for a in s['accepts'] if a['payTo'].startswith('nano_')}
+        self.assertEqual({r['nano_address'] for r in flat}, want)
+        for r in flat: self.assertTrue(nanoaddr.is_valid(r['nano_address'])); self.assertTrue(r['verified_at'])
 if __name__ == '__main__': unittest.main()

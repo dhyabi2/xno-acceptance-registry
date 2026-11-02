@@ -67,3 +67,8 @@ Source of the seed: the Nano seller list published at https://pursekeeper.dev/se
 Open a pull request adding your endpoint to `extras.json` (id, operator, what, endpoint, price, a probe method). CI is not used; run `python3 build.py data/pursekeeper-sellers-2026-11-02.json extras.json registry.json && python3 feeds.py && python3 -m unittest discover -s tests`. Entries are removed only when the operator asks; downtime is shown as `dead`, not hidden.
 
 Run the tests: `python3 -m unittest discover -s tests` (stdlib only, Python 3.9+).
+
+## Also here
+- `feeds/nano-accepting-agents.json`: flat file, one row per payee (name, url, nano_address, verified_at) for directories that ingest a list.
+- `listing/`: which x402 facilitators and catalogs can list nano:mainnet, probed and tracked (`listing/README.md`).
+- `cases/parley.md`: a seller that already takes XNO beside USDC, read from its own endpoints.

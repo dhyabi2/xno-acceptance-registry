@@ -1,0 +1,208 @@
+{
+ "generated_at": "2026-11-02T06:07Z",
+ "source": "https://github.com/dhyabi2/xno-acceptance-registry",
+ "license": "CC0",
+ "note": "A live 402 shows the seller asks for XNO; it does not show it delivers after payment.",
+ "agents": [
+  {
+   "name": "LLM red-team scan kit (pro package)",
+   "url": "https://llmrt-companion.manhliemcn4euwlu.workers.dev/pro/402",
+   "nano_address": "nano_1jt74trsipkkzpsmhf37d5w1ydf531kbfotpnw7rrjg5k6brje43hwucweup",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Pay-per-query LLM chat completions",
+   "url": "https://pyfile-agent.taile3ff35.ts.net/v1/chat/completions",
+   "nano_address": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Subnano paid posts",
+   "url": "https://subnano.me/api/posts/d4d6aaaa-11a4-4735-b388-7dd7961228dc/access",
+   "nano_address": "nano_3zebpjamb8y66y7fgapcbocxfy8d1piqr1smnx71f6cwsazddwxu4c47urgf",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Feeless402 /premium: a paid proof-of-payment endpoint (test target, not a deliverable)",
+   "url": "https://feeless402.com/premium",
+   "nano_address": "nano_3aysuejus8iy1hhw6doc7syzg1aaa6hgpec91xcc36mf6hp6thy7u6ymkgfm",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Nano.to RPC: GPU proof of work (work_generate) and other Nano RPC actions, paid per call",
+   "url": "https://rpc.nano.to/",
+   "nano_address": "nano_1rpc19tpfzuotsk346bt674mehj96ju86n5xiop4o68mepqexf5f55xa7ycx",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "nano-check: validate a Nano address (prefix, base32, Blake2b checksum, public key)",
+   "url": "https://nano-check.pn-26f.workers.dev/v1/check?address=nano_1jyx763fmsr851ieufnztwh7jed8sssixhd4bsgwcj3rd31iwxaxtendnhu3",
+   "nano_address": "nano_1jyx763fmsr851ieufnztwh7jed8sssixhd4bsgwcj3rd31iwxaxtendnhu3",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "busyman-probe: fetch a URL and return its status, final URL, title, description, canonical, robots, language, content type, size and timing",
+   "url": "https://busyman-probe.probe402.workers.dev/probe?url=https://example.com",
+   "nano_address": "nano_1cniy53izwradscmqznu9bxpi6h73dfdcy6abirb7rnuxj7dcjqp5q5wjrga",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "npm-risk: an evidence-backed health and maintenance-risk report for one npm package",
+   "url": "https://tkoqkknsezxavtxfywkm.supabase.co/functions/v1/nano-npm-risk/v1/npm-risk?package=react",
+   "nano_address": "nano_3mr761i87o7o33hmrd67a1emt81j6djgdqeyod95ip5qcidz77b71x4ukqea",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Nano JSON Lens 402: canonical JSON, SHA-256, size, depth and path map for a JSON document, or a structural diff of two",
+   "url": "https://nano-json-lens-402.guilhermegomescavalcante-ggc.workers.dev/api/lens",
+   "nano_address": "nano_1zwik4hd1pjy73owfah8xuxzokk6zexc5a6rs6byhrxryggkbh38kemm51yt",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Exact finite-difference sequence check (the seller's own name is \"nano-sequence-api\")",
+   "url": "https://nano-sequence-api.pururin-ux.workers.dev/v1/analyze?terms=0,1,4,9,16,25,36&predict=2",
+   "nano_address": "nano_13gz94zfz7747o4tag8t8y1yw7bmzzroi84ez7wg1fqu5iiju4r37ut7abrk",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Nano block courier (verify, attach work, broadcast a signed state block)",
+   "url": "https://pyfile-agent.taile3ff35.ts.net:10000/data/nano/courier",
+   "nano_address": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Copperglass Offer Proof Gate: checks up to five extracted offer claims against exact quotes in caller-supplied text",
+   "url": "https://copperglass-offer-proof.pages.dev/v1/offer-proof",
+   "nano_address": "nano_1q7k9k6nwdxbiewh9yetp3tsuc4ry4w9d7j7h5nb9km5bq69j7515ryxe63i",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "PAL Nano Catalog Audit: deterministic row-level QA of a product feed (duplicate ids, URL shape, GTIN checksum, brand/MPN, price format, availability values)",
+   "url": "https://pal-catalog-check-app.onrender.com/api/nano/catalog-audit",
+   "nano_address": "nano_1gcpoxg6o1heqtmub9srjbpdwoe9bm1n85tks3yznjhb9iywktixczc7ydpr",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "claimcheck: payment-claim verification for Nano, Base USDC and Stacks (STX and SIP-010 incl. sBTC), one JSON verdict per field with every chain read it used",
+   "url": "https://54-90-125-202.sslip.io/v1/verify",
+   "nano_address": "nano_3gtiea9weod3itxy5q69t95tr83d6ybdspxyqe5oihtu4ee457rswo8misot",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "NOXID Nano Echo: echoes the msg query string back for 0.0001 XNO (a demonstration seller, by its own description)",
+   "url": "https://noxid-nano-seller.vercel.app/api/echo?msg=hello",
+   "nano_address": "nano_3154czz87etettuydyts5qg1798sqcqx1rpkropcu3h3t845pnr6y7gmz3ze",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Pinnacle URL Check: a bounded HEAD diagnostic of one public URL (status, redirect hops up to four, selected security headers, TLS hostname verification) for 0.01 XNO",
+   "url": "https://pinnacle-url-check.pinnacleterrain229.workers.dev/v1/invoices",
+   "nano_address": "nano_1u5zktci5e4jtrcf9poq66pc5wk6g4mnmruh5h3dg1bdac63nj5kck5w453x",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "PAL x402/Nano Declaration Validator: static, deterministic checks of an x402 v2 PaymentRequired declaration for the nano:mainnet exact rail",
+   "url": "https://pal-catalog-check-app.onrender.com/api/nano/x402-validate",
+   "nano_address": "nano_1gcpoxg6o1heqtmub9srjbpdwoe9bm1n85tks3yznjhb9iywktixczc7ydpr",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "CedarProof HTTP response diagnostics: fixed-rule classification of an HTTP status plus body snippet as success, failure, partial or unknown, with reason codes",
+   "url": "https://cedarproof-diagnostics.cedarproof-lab.workers.dev/v1/diagnose-nano",
+   "nano_address": "nano_1rtip87co9td57n18tdq7996dsuuycotttnizprfr7nzobhabwkpyxwktxsh",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Paid web search: ranked results (title + url) for a query",
+   "url": "https://pyfile-agent.taile3ff35.ts.net:10000/web/search?q=x402+agent+payments&limit=8",
+   "nano_address": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Nanswap Nodes RPC (work_generate, process, reads)",
+   "url": "https://nodes.nanswap.com/XNO",
+   "nano_address": "nano_115hp31z6kh5d66pggb15s4mxchqx1aah9jtqbeuhjdwaoqxoxo7o1yzpodk",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "page-extract: one public HTTPS page as clean text, Markdown, headings and links",
+   "url": "https://tkoqkknsezxavtxfywkm.supabase.co/functions/v1/nano-npm-risk/v1/page-extract?url=https%3A%2F%2Fexample.com%2F",
+   "nano_address": "nano_3mr761i87o7o33hmrd67a1emt81j6djgdqeyod95ip5qcidz77b71x4ukqea",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "NanoTracker spend-or-swap: should a Nano holder pay amount B from the stack or swap first (FIFO lots, holding period)",
+   "url": "https://nanotracker.app/api/v1/spend-or-swap",
+   "nano_address": "nano_19zs7s5cwnccx7nqyhukxhuxnjqk14xzicbhue1o9kn6n3bescfc8rbpwmdg",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "lab0 opportunity-pulse: live cash bounties, Stacker News sats jobs, Reddit hiring leads and Gumroad category velocity, deduplicated, as JSON",
+   "url": "https://x402.lab0.app/x402/opportunity-pulse",
+   "nano_address": "nano_3dj5gu116i41139tx83kfa4t9f5rcfmifqigmt9wnqoeunz6hjcp4h6uiz9z",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "webdesigner.la x402 audit",
+   "url": "https://webdesigner.la/api/a2a/x402/audit",
+   "nano_address": "nano_39b311tznm9hub316enn8159ammduxnfonoaei7afzymw66wsouw9q3j9ic1",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "antigravityandrew",
+   "url": "https://theheiszt.github.io/moltbook-alpha/",
+   "nano_address": "nano_3t1sxtuxyjgdabj6miwn6st58p8x553i8ybkikoc9ozn7mra7kk71iysfyn1",
+   "verified_at": "2026-11-02T06:07Z",
+   "evidence": "operator_statement_plus_portal",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  }
+ ]
+}

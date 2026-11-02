@@ -1,0 +1,161 @@
+{
+ "total_reported": 69878,
+ "scanned": 69935,
+ "networks": {
+  "eip155:8453": 73403,
+  "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp": 15478,
+  "eip155:137": 8775,
+  "eip155:42161": 7508,
+  "xrpl:0": 4659,
+  "eip155:5042": 3385,
+  "eip155:143": 3122,
+  "eip155:480": 2375,
+  "eip155:10": 2114,
+  "eip155:42220": 1757,
+  "stellar:pubnet": 1501,
+  "eip155:56": 1332,
+  "algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73k": 1040,
+  "eip155:43114": 1016,
+  "eip155:4663": 957,
+  "eip155:196": 891,
+  "eip155:999": 857,
+  "eip155:1329": 703,
+  "algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=": 668,
+  "eip155:84532": 316,
+  "base": 229,
+  "eip155:4326": 111,
+  "eip155:1": 108,
+  "eip155:130": 55,
+  "eip155:146": 55,
+  "stacks:1": 26,
+  "solana": 25,
+  "eip155:1187947933": 20,
+  "cosmos:noble-1": 18,
+  "nano:mainnet": 17,
+  "eip155:8217": 15,
+  "xrpl:1": 14,
+  "hyperliquid:mainnet": 11,
+  "zeroclick:card": 9,
+  "lnbtc:000000000019d6689c085ae165831e93": 7,
+  "solana:mainnet": 6,
+  "hedera:mainnet": 5,
+  "eip155:50": 4,
+  "sui:mainnet": 4,
+  "solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1": 3,
+  "eip155:5042002": 2,
+  "base-sepolia": 2,
+  "eip155:42793": 1,
+  "eip155:46630": 1,
+  "aws:base": 1,
+  "polygon": 1,
+  "arbitrum": 1,
+  "eip155:59144": 1,
+  "eip155:324": 1,
+  "eip155:534352": 1,
+  "eip155:11142220": 1
+ },
+ "nano_resources": [
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/data/nano/courier",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/web/search",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/data/chain/network-info",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/data/chain/block-number",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/data/ideas",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/secret/drop-ttl",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/secret/delete",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/secret/get",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/data/wiki",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/data/read",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/data/read",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/data/wiki",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/data/chain/erc20-balance",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/data/ideas",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/web/read",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/web/search",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  },
+  {
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/web/read",
+   "network": "nano:mainnet",
+   "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+   "network_is_nano": true
+  }
+ ]
+}

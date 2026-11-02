@@ -16,3 +16,15 @@ with open('feeds/nano-sellers.csv', 'w', newline='') as f:
     for s in out:
         for a in s['accepts']: w.writerow([s['id'], s['resource'], a['network'], a['payTo'], s['price_quoted_by_operator'], s['last_probed']])
 print(len(out))
+
+# Flat file for directories that want one row per payee (name, URL, nano_ address, when verified).
+flat = []
+for s in out:
+    for a in s['accepts']:
+        if a['payTo'].startswith('nano_'):
+            flat.append({'name': s['name'], 'url': s['resource'], 'nano_address': a['payTo'], 'verified_at': s['last_probed'],
+                         'evidence': s['evidence'], 'how_verified': 'one unpaid request answered with a Nano payTo; checksum validated'})
+json.dump({'generated_at': reg['generated_at'], 'source': 'https://github.com/dhyabi2/xno-acceptance-registry', 'license': 'CC0',
+           'note': 'A live 402 shows the seller asks for XNO; it does not show it delivers after payment.', 'agents': flat},
+          open('feeds/nano-accepting-agents.json', 'w'), indent=1, ensure_ascii=False)
+print(len(flat), 'rows in feeds/nano-accepting-agents.json')
