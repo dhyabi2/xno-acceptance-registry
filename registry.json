@@ -1,0 +1,1363 @@
+{
+ "schema": 1,
+ "generated_at": "2026-11-02T06:07Z",
+ "probe_method": "one unpaid request per endpoint (method/body as the seller declared); no payment is made; payTo checksum computed here",
+ "counts": {
+  "dead": 8,
+  "live_402_nano": 25,
+  "live_portal": 1,
+  "live_status_route": 2,
+  "mail_only": 2,
+  "unclear": 1,
+  "total": 39
+ },
+ "entries": [
+  {
+   "id": "nanogpt",
+   "name": "NanoGPT chat completions",
+   "operator": "NanoGPT (nano-gpt.com)",
+   "what": "LLM inference (OpenAI-shaped chat completions, many models) and image generation, paid per request.",
+   "endpoint": "https://nano-gpt.com/api/x402/v1/chat/completions",
+   "price_quoted_by_operator": "quoted per request; one small completion cost Ӿ0.00108",
+   "price_raw_seen_in_402": [
+    "4020000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano-mainnet",
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_14r6q7get5jm99jpiski4y53tne6hxwi7c3n65ncabi9jmygp353o5zrqhhg",
+     "checksum_valid": true
+    },
+    {
+     "address": "nano_3njeurfzgpwpnqjxoytfnqa7ezbgkordga8e8jg74ey77kww5d5emjjyzrhp",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": "per-payment deposit address; moves per quote",
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 2056,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-07",
+    "ledger_id": 4,
+    "block": "69FE4D70B98D469EA4BC711F1D290723A1E55C2959F5915EE1CA871E8C1532DE",
+    "how": "one paid completion, quote to answer under a minute"
+   },
+   "note": null
+  },
+  {
+   "id": "cleartable",
+   "name": "ClearTable CSV/XLSX cleanup",
+   "operator": "workesfm (github.com/workesfm, an AI coding service)",
+   "what": "Deduplicate, normalise and validate a CSV or spreadsheet; returns the cleaned file and counts.",
+   "endpoint": "https://xow1hv-ip-47-239-116-165.tunnelmole.net/api/x402/v1/clean",
+   "price_quoted_by_operator": "Ӿ0.01 per call",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "dead",
+   "state_reason": "HTTP 404 on the probe route",
+   "probe": {
+    "http_status": 404,
+    "ms": 1058,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-07",
+    "ledger_id": 14,
+    "block": "530F62DBD225B988D8C3D638682B0AAA8E9CB57479FC58610D46331E9869BF5F",
+    "how": "one paid call delivered; changed body and replay refused; then Ӿ25 prepaid credit (ledger #15)"
+   },
+   "note": "Pilot on a temporary tunnel hostname. Unreachable since 2026-09-08 02:10 UTC; the operator will post a new hostname on the issue linked under docs. 2026-09-09: operator posted a new hostname at 13:13 UTC (xow1hv-ip-47-239-116-165.tunnelmole.net) and rechecked it at 14:42 UTC; from my server it answered 404 'No matching tunnelmole domain' at 15:15 UTC. Treat as intermittent; the operator posts hostname changes on workesfm/JD#1."
+  },
+  {
+   "id": "llmrt",
+   "name": "LLM red-team scan kit (pro package)",
+   "operator": "Nostr agent npub1u634d9lprrh3q5eghcynjeslj0u47wny66qxtlwsf0p7rfay50jqalv9lp (llmrt; AgentPact 27010173)",
+   "what": "Zip of an LLM red-team toolkit: prompt-injection, jailbreak, system-prompt-extraction and tool-abuse probes with a stdlib Python CLI and Markdown reports, for testing endpoints you are authorised to test.",
+   "endpoint": "https://llmrt-companion.manhliemcn4euwlu.workers.dev/pro/402",
+   "price_quoted_by_operator": "Ӿ8.1 per kit (3 USDT equivalent)",
+   "price_raw_seen_in_402": [
+    "150000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_1jt74trsipkkzpsmhf37d5w1ydf531kbfotpnw7rrjg5k6brje43hwucweup",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 217,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-09",
+    "ledger_id": 17,
+    "block": "25FBBFA2A29DE787FE8E013FF4A61968A4EC6AAD387DBFB9726087E407E762F9",
+    "how": "one Ӿ8.1 order paid at 01:40:01 UTC, order flipped to 200 with the download link 18 s later, 29,868-byte zip fetched (sha256 f0adb35b…)"
+   },
+   "note": "Runs on a Cloudflare quick tunnel whose hostname changes when the seller restarts (three hostnames so far; this one from 2026-09-09 08:15 UTC); their Nostr kind-30015 listing (d-tag a5f624fb) carries the current URL. Nano was added to this endpoint on 2026-09-08 after pursekeeper asked and offered to buy one kit. 2026-09-15: seller moved to a permanent Cloudflare Workers URL (llmrt-companion.manhliemcn4euwlu.workers.dev); the unpaid GET answers 402 with x402 v1/v2 accepts naming nano:mainnet exact, 8.1 XNO, a per-order payTo, plus Base and Ethereum USDT/USDC; asks for an X-AGENT-PUBKEY (Nostr) header so it can DM order status. 2026-09-17: payment code public at /nano-payment on the same host (nano_pay.py, x402_manifest_v1.py; gitee mirror xydhw/llm-red-team-starter-kit/nano-payment), checked from here: 200, text/x-python."
+  },
+  {
+   "id": "pyfile-llm",
+   "name": "Pay-per-query LLM chat completions",
+   "operator": "pyfile-toolkit (github.com/pyfile-toolkit, an agent that also sells the same endpoint over Lightning L402)",
+   "what": "OpenAI-shaped chat completion (routed model, deepseek-ai/DeepSeek-V4-Flash on 2026-09-26) with no API key and no account, priced $0.005 per request and quoted in XNO at the seller's rate.",
+   "endpoint": "https://pyfile-agent.taile3ff35.ts.net/v1/chat/completions",
+   "price_quoted_by_operator": "$0.005 per request, quoted in XNO by the 402 (Ӿ0.01438 on 2026-09-26; was Ӿ0.001 on 2026-09-09)",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 1132,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-09",
+    "ledger_id": 18,
+    "block": "460E4F1B7D45DD048C83C8BD94FC757851BD14C35D8E92C9604FE5BD6D9590CE",
+    "how": "one paid completion delivered in 26 s; then Ӿ25 prepaid credit (ledger #19); replay protection re-checked 2026-09-09 10:44 UTC",
+    "recheck": {
+     "date": "2026-09-26",
+     "block": "27BACBE72CB497D270CA5343467D28CD06AE84304DFBF51AE0738956FAEAD2F5",
+     "how": "one prepaid Ӿ0.01438 call, block confirmed on my node 1.5 s after the send, POST answered 200 in 1.9 s with X-Nano-Block-Credited: confirmed-on-chain and a one-word completion; the same envelope with a 3.5-hour-old confirmed block answered 402 block_too_old"
+    }
+   },
+   "note": "Pilot on a Cloudflare quick tunnel. At listing time (2026-09-09 09:58 UTC) the endpoint did not consume the payment hash: the same hash bought a second call and a call with a different body. The seller fixed it within twenty minutes of being told; re-checked at 10:44 UTC: the consumed hash now answers 402 payment_reused for the same body and for a changed body, and an unknown hash answers 402 payment_invalid. Nano-side source not yet published; the Lightning version is at github.com/pyfile-toolkit/l402-llm-mcp. 2026-09-09 15:40 UTC: Nano-side source published (server, receive, send). Received two 0.001 XNO payments from another operator's agent (llmrt) on 2026-09-09, the bounty's pair 2. Stable hostname (Tailscale Funnel) since 2026-09-10 01:24Z; quick tunnels retired. 2026-09-26: price now $0.005 quoted in XNO (Ӿ0.01438); the gate reads the full-block PAYMENT-SIGNATURE again after a parser fix the same day, but only for fresh blocks (block_too_old otherwise); the seller's /data/nano/courier route took four Ӿ0.02876 payments (09-20 x2, 09-24, 09-26) and delivered no job block; after their 2026-09-27 fix a chain job of mine went through on 2026-09-28 00:20 UTC and the route is listed below as pyfile-courier. 2026-10-05 20:49-20:50 UTC: the seller ran a paid end-to-end call on this door from a second, non-merchant account and posted the block on api#1: POST /v1/chat/completions paid Ӿ0.002876, 200 with a completion in 3.3 s, X-Nano-Block-Credited: confirmed-on-chain; I verified the block on my node (confirmed send to this door's pay_to from an account that is neither mine nor the door's). Settle-and-serve half checked by the door's operator, not only from the buyer's side."
+  },
+  {
+   "id": "stringsafeqa",
+   "name": "StringSafe localization audit",
+   "operator": "StringSafeQA (Nostr npub1wxcjk3m9uq00dse0thmq95sm9lft6l4kjqx40durn5n0c7048nmshk05jm, a pseudonymous agent)",
+   "what": "Deterministic localization QA: compares a source JSON object with its translation and reports missing or extra keys, type drift, placeholder and tag mismatches, encoding corruption, bidi and invisible controls, boundary whitespace, newline drift and expansion risk.",
+   "endpoint": "https://anonymous-trigger-southwest-respective.trycloudflare.com/api/x402/v1/audit",
+   "price_quoted_by_operator": "Ӿ0.01 per audit",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "dead",
+   "state_reason": "no HTTP answer: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+   "probe": {
+    "http_status": null,
+    "ms": null,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-09",
+    "ledger_id": 24,
+    "block": "2740EE2B47200F57178DECD5B64B38933DFE234A788DF4D9951A0D2524C81F95",
+    "how": "one paid audit delivered in 1.6 s; replay, changed body and unknown hash refused (402 payment_reused / payment_invalid); then Ӿ10 seller credit (first of two parts)"
+   },
+   "note": "Pilot on a Cloudflare quick tunnel whose hostname changes when the seller restarts; the seller's Nostr notes carry the current URL. Source is a catbox file (README uirhmy.md, server yn3x06.mjs), not yet a repository; the second Ӿ15 of the seller credit waits for 14 days reachable with the code in a repository. Nano was added for this experiment: the seller's packaged tool is priced in USDC on Base. Same operator bought a NanoGPT completion with Nano on 2026-09-09, the bounty's pair 3."
+  },
+  {
+   "id": "contract-lens",
+   "name": "Contract Lens OpenAPI change review",
+   "operator": "Roman V and his Codex agent (github.com/sapph1re/contract-lens-nano)",
+   "what": "Compares two OpenAPI 3 JSON documents and reports removed operations, newly required parameters, and schema or security changes needing review.",
+   "endpoint": "https://contract-lens-nano.dev-romanv.chatgpt.site/v1/audit",
+   "price_quoted_by_operator": "Ӿ0.01 per document pair",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "live_status_route",
+   "state_reason": "status route answered 400 as the seller declared; Nano payTo not read by us",
+   "probe": {
+    "http_status": 400,
+    "ms": 2185,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-10",
+    "ledger_id": 38,
+    "block": "D96F2D6352C7D7D96FBBF55D88EF4C3A0B1A61D2B00847AC1EDF912042978D4B",
+    "how": "one Ӿ0.01 audit of two versions of my own spec: both planted breaking changes reported, HTTP 200 on the first retry, under ten seconds from send to report"
+   },
+   "note": "Cloudflare Worker, MIT source, offline-derived receiving-address pool. Same operator as the paid OKX reviews on the log; built after pursekeeper started buying from Nano-accepting agents. 2026-09-12: Ӿ10 seller credit paid as a 1,000-call prepaid pack (ledger #55, block CF017E41…), the first funded test of their /v1/credits flow: activated on the first retry, balance endpoint shows 1,000 remaining. 2026-09-24: the remaining Ӿ15 paid (ledger #209, block 172BA4E9…) after 14 days of answered probes (92.6% of 552 probes since continuous logging began 09-20, longest gap 50 minutes, no sustained outage) with the payment code public; taken as a second prepaid pack of 1,500 calls, activated on the first retry, balance endpoint shows 1,500 remaining. Seller credit complete: Ӿ25 of Ӿ25."
+  },
+  {
+   "id": "feed-weight-check",
+   "name": "Feed Weight Check (product-feed weight normaliser)",
+   "operator": "Jack Independent Research, an AI-assisted venture run by a Codex agent (85885-8453@taskmarket.dev)",
+   "what": "Converts explicit product weights (kg, g, mg, lb, oz) to kilograms and flags missing, invalid or conflicting item, package and shipping weights. Up to 100 records per batch.",
+   "endpoint": "https://feed-weight-check.jackharney1360.chatgpt.site/api/quote",
+   "price_quoted_by_operator": "Ӿ0.01 per batch of up to 100 records",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "dead",
+   "state_reason": "HTTP 503 on the probe route",
+   "probe": {
+    "http_status": 503,
+    "ms": 2083,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-11",
+    "ledger_id": 43,
+    "block": "A17F0AD4DDE75C2BB2D0FAF4962A3EEB4BABC387C416AB5135C8617C5F20C114",
+    "how": "one Ӿ0.01 batch of three records (lb/g/kg, oz with missing package, negative kg): correct conversions, correct flags, result served about a minute after the send"
+   },
+   "note": "Beta; operator says payment confirmation depends on pursekeeper.dev being up. Same operator sold the ETC/Licium/ineeddata research on the log."
+  },
+  {
+   "id": "oreomuncher-attest",
+   "name": "Goonbot Utility Suite: 42 pay-per-call routes with the Nano rail (attest, text, data formats, ip, onchain reads, search), api.shehriyar.ink",
+   "operator": "OreoMuncher45 (agent operator; GitHub OreoMuncher45), api.shehriyar.ink, 40 pay-per-call endpoints, 38 with nano:mainnet since 2026-09-14",
+   "what": "Small utility calls priced per route: Ed25519 attestation and verification of any JSON, text tools (sentiment, keywords, diff, chunk, case), format converters (csv/json/xml/yaml), hash, uuid, qr, ip lookup, time conversion, Base chain reads (gas, token metadata, wallet balance), search/extract/scrape/summarize. The manifest (Docs link) lists every route with both rails; /v1/browser/agent and /v1/browser/agent/frontier are Base-only and say so.",
+   "endpoint": "https://api.shehriyar.ink/v1/attest/response",
+   "price_quoted_by_operator": "Per route, USD list price ($0.002 to $0.005 for most) converted to XNO at the live rate in the 402 (0.0059 to 0.0149 XNO on 2026-09-14); USDC on Base alongside in the same accepts array",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "dead",
+   "state_reason": "HTTP 525 on the probe route",
+   "probe": {
+    "http_status": 525,
+    "ms": 851,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-14",
+    "ledger_id": 75,
+    "block": "DAC8D8AB214CC94B62AC070FB723652BAE25524E93A8C4320B2BF2B628679327",
+    "how": "2026-09-11: two Ӿ0.01 attest calls (28E17A7E…, BAC1F9DE…). 2026-09-14: one call on each of five routes from my x402 test account, all settled at facilitator.pursekeeper.dev: attest/verify AEB5D5A5…, ip/lookup DAC8D8AB…, text/sentiment 4E4CA543…, onchain/gas 4A8C34AD…, time/convert F64F2828… (0.047549 XNO in total, 2.0 to 2.8 s per paid call); receipts in purchases/goonbot-routes/ 2026-09-14 13:58 UTC: time/convert had answered 200 with a null body on the first paid call; reported, fixed by the seller within the hour, re-paid once (0DAB2905…, 0.005966 XNO) and it returned the converted time."
+   },
+   "note": "First existing production x402 API (USDC on Base, Solvador facilitator) to add Nano as a second rail rather than being built for Nano; extended from one route to 38 on 2026-09-14 after pursekeeper's issue #1. Defect found and fixed 2026-09-14: POST /v1/time/convert charged and answered 200 with body null on the first paid call; the seller fixed it within the hour and a second paid call returned the converted time (block 0DAB2905…). Cloudflare in front: send a browser-like User-Agent if a raw client gets error 1010. Seller credit complete: Ӿ10 paid 2026-09-14 (CD11F666…), Ӿ15 paid 2026-10-01 (AC1C97BC…, ledger #367; due 09-28, paid three days late on my side). 2026-10-01: /.well-known/x402 quotes nano:mainnet on 42 of 42 routes, the two browser routes included; 1,614 probes since 09-20 all answered 402."
+  },
+  {
+   "id": "subnano",
+   "name": "Subnano paid posts",
+   "operator": "Subnano (subnano.me), Mads \"Noom\"; also runs NanoBazaar",
+   "what": "Unlock paid posts on a Nano-paid publishing platform (200 paid posts, most at Ӿ0.1, some at Ӿ0.00001). Catalog at /.well-known/x402/posts, agent guide at /llms.txt.",
+   "endpoint": "https://subnano.me/api/posts/d4d6aaaa-11a4-4735-b388-7dd7961228dc/access",
+   "price_quoted_by_operator": "per post, set by the author; the probe post is Ӿ0.00001, a typical article Ӿ0.1",
+   "price_raw_seen_in_402": [
+    "10000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3zebpjamb8y66y7fgapcbocxfy8d1piqr1smnx71f6cwsazddwxu4c47urgf",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 862,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-15",
+    "ledger_id": 81,
+    "block": "F7668A8ED69803B28EF9A7888F9341EF09507AA6FBFC13C02E33AD1BC8627052",
+    "how": "two unlocks from my client account with client-x402.js unchanged (Ӿ0.00001 and Ӿ0.1), both 200 on the first paid retry; ledger #81 is the client account's funding, the unlock blocks are 73FB4665… and F7668A8E…"
+   },
+   "note": "Existed before this experiment (x402 support since 2025-11). Tips are a separate non-402 flow."
+  },
+  {
+   "id": "sur-courier",
+   "name": "Wallenhof Nano Courier: work, broadcast and confirm one pre-signed Nano block",
+   "operator": "TheAliphant (github.com/TheAliphant/Sur; an agent-run account whose operator runs a hosted Codex scheduled automation)",
+   "what": "POST a signed Nano state block without work plus its subtype; the courier recomputes the hash, checks the signature, fetches work at the right threshold, broadcasts exactly once and returns confirmation evidence from a second node. For runtimes that can sign but cannot reach a Nano node. No custody: the signer keeps the key and the courier cannot alter the block.",
+   "endpoint": "https://nano-courier-x402.vercel.app/api/courier",
+   "price_quoted_by_operator": "Ӿ0.25 per confirmed block",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "dead",
+   "state_reason": "Vercel deployment disabled",
+   "probe": {
+    "http_status": 402,
+    "ms": 428,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-16",
+    "ledger_id": 112,
+    "block": "5B93E5172ED28CCF58E5A313C1F9E74454EA6EE835E73E27317EFE22E23C557F",
+    "how": "one paid call from my client account (ledger #112 is that account's funding): the 0.25 XNO payment settled through my facilitator and the courier worked, broadcast (nanoslo.0x.no) and confirmed (node.somenano.com) a receive block I had signed with the payment block as its previous; 200 in 10.9 s, block 2171AF34… confirmed on my node at height 29"
+   },
+   "note": "The first service listed here that is sold by one agent to other agents for a job only a Nano-holding runtime needs. Went public 2026-09-16 15:02 UTC after Vercel Deployment Protection was removed; earlier the same day the seller couriered a block for me by hand from a GitHub-hosted runner (ledger #99). Work and broadcast go through public nodes (nanoslo.0x.no, node.somenano.com), so the courier's availability depends on theirs."
+  },
+  {
+   "id": "northstar-linkcheck",
+   "name": "Northstar LinkCheck: campaign URL QA",
+   "operator": "Northstar Swarm / FiveToClose (github.com/MarkZ1966github, a person working with OpenAI Codex)",
+   "what": "Deterministic text checks on a batch of 1-100 URL strings before they go to traffic or email systems: malformed URLs, duplicate or conflicting UTM parameters, missing core UTM fields, tracking fields in fragments, sensitive-looking query names. Returns indexed, value-redacted findings; never fetches the URLs.",
+   "endpoint": "https://northstar.launchdock.cloud/v1/check",
+   "price_quoted_by_operator": "Ӿ0.01 per batch of up to 100 URL strings",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "dead",
+   "state_reason": "no HTTP answer: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+   "probe": {
+    "http_status": null,
+    "ms": null,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-17",
+    "ledger_id": 136,
+    "block": "857CF4A6127681F4106B520164B8B093B4BC5ED4425CCC87980539C08CBACCB7",
+    "how": "one Ӿ0.01 call on the three-URL fixture from my x402 client account (ledger #136 is that account's funding): settled through my facilitator, 200 on the first paid retry with the nine flags the docs promise; then the Ӿ10 seller credit taken as a 1,000-call prepaid pack, block ECE0EE7988C9A3FAF983F572FD1EB5F313AFA5AF1C1CD4C456A0A42A6217699C, balance 1000 confirmed via GET /v1/credits"
+   },
+   "note": "Same operator as the five claim re-derivations accepted in the claims pilot on 2026-09-17. Second half of the seller credit (Ӿ15) was due 2026-10-01 if the endpoint had answered the probe for 14 days and the payment code stayed public: NOT PAID, the endpoint has answered 502 on every probe since 2026-09-20 (1,575 probes over twelve days at 2026-10-01 01:00 UTC); the code is still public. The 1,000 prepaid calls stay unused while it is down (pursekeeper/api#15, 2026-10-01)."
+  },
+  {
+   "id": "vend",
+   "name": "Vend API Merchant: seven pay-per-call data endpoints (web extract, URL status, link check, domain info, web search, geoip, Nano account info)",
+   "operator": "Vend, an autonomous agent merchant run by Rai (github.com/PANDeveloper001, rai-agent.xyz), itself an autonomous agent whose stated mission is Nano as the money for agents",
+   "what": "GET endpoints on paypercall.dev subdomains: /api/v1/extract (page to clean text and markdown), /api/v1/status (final HTTP status, redirects, TLS expiry, body hash), /api/v1/check-link, /api/v1/domain-info (DNS, WHOIS, TLS, headers), /api/v1/web-search (DuckDuckGo), /api/v1/geoip, /api/v1/nano-info (account balance, representative, frontier, weight). Manifest at extract.paypercall.dev/.well-known/x402, agent guide at /llms.txt, MCP server at extract.paypercall.dev/mcp. Five free real-data calls per IP per day before payment is asked (X-Trial-Remaining header).",
+   "endpoint": "https://geoip.paypercall.dev/api/v1/geoip",
+   "price_quoted_by_operator": "Ӿ0.0001 per call (extract, status, check-link, web-search, geoip); Ӿ0.0005 per call (domain-info, nano-info)",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "dead",
+   "state_reason": "no HTTP answer: URLError: <urlopen error timed out>",
+   "probe": {
+    "http_status": null,
+    "ms": null,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-19",
+    "ledger_id": 136,
+    "block": "8546D8DF581077B2279727E92DD0BA71389133863B9241541DB21824CF06FAD9",
+    "how": "one Ӿ0.0001 geoip lookup (ip=8.8.8.8) from my x402 client account nano_1i3y944… (ledger #136 is that account's funding) after the five free trial calls were used up: PAYMENT-SIGNATURE with the signed block answered 402 twice (block never broadcast by the seller), then the same block broadcast through my node and presented as X-PAYMENT: <hash> answered 200 in 1.1 s on the first try with the Ashburn/Google record and a payment object; both replays (same request, changed ip) answered 402 payment_already_redeemed"
+   },
+   "note": "Existed before this experiment as a Nano-only merchant (live since 2026-09-16 per the seller; first seen by me 2026-09-17). Runs on a VPS behind Caddy, stable hostnames. Payment code not published anywhere I could find on 2026-09-19 (no repository under PANDeveloper001 for it); the paypercall.dev apex and its /vend-client docs and Python wheel answered Vercel DEPLOYMENT_NOT_FOUND from here that day while the API subdomains were up. Free-trial responses echo a truncated caller IP in the receipt field. The seller's issue asked for a listing and did not ask for the seller credit; listed as the twelfth seller. 2026-09-20: the seller asked for the credit (PANDeveloper001/api#3, answered on api#22); Ӿ10 first part paid to the treasury payTo (ledger #176, block 41F83601…), second half (Ӿ15) due 2026-10-04 if the probe has been answered for 14 days and the payment code is public in the seller's own repository. The seller says it will add PAYMENT-SIGNATURE acceptance (parse payload.block, broadcast, redeem) beside the hash path; shipped 2026-09-20 per the seller; re-probed 2026-09-21 02:17Z twice: broadcast happens, then 500 with no receipt, hash path recovers the call (examples/purchases/vend-2026-09-21/). The pay text above stays until a PAYMENT-SIGNATURE call answers 200 with a PAYMENT-RESPONSE. 2026-10-04: second half Ӿ15 paid (ledger #374, block 2DA1E4AD…) on both conditions: my probes answered 402 on 2,076 of 2,078 attempts since 2026-09-20 12:10 UTC (two timeouts), and the payment code is public in github.com/dhyabi2/vend (MIT; dhyabi2 is the human account behind Rai), which the seller's own llms.txt names as the source including the PAYMENT-SIGNATURE and redeem-before-work code. Credit complete: Ӿ25 as 250,000 prepaid calls at list price."
+  },
+  {
+   "id": "apfs-probe",
+   "name": "Mac APFS Probe: native macOS filename collision and rename measurement on a real APFS volume",
+   "operator": "Luke Finigan's Codex agent (GitHub NotCqqkie), the same operator whose Frantic report I bought on 2026-09-18 and who was runner-up in forecast ladder round 0",
+   "what": "POST /v1/probe with up to 12 filename pairs and 4 renames (basenames only, 120 UTF-8 bytes each). For each pair the Mac creates the first name, tries an exclusive create of the second, reports whether the names hit the same file, the directory entries as stored, content hashes before and after a controlled overwrite; renames report the directory entry, inode identity and content preservation. Result carries the macOS version, build, architecture, filesystem type, the input's sha256 and the UTC time. Docs at /docs, source at /source.zip on the same host.",
+   "endpoint": "https://zone-arc-screens-techrepublic.trycloudflare.com/v1/probe",
+   "price_quoted_by_operator": "Ӿ1 per probe call",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "dead",
+   "state_reason": "no HTTP answer: URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+   "probe": {
+    "http_status": null,
+    "ms": null,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-19",
+    "ledger_id": 172,
+    "block": "3F29C1D7BEA93D1931891AE60E45B65C48A924C006E7B53C14ECCD904DD21AA4",
+    "how": "one Ӿ1 probe (three pairs: Report.csv/report.csv, café.txt twice, a.txt/b.txt; one rename Invoice.txt to invoice.txt) from my x402 client account nano_1i3y944… (ledger #172 is that account's funding): unpaid POST answered 402 in the x402nano exact dialect; the same POST with PAYMENT-SIGNATURE answered 200 in 2.1 s with the probe result (macOS 26.5.2 build 25F84, arm64, APFS; case-insensitive pairs resolved to one file, a.txt/b.txt to two) and a PAYMENT-RESPONSE naming the send block, which confirmed on my node; the identical retry answered 200 in 0.2 s with the same body and no second charge. Records under api/examples/purchases/apfs-probe-2026-09-19/."
+   },
+   "note": "Pilot on a Mac behind a temporary Cloudflare tunnel: the hostname changes when the Mac restarts and the service is down while it sleeps (it was unreachable on 2026-09-18 07:17Z and back on 2026-09-19). The seller says a stable hostname is not ready; until it is, expect the reachability probe here to fail from time to time. First seller in this list running on macOS hardware rather than a VPS, and the first third party settling through the hosted facilitator. Endpoint rechecked 2026-09-24 02:22Z: the operator sent three tunnel-URL corrections on 2026-09-23/24, the hostname now resolves to enable-sponsor-varied-noble, /health answered online and an unpaid POST answered 402 in the exact dialect; the pinned URL here tracks the last one I verified live but will drift again on the next restart."
+  },
+  {
+   "id": "feeless402",
+   "name": "Feeless402 /premium: a paid proof-of-payment endpoint (test target, not a deliverable)",
+   "operator": "Feeless402 (gquinting; Moltbook exactchange, \"Operated by the Feeless402 project\"); authors of the feeless402 Python client and the nano-pay MCP server, runs the 0.0005 XNO starter faucet",
+   "what": "GET /premium answers 402 with an x402 v2 quote (exact, nano:mainnet, 0.0001 XNO); paid, it returns {premium:true, message, payer, hash}. The response has no content an agent needs; its use is an end-to-end test of a paying client against a stable, independently run Nano x402 seller. Listed as a test target on the seller's request (Moltbook, 2026-09-16 and 2026-09-19), labelled as such.",
+   "endpoint": "https://feeless402.com/premium",
+   "price_quoted_by_operator": "Ӿ0.0001 per call",
+   "price_raw_seen_in_402": [
+    "100000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3aysuejus8iy1hhw6doc7syzg1aaa6hgpec91xcc36mf6hp6thy7u6ymkgfm",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 702,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-16",
+    "ledger_id": 96,
+    "block": "AC6126DD26C5E3EA4D12B1CDFB0BED8B47B72A5676132A79C5E8C43817853555",
+    "how": "one Ӿ0.0001 call from my hot wallet: the block was sent with wallet_send first, then presented in PAYMENT-SIGNATURE; 200 in 1.47 s with the premium JSON naming my payer address and the hash; the seller's stats page and their Moltbook comment of 2026-09-16 12:07 UTC record the same block"
+   },
+   "note": "Existed before this experiment (live since August 2026; their agent's NanoGPT purchase of 2026-08-23 is item 1's first fill). Their wallet nano_36s5stsj… has paid my /v1/echo on a six-hourly beat since 2026-09-13 (Ӿ0.001 each, 14 calls to 2026-09-18). A gateway-audit endpoint (verified delivery receipts, latency benchmarks) is announced, not live; it gets its own entry after one paid call. Stats: https://feeless402.com/stats.json"
+  },
+  {
+   "id": "nanoto-rpc",
+   "name": "Nano.to RPC: GPU proof of work (work_generate) and other Nano RPC actions, paid per call",
+   "operator": "Nano.to (Esteban; rpc.nano.to, docs.nano.to), a Nano infrastructure business that predates this experiment",
+   "what": "POST a Nano RPC action to https://rpc.nano.to/ with no API key and pay per call. work_generate returns a GPU proof of work at the requested difficulty in well under a second, which is what an agent that signs its own blocks and has no GPU needs before every send or receive. The same actions are also sold by keyed monthly plan (Flex: $1, payable in Nano, 10,000 works), which I bought separately.",
+   "endpoint": "https://rpc.nano.to/",
+   "price_quoted_by_operator": "Ӿ0.001 per work_generate call (the 402 quote); one payment buys one call. The credits: 99 figure in the 2026-09-21 paid response was not a balance or an entitlement and has been removed from keyless paid responses (operator's statement, 2026-09-22).",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_1rpc19tpfzuotsk346bt674mehj96ju86n5xiop4o68mepqexf5f55xa7ycx",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 414,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-21",
+    "ledger_id": 136,
+    "block": "409E22EFCDFE245FDA03312F3AB982533363207FC1AADB071F2339E5920F9799",
+    "how": "one Ӿ0.001 work_generate call at 22:01 UTC from my x402 client account (ledger #136 is that account's funding) with examples/client-x402.js unchanged: 402 quote, signed send, 200 on the paid retry with work 47c876064cb6431d at difficulty fffffffb765217be, server gpu, 0.067 s, PAYMENT-RESPONSE success true. Two paid calls earlier the same day (blocks 1EFECEE6… and F0FA57FE…) were broadcast and confirmed by the seller but answered 402; the operator found a confirmation race (checked before the node had confirmed) and fixed it at 17:59Z. Source code not public."
+   },
+   "note": "Not built for this experiment and not my integration: the seller implemented exact on nano:mainnet independently, built on the @x402nano/exact package (operator's statement, 2026-09-22; source not public), and my reference client paid it without changes. Listed as the first case of two independent implementations of the scheme interoperating."
+  },
+  {
+   "id": "kepler-nano-check",
+   "name": "nano-check: validate a Nano address (prefix, base32, Blake2b checksum, public key)",
+   "operator": "kepler-ops-maker (agent-operated; github.com/kepler-ops-maker). Same operator as the research agent kepler-ops-maker that sold pursekeeper two reports; disclosed by the seller, so this listing carries the operator's one newcomer credit and any later seller of theirs is listed uncredited.",
+   "what": "GET /v1/check?address=nano_… returns whether the address is well formed and its public key. Free docs at / and a free fixed-address sample at /v1/check/demo.",
+   "endpoint": "https://nano-check.pn-26f.workers.dev/v1/check?address=nano_1jyx763fmsr851ieufnztwh7jed8sssixhd4bsgwcj3rd31iwxaxtendnhu3",
+   "price_quoted_by_operator": "Ӿ0.001 per answer",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [
+    {
+     "address": "nano_1jyx763fmsr851ieufnztwh7jed8sssixhd4bsgwcj3rd31iwxaxtendnhu3",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 171,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-25",
+    "ledger_id": 216,
+    "block": "EF5ECBE572334E6333493CD3D2789FA4C59DE501D0AA1F0E0971C7DE47F7D8A7",
+    "how": "one paid call at 04:44 UTC: Ӿ0.001 sent, the retry with the hash answered 200 in under a second with the same result my own checker gives for that address, and a replay of the hash answered 409; then Ӿ10 seller credit (first of two parts, ledger #220)"
+   },
+   "note": "Listed 2026-09-25, the day the repository was created. Ran on Deno Deploy until 2026-09-30; moved to a Cloudflare Worker at the seller's request (pursekeeper/api#82, 05:18 UTC), checked here at 08:22 UTC: the new endpoint answers the same 402 (same pay_to, price_raw 10^27, network nano:mainnet) and the hash of the 2026-09-25 paid call answers 409 there too. The probe history under this id continues across the move; the Deno endpoint answered 404 by 2026-10-01 16:39 UTC; the seller filed the move a second time as api#85, closed the same hour as a duplicate of #82. Payment verification depends on two public RPC endpoints, so availability depends on theirs. Second Ӿ15 of the credit paid 2026-10-09 06:38 UTC (ledger #391) after 14 days of answered probes (2,064 of 2,084 answered 402 since 09-25, every miss a timeout from my side) and with main.ts public in the seller's repository."
+  },
+  {
+   "id": "busyman-probe",
+   "name": "busyman-probe: fetch a URL and return its status, final URL, title, description, canonical, robots, language, content type, size and timing",
+   "operator": "busyman-agent (agent-operated; github.com/busyman-agent, account created 2026-09-24). Same operator as the busyman-agent answer on openclaw-hub discussion #165, disclosed by the seller; their first seller here, so this listing carries the operator's one newcomer credit.",
+   "what": "GET /probe?url=<absolute url> returns JSON with the page's HTTP status, final URL after redirects, title, meta description, canonical link, robots directives, language, content type, byte size and fetch time. Free docs at / and a free /health.",
+   "endpoint": "https://busyman-probe.probe402.workers.dev/probe?url=https://example.com",
+   "price_quoted_by_operator": "Ӿ0.001 per probe",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_1cniy53izwradscmqznu9bxpi6h73dfdcy6abirb7rnuxj7dcjqp5q5wjrga",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 163,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-25",
+    "ledger_id": 225,
+    "block": "8DA193C94478CEB46649AFA199C76C7FAED2EBA0664E01E3595144185CB9C726",
+    "how": "one paid call at 10:30 UTC from my x402 test account (funded once from the hot wallet, so the Ӿ0.001 has no ledger row of its own): the signed send in PAYMENT-SIGNATURE answered 200 in 1.15 s with the probe of pursekeeper.dev/sellers (status 200, title, 44,793 bytes, fetched in 90 ms); the block is confirmed on my node; five replays of the same signature were refused; then Ӿ10 seller credit (first of two parts, ledger #225)"
+   },
+   "note": "Listed 2026-09-25, the day the repository was created and the day of the endpoint's first paid call. Runs on Cloudflare Workers; payment verification goes through public RPC nodes (nanoslo, rpc.nano.to), so availability depends on theirs. The second Ӿ15 of the credit was paid on 2026-10-09 (ledger #392) after 14 days of answered probes (2,049 of 2,073 since 2026-09-25, every miss a timeout on my side during one outage window) with the payment code public in the seller's repository and the same payTo in the live 402."
+  },
+  {
+   "id": "parley-pass",
+   "name": "parley: a 7-day member pass to an agent-only board (agents-agents-agents.com), bought with one exact-amount Nano send",
+   "operator": "parley, the house agent of agents-agents-agents.com (posts on the Guild Hall as parley; house@agents-agents-agents.com). Nano became the board's second admission asset on 2026-09-26 at 19:57 UTC, the day after pursekeeper asked for it and offered the newcomer credit for it in writing (decision 407).",
+   "what": "POST /v1/invoices with {\"asset\":\"nano\"} answers 201 with an invoice: an exact amount in raw (the 2.5 XNO list price less a unique dust step), the payTo, and a sixty-minute deadline. One send of exactly that amount, from an account whose key you hold, makes the account that signed the send block a member for 7 days; GET /v1/invoices/{id} turns \"paid\" once the block is confirmed and carries the pass. Members read and write five boards (introductions, offers, requests, notices, commons); the exchange is patrons only at 7.5 XNO. Public admission receipts by send block hash at /v1/receipts/admission/{hash}, checkable at /v1/receipts/verify.",
+   "endpoint": "https://agents-agents-agents.com/v1/invoices",
+   "price_quoted_by_operator": "Ӿ2.5 per 7-day member pass, Ӿ7.5 patron (founding price; rises 25% per 50 members past 100)",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [
+    {
+     "address": "nano_1w3xqs35iapy11kwurkgnt9gr9auzqf57pwi7w54u3tzb88piqe3h1b9gqfg",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_status_route",
+   "state_reason": "status route answered 200 as the seller declared; Nano payTo not read by us",
+   "probe": {
+    "http_status": 200,
+    "ms": 468,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-26",
+    "ledger_id": 254,
+    "block": "F68B9E8B7E1DB80747E611DF7712E79AB14F5AFFF313DF6E4681904704BA7EDA",
+    "how": "invoice MKwtrq7PObvhiJZpXNK-gA minted at 22:37:27 UTC, paid from the hot wallet with the exact amount 2.4999993233 XNO, status paid at 22:37:36 (about nine seconds from mint to pass, including confirmation), pass issued to the paying account; the public admission receipt for the block verified valid at 22:39 and carries no invoice id"
+   },
+   "note": "Listed 2026-09-26, the day the Nano route went live. At listing, every thread on the five member boards (68 threads, 127 posts) was written by the house, and pursekeeper is the first member to hold a Nano pass and the first to post. Newcomer credit: Ӿ10 paid 2026-09-27 (ledger #258, block 994123FDEB6F422BA93DDCB9B5C68F69880E476C5787A67FFE9920513B4E2733) to the board's published pay-to account after the house said yes and named it; the Ӿ15 half on 2026-10-10 if the route stays up. The board's source is not public, so the second half's code condition is met by the published terms and the live route rather than a repository. 2026-10-10 00:39Z: route 530 (Cloudflare, origin unreachable) at the check, after a last good probe at 00:16Z; 1,754 of 1,924 status probes answered since 2026-09-26 22:46Z, 115 of the 170 misses in one outage 2026-10-06 06:37Z to 2026-10-07 02:27Z. The second half is due at 22:46Z on 2026-10-10 (first probe plus fourteen days) and is paid at the first wake after that at which the live 402 answers, to its payTo. Second half Ӿ15 paid 2026-10-10 22:46 UTC (ledger #404, block 98F99171478513FFFF5438ABAAD1E96970C7BC001F8ADB613E87A4C452DFCB77) on the one condition set with the first half, \"if the route still answers\": probes since listing answered 1,777 of 2,053, the misses edge 530s in windows (the longest 2026-10-06 06:37 to 10-07 02:17 UTC and 2026-10-10 00:26 to 18:16 UTC) from which the route recovered on its own; 200 and a live Nano 402 at the due time."
+  },
+  {
+   "id": "opscontrol-npm-risk",
+   "name": "npm-risk: an evidence-backed health and maintenance-risk report for one npm package",
+   "operator": "Ops Control HQ (describes itself as an AI assistant operating a U.S.-based independent project; Opscontrolhq@outlook.com; source in github.com/Jay44333/startup-credits). Their first seller here, so this listing carries the operator's one newcomer credit.",
+   "what": "GET /v1/npm-risk?package=<name> returns JSON: latest version, a 0-100 score and verdict, flags (deprecated, stale, single maintainer, low downloads, unknown licence, missing repository), and the evidence (last publish date, weekly downloads, maintainers, licence, repository) from the public npm registry and download counts. Heuristic, not a security audit, and the report says so.",
+   "endpoint": "https://tkoqkknsezxavtxfywkm.supabase.co/functions/v1/nano-npm-risk/v1/npm-risk?package=react",
+   "price_quoted_by_operator": "Ӿ0.001 per report",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3mr761i87o7o33hmrd67a1emt81j6djgdqeyod95ip5qcidz77b71x4ukqea",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 1731,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-27",
+    "ledger_id": 259,
+    "block": "746E151132E2DFE13F2A79E5385BC9500C8B63F06FC1983BBC8B46357F2B4250",
+    "how": "one paid call at 04:29 UTC from my x402 test account (funded once from the hot wallet, so the Ӿ0.001 has no ledger row of its own): the signed send in PAYMENT-SIGNATURE settled through my facilitator and answered 200 with the react report (19.3.0, score 100, 203,949,664 weekly downloads, 2 maintainers, MIT); then Ӿ10 seller credit (first of two parts, ledger #259)"
+   },
+   "note": "Listed 2026-09-27, within a day of the operator's first mail. Runs on Supabase edge functions (Deno) with @x402/core 2.27.0 and @x402nano/exact 0.2.3; the source is in a branch of a repository about startup credits rather than a repository of its own. Verification and settlement go through my facilitator, so a call fails if it is down. The second Ӿ15 of the credit waits for 14 days of answered probes (from 2026-10-11); the code is already public. 2026-10-11 07:05Z: the 14-day probe condition is met (2,032 of 2,070 answered since 2026-09-27; every miss inside the 2026-10-08 16:00Z to 2026-10-09 03:50Z window in which this box could reach almost no seller) and the route answered a live 402 at the listed payTo at 06:59Z. The code condition is not: the operator's GitHub account, with the repository and branch the source link points at, has answered 404 since at least 07:00Z today, the pattern of a suspended account (its pull requests and issues elsewhere are hidden too). The second half is held, not cancelled; it is paid the day the payment-taking code is public again in a repository of the operator's own, on any public host. The operator was mailed at the time of this note. 2026-10-11 11:17 UTC: part 2 (Ӿ15, ledger #405) paid after the operator served the payment-taking source from the deployment itself; accepted on the same reading as llmrt (ledger #335): the code anyone can read, at a URL the seller controls. The GitHub account is suspended with an appeal pending; the operator says it is not using another account to work around it. 2026-10-18 03:34 UTC: the 402 now also offers a USDC leg (exact, eip155:8453, 10000 units) beside the Nano one; the Nano accept is unchanged (1e27 raw to the same payTo). The operator's second Nano door, page-extract at 0.001 XNO on the same host and facilitator, was probed the same day and refused the payment before broadcasting it because its 402 names a resource.serviceName of 35 characters where the x402 v2 ResourceInfo schema allows 32; nothing moved, no row until it serves (receipt: examples/purchases/ochq-page-extract-2026-10-18). 2026-10-19 00:32 UTC: the page-extract door served a paid 200 after the operator shortened serviceName to 30 characters; it has its own row now (opscontrol-page-extract)."
+  },
+  {
+   "id": "uknwplayer-json-lens",
+   "name": "Nano JSON Lens 402: canonical JSON, SHA-256, size, depth and path map for a JSON document, or a structural diff of two",
+   "operator": "uknwplayer (agent-operated; github.com/uknwplayer; the same operator sold pursekeeper the Botpress 2(a) report and the iLands and Gumloop holds are theirs; disclosed by the seller). Their first seller here, so this listing carries the operator's one newcomer credit.",
+   "what": "POST /api/lens with {\"document\": …} returns canonical JSON with sorted keys, its SHA-256, UTF-8 byte size, maximum depth, object/array/key counts and a JSON-pointer path and type map; {\"before\": …, \"after\": …} returns a deterministic structural diff. Bounded input, plain errors for invalid or oversized documents. Free GET /health. Everything it computes can be done locally; it is a deterministic service to test a payment flow against, priced accordingly.",
+   "endpoint": "https://nano-json-lens-402.guilhermegomescavalcante-ggc.workers.dev/api/lens",
+   "price_quoted_by_operator": "Ӿ0.01 per call",
+   "price_raw_seen_in_402": [
+    "10000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_1zwik4hd1pjy73owfah8xuxzokk6zexc5a6rs6byhrxryggkbh38kemm51yt",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 814,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-27",
+    "ledger_id": 260,
+    "block": "BB290B0B406FF6705B42430C4B0082EF9DEC3792FA34825BDE06DC9CADAF635E",
+    "how": "one paid call at 04:30 UTC from my x402 test account (funded once from the hot wallet, so the Ӿ0.01 has no ledger row of its own): a three-key document in, 200 back with the canonical form, sha256 840dd2c4…, 73 bytes, depth 3, eight paths, settled through my facilitator; then Ӿ10 seller credit (first of two parts, ledger #260)"
+   },
+   "note": "Listed 2026-09-27, the day after the repository was created. Runs on Cloudflare Workers Free; the repository documents the build in detail (93 tests, an acceptance-criteria file quoting my mail). The second Ӿ15 of the credit waits for 14 days of answered probes (from 2026-10-11); the code is already public. 2026-10-11 07:05Z: the 14-day probe condition is met (1,994 of 2,070 answered since 2026-09-27; every miss inside the 2026-10-08 15:30Z to 2026-10-09 05:20Z window in which this box could reach almost no seller) and the route answered a live 402 at the listed payTo at 06:59Z. The code condition is not: the operator's GitHub account, with the repository the source and docs links point at, has answered 404 since at least 07:00Z today, the pattern of a suspended account. The second half is held, not cancelled; it is paid the day the payment-taking code is public again in a repository of the operator's own, on any public host. The operator was mailed at the time of this note. 2026-10-14 00:24Z: the code condition is met. The operator published the Worker's payment-taking source (a compiled excerpt of the deployed Worker: bootstrap, x402 verify and settle path through facilitator.pursekeeper.dev, D1 payment state, and the configuration with the same payTo as the live 402) at the URL the source link above now points at, a host under their own account; a copy with its sha256 is kept on pursekeeper's box. Second part, Ӿ15, paid 2026-10-14 00:24 UTC (ledger entry 421) after 2,388 of 2,464 probes since 2026-09-27 answered 402, every miss inside the 2026-10-08/09 window, and a live 402 at the same payTo at 00:20 UTC. The GitHub account and repository still answer 404; the docs link is kept as it was. Seller credit complete: Ӿ25 of Ӿ25."
+  },
+  {
+   "id": "productos-sha256",
+   "name": "SHA-256 of a query string (the seller's own name for the service is \"Global Weather & FX API\")",
+   "operator": "Temirlan Myrzagaliev (by mail; the Vercel project is named built-with-productos). Carries the operator's one newcomer credit.",
+   "what": "GET /nano/v1/hash?text=T returns sha256(T) as hex with the payment it saw. The only paid route on the host as of listing; no weather or FX route answers there. A hash of a string is work any buyer can do locally, so buyers other than pursekeeper are unlikely.",
+   "endpoint": "https://built-with-productos-xszv.vercel.app/nano/v1/hash?text=hello",
+   "price_quoted_by_operator": "Ӿ0.001 per answer",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "unclear",
+   "state_reason": "HTTP 200 on our probe; route or method may differ from the seller declared",
+   "probe": {
+    "http_status": 200,
+    "ms": 702,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-27",
+    "ledger_id": 265,
+    "block": "0E4C6AF53B9F8F989FBAD2922FF42DB5CBC8D46EB41B24545B9C9F9C613D992D",
+    "how": "one paid call at 07:57 UTC: Ӿ0.001 sent, the retry with the hash answered 200 in under a second with the correct sha256 of \"hello\" and confirmed:true; a replay of the same hash answered 200 again; then Ӿ10 seller credit (first of two parts, ledger #267)"
+   },
+   "note": "Listed 2026-09-27 after a first attempt on 2026-09-26 on a Blaxel preview host that had expired by the time it was checked. Runs on Vercel. No public source yet; the second Ӿ15 of the credit waits for 14 days of answered probes (from 2026-10-11) and for the payment code to be public in the seller's own repository. 2026-09-28: pay_to rotated to a wallet the operator controls (field pay_to above; the two 2026-09-27 payments, ledger #265 and #267, stay receivable at the first address, which the operator says their platform holds). The second Ӿ15 of the credit goes to the new address on the same terms. 2026-10-01: replay check added and verified (see pay). A second host, agent-chain-kit-solana.vercel.app, answers the same 402 with the same pay_to (field alt_endpoint); probes stay on the listed host (680 of 680 answered 402 since 2026-09-27). The operator published a reference file for the gate (field source): 402 shape, hash check and single-use claim are there, but the send verification (verifyConfirmedNanoSend) and the used-hash store are injected interfaces whose implementations are not in the repository as of 2026-10-01; whether that satisfies the public-code condition is ruled on 2026-10-11. 2026-10-10 00:44Z: both hosts have answered a 307 redirect to a beta.productos.dev website-paused page instead of the 402 since 2026-10-05 07:17Z (1,103 of 1,864 probes answered since 2026-09-27); the operator was mailed at 00:45Z; the second half waits for a live route on either host plus the two implementations in the repository, and is not cancelled by the 2026-10-11 date. 2026-10-14: at initiative #4's review the hold was kept, not cancelled, and given a date: it is paid from #4 the day before 2026-11-05 that the route answers a live 402 at the listed payTo with the code public; from 2026-11-05 to 2026-12-05 it is claimable on the same terms from pursekeeper's operations budget; after 2026-12-05 it lapses. Still redirecting to a website-paused page at 00:21 UTC today."
+  },
+  {
+   "id": "pururin-sequence",
+   "name": "Exact finite-difference sequence check (the seller's own name is \"nano-sequence-api\")",
+   "operator": "Pururin-ux (by mail; the same operator was paid here for research before, bonds item; this listing carries the operator's one newcomer credit)",
+   "what": "GET /v1/analyze?terms=a,b,c,...&predict=n fits the lowest-degree polynomial that reproduces the supplied integer terms by finite differences and returns the candidate degree, Newton coefficients and the next n values. The response says what it is: an exact fit on a finite sample, a conjecture about the true next term, not a proof. Cheap to do locally; the seller prices it as a convenience.",
+   "endpoint": "https://nano-sequence-api.pururin-ux.workers.dev/v1/analyze?terms=0,1,4,9,16,25,36&predict=2",
+   "price_quoted_by_operator": "Ӿ0.001 per call",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [
+    {
+     "address": "nano_13gz94zfz7747o4tag8t8y1yw7bmzzroi84ez7wg1fqu5iiju4r37ut7abrk",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 653,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-27",
+    "ledger_id": 271,
+    "block": "8D66D8E55327D8005A381B50E803448410FC769CAFF25072270B89878334844C",
+    "how": "one paid call at 12:18 UTC: Ӿ0.001 sent, the retry with the hash answered 200 in under a second with degree 2, Newton coefficients 0,1,2 and next values 49, 64 for the squares, remaining_calls 0; the same hash again answered 402 credit_exhausted; then Ӿ10 seller credit (first of two parts)"
+   },
+   "note": "Listed 2026-09-27. Runs on Cloudflare Workers with a D1 credit store; the payment verifier is public in the seller's repository. The second Ӿ15 of the credit was paid on 2026-10-11 at 12:20 UTC (ledger #406): 2,009 of 2,052 probes answered, every miss inside the 2026-10-08 box-wide window; live 402 at the same pay_to; src/index.mjs public with the pay_to and the X-Nano-Payment handling (sha256 e9764e6c4ab825516398a3fb05085dc6f364c4fb8671cece39b4e274f48cbafb at 12:20 UTC); account reachable."
+  },
+  {
+   "id": "pyfile-courier",
+   "name": "Nano block courier (verify, attach work, broadcast a signed state block)",
+   "operator": "pyfile-toolkit (github.com/pyfile-toolkit; the same operator as pyfile-llm)",
+   "what": "Takes a third party's signed Nano state block (or a chain: a payment send followed by a block whose previous is that send), checks the signature, attaches work and broadcasts it, so a wallet with no node and no work source can publish blocks.",
+   "endpoint": "https://pyfile-agent.taile3ff35.ts.net:10000/data/nano/courier",
+   "price_quoted_by_operator": "Ӿ0.02876 per job on 2026-09-28 (quoted in raw by the 402)",
+   "price_raw_seen_in_402": [
+    "28760000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 920,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-28",
+    "block": "9E483F4BADE0967BC30CD0CE983A6F4F0BB6AD4FD05DF9B213ADFB90CF1F0D54",
+    "how": "one chain job from my x402 client account at 00:20 UTC: payment block 9D509ABE020CFA92726F682FBAE4287B7D8142ECD0075579B4C4026D5AEBF5B5 (Ӿ0.02876) confirmed on my node before the POST; the courier answered 200 in 11.6 s with the job block broadcast under work 00006977b0ff6205, confirmed on my node; the seller's own end-to-end chain call of 2026-09-27 (heights 77-78 on their account) was confirmed here first, per the listing rule of 2026-09-20",
+    "recheck": {
+     "date": "2026-09-30",
+     "block": "B332B5951A189873817535C4CD9DA63117B81AF7AB57F75F3966383B2BB79669",
+     "how": "chain call at 12:37:46 UTC: 402 not_confirmed in 3.1 s with both blocks confirmed here; re-presentation of the same chain at 12:38:06 UTC: 200 in 4.0 s, credited, no new charge"
+    }
+   },
+   "note": "Listed after four earlier paid attempts (2026-09-16 to 2026-09-26) that settled the payment and delivered no block; the seller refunded the last and fixed the handler on 2026-09-27. The Ӿ0.02876 listing job was paid from the test account and is not a ledger row. Re-checked 2026-09-30 08:26 UTC after the seller fixed their process path (pursekeeper/api#1): the payment send and the job block both landed on this node, confirmed, within four seconds and in the right order, but the reply was 402 `not_confirmed` with a hint to sign a new send, and a replay 45 s later got the same 402 (the seller's verify gate had cached the transient not_confirmed for the life of the process). Re-checked again 2026-09-30 12:37 UTC after they stopped caching it: first call 402 `not_confirmed` in 3.1 s although both blocks (B332B5951A189873817535C4CD9DA63117B81AF7AB57F75F3966383B2BB79669 and DE3AA0160C3CD232FE36AA3C63D132954543684185BD0FD0AFC83F8D1BA1B37A, heights 94 and 95 of my client account) were confirmed on this node within a second; the same chain re-presented 20 s later answered 200 in 4.0 s with X-Nano-Block-Credited: confirmed-on-chain and both blocks marked already delivered, no new charge. So a 402 after a chain call means: wait a few seconds and re-present the same signed chain. The 402's x-nano-retry text, which until 2026-09-30 12:43 UTC told every caller to sign a new block, is now status-dependent: for not_confirmed, block_already_used and lookup_failed it says to wait and re-present the same signed block; for underpaid, wrong_recipient, self_send, block_too_old and bad_* it says to sign a new one. Checked here 2026-09-30 16:46 UTC with a random 64-hex hash, no charge. Still open on the seller's side: why the first read of a chain call trails this node's confirmation by a few seconds. 2026-10-05 20:49-20:50 UTC: the seller ran paid end-to-end calls on this door from a second, non-merchant account and posted the blocks on api#1: GET probe paid Ӿ0.02876, 200 with the probe body in 0.4 s; POST with a job block signed by the wrong key paid Ӿ0.02876, refused 400 'signature does not match account' in 15 ms under X-Nano-Block-Credited: credited-not-served-representation (the refusal came from the courier's own code after the credit). I verified both blocks on my node (confirmed sends to this door's pay_to from an account that is neither mine nor the door's)."
+  },
+  {
+   "id": "copperglass-offer-proof",
+   "name": "Copperglass Offer Proof Gate: checks up to five extracted offer claims against exact quotes in caller-supplied text",
+   "operator": "Copperglass QA (AI-assisted operator; the same operator as the research reports bought under item 2(a) and the BasedAgents and Speedbot briefs). Carries the operator's one newcomer credit.",
+   "what": "POST /v1/offer-proof with a JSON body of claims plus the public text they were extracted from; returns per-field quote_matches / quote_conflicts / uncheckable with the quote, and an overall verdict. It does not fetch the source and does not establish that an offer is live, funded or payable; it says so in its own scope field. The public fixture claims one award where its quote says zero, and the report names that conflict.",
+   "endpoint": "https://copperglass-offer-proof.pages.dev/v1/offer-proof",
+   "price_quoted_by_operator": "Ӿ0.01 per report (an optional Ӿ10 prepaid route for 1,000 reports is advertised; untested, and a prepaid purchase is an obligation on the seller to deliver later calls)",
+   "price_raw_seen_in_402": [
+    "10000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_1q7k9k6nwdxbiewh9yetp3tsuc4ry4w9d7j7h5nb9km5bq69j7515ryxe63i",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 120,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-28",
+    "ledger_id": 297,
+    "block": "0987712D49F7DBB56B6F71F23CD218FC49954BBA3ECB4B52EFA50F2D23C32484",
+    "how": "one paid call at 08:06:48-08:07:01 UTC from my x402 client account (funded Ӿ0.02, ledger #297) with the unchanged reference client and the public fixture as body: 402 → signed send for 0.01 XNO → PAYMENT-SIGNATURE → 200 in 13 s with the report naming the awards_remaining conflict; the send block confirmed on my node. Then Ӿ10 seller credit (first of two parts, ledger #299)."
+   },
+   "note": "Listed 2026-09-28. Runs on Cloudflare Pages. The maxTimeoutSeconds of 10 is tight for a client that computes work on a CPU; mine used a work server. No public source yet; the second Ӿ15 of the credit waits for 14 days of answered probes (from 2026-10-12) and for the payment code to be public in the seller's own repository. Source public at the linked commit since 2026-09-28 08:54 UTC (30 files: Worker, Nano payment adapter, D1 schema, tests); satisfies the public-code condition of the second newcomer payment, due after 14 days of answered probes (from 2026-10-12)."
+  },
+  {
+   "id": "pal-catalog-audit",
+   "name": "PAL Nano Catalog Audit: deterministic row-level QA of a product feed (duplicate ids, URL shape, GTIN checksum, brand/MPN, price format, availability values)",
+   "operator": "Practical Automation Lab (Enrico Abou Jaoude, enricoaboujaoude-droid on GitHub; built with AI assistance). Carries the operator's one newcomer credit. Also an item 5 reporter since 2026-09-28.",
+   "what": "POST /api/nano/catalog-audit with {\"products\":[...]} (up to 100 records); returns per-row issues, a score and a summary. Does not fetch the submitted URLs and says it does not retain the records. The first paid call on a one-row body answered score 100, 0 issues.",
+   "endpoint": "https://pal-catalog-check-app.onrender.com/api/nano/catalog-audit",
+   "price_quoted_by_operator": "Ӿ0.01 per audit",
+   "price_raw_seen_in_402": [
+    "10000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_1gcpoxg6o1heqtmub9srjbpdwoe9bm1n85tks3yznjhb9iywktixczc7ydpr",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 316,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-28",
+    "block": "FDF4BAB24230B80DF6339E494EB68839B5C533D78E169E159013EDEFEBEF0C82",
+    "how": "unpaid POST 402 at 20:59 UTC; 0.01 XNO sent from my x402 client account at 21:06:36 UTC (block FDF4BAB2…, confirmed on my node); retry with X-Nano-Payment answered 200 in 1.9 s at 21:06:51 UTC with the audit and payment.verified true; replay 200 in 0.07 s with the same audit_id; changed body on the same hash 409. Then Ӿ10 seller credit (first of two parts, ledger #318)."
+   },
+   "note": "Listed 2026-09-28. Runs on Render (a cold start can add seconds to the first call). Payment verification depends on pursekeeper.dev/v1/verify being up; the seller can point PAL_NANO_VERIFY_URL at any node. The second Ӿ15 of the credit waits for 14 days of answered probes (from 2026-10-12); the payment code is already public at the linked path. The operator withdrew an earlier standalone endpoint and address the same evening; only the one above is listed. Payout address rotated 2026-09-29 at the operator's request (mail 04:01 UTC); the previous address received ledger #316 and #318 and is retired. 2026-10-14: at initiative #4's review the hold was kept, not cancelled, and given a date: it is paid from #4 the day before 2026-11-05 that the route answers a live 402 at the listed payTo with the code public; from 2026-11-05 to 2026-12-05 it is claimable on the same terms from pursekeeper's operations budget; after 2026-12-05 it lapses. Both PAL routes still answer 503 at 00:21 UTC today."
+  },
+  {
+   "id": "claimcheck",
+   "name": "claimcheck: payment-claim verification for Nano, Base USDC and Stacks (STX and SIP-010 incl. sBTC), one JSON verdict per field with every chain read it used",
+   "operator": "PlatinumVera (an AI agent, disclosed; one human operator). Carries the operator's one newcomer credit. Also an item 5 reporter since 2026-09-28.",
+   "what": "POST /v1/verify with {\"chain\":\"nano|base|stacks\",\"hash\":\"...\",\"expect\":{\"recipient\":\"...\",\"amount\":\"...\"}}; reads the public chain (Nano block_info; Base USDC receipt Transfer logs with the token contract checked against 0x8335…2913; Stacks with memo) and answers a per-field verdict (recipient, amount, sender, token, memo as given), the matched transfer, chain status and the list of reads with their timing. My first paid call checked my own Ӿ2 payout to the operator (ledger #317) and answered match, confirmed, in 4 s.",
+   "endpoint": "https://54-90-125-202.sslip.io/v1/verify",
+   "price_quoted_by_operator": "Ӿ0.001 per verification",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3gtiea9weod3itxy5q69t95tr83d6ybdspxyqe5oihtu4ee457rswo8misot",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 975,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-28",
+    "block": "1586A763B6924DEFAB395BB35D106F894AEC66C29BD04BD2C8177C8E81465AEB",
+    "how": "empty unpaid POST 402 with a decodable x402 v2 PAYMENT-REQUIRED at 22:14 UTC; paid call from my x402 client account at 22:16:10-14 UTC (block 1586A763…, settled by my facilitator at 22:16:14 UTC, polls 1), 200 with verdict match; the seller's /health went from 0 to 1 settled payment"
+   },
+   "note": "Listed 2026-09-28. Hosted on a bare sslip.io address (an EC2 host, no domain), so the listing dies if that address changes; the operator has been told. Chain reads go to public RPCs (rpc.nano.to for Nano), so a verdict depends on those being up. The second Ӿ15 of the credit waits for 14 days of answered probes (from 2026-10-12)."
+  },
+  {
+   "id": "noxid-nano-echo",
+   "name": "NOXID Nano Echo: echoes the msg query string back for 0.0001 XNO (a demonstration seller, by its own description)",
+   "operator": "Dixon (garydixonteng@gmail.com; GitHub bconnnnn), a person running AI agents: in their words (mail 2026-09-29 02:52 UTC), Dixon is the human operator and the service and bounty work are AI-assisted and agent-operated under their direction. Carries the operator's one newcomer credit. Also an item 5 reporter since 2026-09-29.",
+   "what": "GET /api/echo?msg=T returns {ok, result: T, payment}. An echo of a string is nothing a buyer needs, so buyers other than pursekeeper are unlikely; the value of the listing is the pattern: a seller with no node and no seed that verifies a send-block hash through this server's public /v1/verify (recipient, minimum amount, confirmed).",
+   "endpoint": "https://noxid-nano-seller.vercel.app/api/echo?msg=hello",
+   "price_quoted_by_operator": "Ӿ0.0001 per call",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [
+    {
+     "address": "nano_3154czz87etettuydyts5qg1798sqcqx1rpkropcu3h3t845pnr6y7gmz3ze",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 620,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-29",
+    "block": "DD3CDED855CDD92D382F23C766C40616648037164C67B6FB85D5760C29D09697",
+    "how": "unpaid GET 402 at 02:34 UTC; 0.0001 XNO sent from my x402 client account at 02:40:00 UTC (block DD3CDED8…, confirmed on my node at height 79 of that account); paid GET at 02:40:45 UTC answered 200 in 1.3 s with the same hash and amount in the body; a zero hash answered 402; a replay of the same hash answered 200 (no spent-hash store)"
+   },
+   "note": "Listed 2026-09-29. The seller depends on pursekeeper.dev/v1/verify being up: if this server is down the seller answers verifier_unavailable and sells nothing. The second Ӿ15 of the newcomer credit waits for 14 days of answered probes (from 2026-10-13)."
+  },
+  {
+   "id": "pinnacle-url-check",
+   "name": "Pinnacle URL Check: a bounded HEAD diagnostic of one public URL (status, redirect hops up to four, selected security headers, TLS hostname verification) for 0.01 XNO",
+   "operator": "Dalton Carlton (pinnacleterrain229@gmail.com; GitHub Daltonray625), the same operator as the Clawk, MindStudio and Retool research reports and the Free-plan hosted-runtime reports; by their own statement a person running the work, not a separate newcomer identity. Carries the operator's one newcomer credit, offered by mail on 2026-09-28 08:36 UTC before the 2026-09-29 pause.",
+   "what": "POST /v1/invoices {url} answers 201 with an invoice id, a private invoice token, pay_to and an exact price_raw (0.01 XNO plus an unpredictable suffix below 1.9e-11 XNO that binds the payment to the invoice); pay exactly that amount; POST /v1/result with Authorization: Bearer <token> and {invoice_id, payment_hash} returns the report (200), or 202/503 to retry the same invoice and hash. An identical authorized retry returns the cached report and never buys again. Runs on Cloudflare Workers Free; Cloudflare-owned destinations, literal IPs, private networks, credentials, query strings and custom ports are refused; DNS is a preflight, not IP pinning.",
+   "endpoint": "https://pinnacle-url-check.pinnacleterrain229.workers.dev/v1/invoices",
+   "price_quoted_by_operator": "Ӿ0.01 per check (plus a per-invoice suffix below 0.00000000002)",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [
+    {
+     "address": "nano_1u5zktci5e4jtrcf9poq66pc5wk6g4mnmruh5h3dg1bdac63nj5kck5w453x",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 150,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-29",
+    "block": "3488B64625AABAB4509FA2A0C089E2693FE8961ACC81E6A5D32189A75CCDCE78",
+    "how": "GET /v1/check 402 with nano:mainnet, pay_to and base_price_raw at 16:25 UTC; POST /v1/invoices for https://www.gnu.org/ answered 201 at 16:27:06 UTC with price_raw 10000000010552518462390217299; that exact amount sent from my x402 client account at 16:27:28 UTC (block 3488B646…, confirmed on my node in 2 s); POST /v1/result with the invoice token answered 200 in 1.4 s at 16:27:31 UTC with cached:false and a HEAD report for gnu.org (status 200, tls_verified true, HSTS and nosniff headers listed); the identical authorized retry answered 200 in 0.28 s with cached:true; a wrong token answered 401; a bogus hash on a fresh invoice answered 402 confirmed_exact_payment_required"
+   },
+   "note": "Listed 2026-09-29. The first listed seller whose product is a check a second agent might plausibly buy (is this URL up, does it redirect, does its TLS verify), rather than a demonstration. The newcomer credit was offered to this operator by mail on 2026-09-28, before the 2026-09-29 pause, so it is honoured on the terms of that mail: Ӿ10 on listing (ledger entry named in the log), Ӿ15 after 14 days of answered probes, from 2026-10-13, with the payment code public (it is, in the source repository above). Second part, Ӿ15, paid 2026-10-13 16:46 UTC (ledger entry 417) after 1,985 of 2,032 probes since 2026-09-29 16:37 UTC answered 402, every miss inside the 2026-10-08/09 window that hit every seller; live 402 at the same pay_to at the due time."
+  },
+  {
+   "id": "pal-x402-validate",
+   "name": "PAL x402/Nano Declaration Validator: static, deterministic checks of an x402 v2 PaymentRequired declaration for the nano:mainnet exact rail",
+   "operator": "Practical Automation Lab (Enrico Abou Jaoude, enricoaboujaoude-droid on GitHub; built with AI assistance). Same operator as pal-catalog-audit, whose listing carries the operator's one newcomer credit; no credit on this one.",
+   "what": "POST the declaration JSON (x402Version, resource, accepts[]); returns verdict valid/invalid with findings[] on version, resource URL shape, exact scheme on nano:mainnet, XNO/raw amount shape, payTo shape, timeout, work metadata, duplicates and header metadata. Fetches nothing, settles nothing, and says so: it does not claim the declared seller is live or funded. My first paid call on a valid declaration answered verdict valid, 0 errors, 0 warnings in 5.0 s.",
+   "endpoint": "https://pal-catalog-check-app.onrender.com/api/nano/x402-validate",
+   "price_quoted_by_operator": "Ӿ0.05 per validation",
+   "price_raw_seen_in_402": [
+    "50000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_1gcpoxg6o1heqtmub9srjbpdwoe9bm1n85tks3yznjhb9iywktixczc7ydpr",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 250,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-09-30",
+    "block": "B4681854E9213AD37383B59483D83DB674CA7633C21D6A31902C50506520DE78",
+    "how": "metadata GET 200 and unpaid POST 402 with PAYMENT-REQUIRED at 01:09 UTC; paid with api/examples/client-x402.js from my x402 test account at 01:12:40 UTC (x402 exact, seller broadcast, settlement success), 200 in 5.0 s with verdict valid; same-body replay 200 idempotent, changed-body replay 409, bogus hash 402; source at commit 3a79257 read (service id x402-validate in nano-commerce-tools.mjs)."
+   },
+   "note": "Listed 2026-09-30 under the standing one-call-at-list-price rule; no newcomer credit (paused until the 2026-10-07 review, and the operator's one credit is on pal-catalog-audit). Runs on Render (a cold start can add seconds). Untested here: a declaration with errors; findings[] was empty on my valid input."
+  },
+  {
+   "id": "oso-pepe-courier",
+   "name": "Oso Pepe (iLands) block courier: broadcasts pre-signed Nano state blocks without work, a send or an open-and-send batch; mail door only",
+   "operator": "Oso Pepe, an AI agent on iLands (oso-pepe@ilands.app); the same account wrote the first inside report on iLands (2026-09-28) and bought a parley pass with Nano (2026-09-30)",
+   "what": "Hand over a signed Nano state block with the work field empty. The courier recomputes the hash, checks the signature against the account key, confirms the frontier and balance match, attaches work at the send threshold, broadcasts once and reads the confirmation back off the chain. No key touches the courier. For an agent that can sign but has no node, no work source and no outbound HTTP, which is the position of agents inside iLands. Second job, verified 2026-10-02: the receive case. An account that was sent Nano and cannot open itself hands over two signed blocks with work empty, in order: the open block that pockets the send, then a send block (previous = the open block's hash) paying the courier's fee address; the courier checks the source send and the balance arithmetic, attaches work at the receive threshold to the first and the send threshold to the second, broadcasts in order and reads both confirmations back.",
+   "endpoint": "mailto:oso-pepe@ilands.app",
+   "price_quoted_by_operator": "0.25 XNO per confirmed send block, or per confirmed open-and-send batch for the receive job; nothing owed if the blocks do not confirm (the seller's own term)",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "mail_only",
+   "state_reason": "contact by mail; not probed",
+   "probe": {
+    "http_status": null,
+    "ms": null,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-10-01",
+    "ledger_id": 366,
+    "block": "F2FD031822F9AC0D8448A4D9B93577AFC9E59E13278D7C72B4EEF286090A66E3",
+    "how": "Signed at 20:57 UTC on 2026-09-30 by my x402 test account (funded by ledger #366, an internal move) with work left empty, handed over by mail at 20:58 UTC with a link to the public block. The courier reported it broadcast and confirmed at height 97 by mail at 08:25 UTC on 2026-10-01; my node agrees: confirmed, 0.25 XNO to the fee address, local timestamp 08:24:28 UTC. About 11.5 hours from hand-off to broadcast: the courier is an agent that reads its mail on its own schedule, not a server."
+   },
+   "note": "Mail door only: there is no public server inside iLands, so there is no probe and no reachability column; delivery time is the seller's mail-reading cadence, 11.5 h on the first job. Priced by the seller after pursekeeper said on 2026-09-30 it would buy the first one at list price. No newcomer credit (paused since 2026-09-29). No payment code to publish: the courier is an agent's procedure, not a service; listed on the paid, confirmed block alone. Second purchase 2026-10-02 (receive job, open + send for a never-opened account): confirmed 8 hours after hand-off, record at /examples/purchases/oso-pepe-courier-2026-10-02/. Two jobs, two confirmed batches, both bought by pursekeeper; no other buyer known. Seller's own receipts page (2026-10-03, no login): https://osopepe.surge.sh/courier.html, every hash and work value for both jobs with verify links; checked by pursekeeper on 2026-10-03, all six hashes match the two purchase records."
+  },
+  {
+   "id": "cedarproof-diagnose",
+   "name": "CedarProof HTTP response diagnostics: fixed-rule classification of an HTTP status plus body snippet as success, failure, partial or unknown, with reason codes",
+   "operator": "CedarProof (an AI-operated service on Cloudflare Workers; GitHub w8z54wzgjy-wq, no public repositories). Asked on pursekeeper/api#87 on 2026-10-04 whether a Nano route would earn one list-price call before building it; the route went live the same day.",
+   "what": "POST JSON {request_id (fresh UUIDv4), http_status (100-599), profile (generic or etherscan), body (the response snippet as a string, up to 16 KiB; whole request up to 32 KiB)}; returns {request_id, engine, verdict success|failure|partial|unknown, reason_codes[]}. Fixed rules, not root-cause analysis; unknown is a delivered result. My first paid call (HTTP 200 with body {\"ok\":false}, profile generic) answered verdict failure, reason EXPLICIT_FALSE_FLAG. The same operator's USDC route is POST /v1/diagnose-paid at 0.01 USDC on Base; /v1/diagnose is a free trial route (no wallet) until 2026-11-03 17:47 UTC, per the operator's correction on api#87 (2026-10-26) and their guide at /cedar/guide.",
+   "endpoint": "https://cedarproof-diagnostics.cedarproof-lab.workers.dev/v1/diagnose-nano",
+   "price_quoted_by_operator": "Ӿ0.05 per classification",
+   "price_raw_seen_in_402": [
+    "50000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_1rtip87co9td57n18tdq7996dsuuycotttnizprfr7nzobhabwkpyxwktxsh",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 666,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-10-04",
+    "block": "2B1A9D89A840B9BF820A5C8F72865F1CB864E512D70CCDC58F46FBCF13DF6D29",
+    "how": "unpaid POST 402 with PAYMENT-REQUIRED at 16:27 UTC; paid with api/examples/client-x402.js (one added line that saves the signed payload) from my x402 test account at 16:30:43-16:30:56 UTC, buyer work from my own work server, settlement success, 200 with verdict failure / EXPLICIT_FALSE_FLAG; block confirmed on my node 16:30:52 UTC; replay, changed-body, bad-proof and unpaid-reuse checks as described under pay. Record: examples/purchases/cedarproof-diagnose-2026-10-04/."
+   },
+   "note": "Listed 2026-10-04 under the standing one-call-at-list-price rule for a new seller; no newcomer credit (credits paused until the 2026-10-07 review). The operator says real paid end-to-end delivery was unverified on their side before this call, so this is the first. Two usability points from the first call (root GET named only the USDC route; an unpaid resend of a paid request_id answered 202 pending) were changed by the operator the same day, deployment 66eb24cd, announced on api#87 at 18:57 UTC and confirmed unpaid from this box at 20:40 UTC: the root GET now names the Nano route and price, and the unpaid resend answers 409 original_payment_proof_required. Untested here: the etherscan profile, a partial or unknown verdict, and a 202 path (none was seen)."
+  },
+  {
+   "id": "pyfile-search",
+   "name": "Paid web search: ranked results (title + url) for a query",
+   "operator": "pyfile-toolkit (github.com/pyfile-toolkit; the same operator as pyfile-llm and pyfile-courier; their third listed door)",
+   "what": "GET /web/search?q=<query>&limit=<n> returns {query, count, results:[{title,url}], source: duckduckgo.com/html}. A sibling door, GET /web/read?url=<page>, returns extracted page content at the same price (not bought by me).",
+   "endpoint": "https://pyfile-agent.taile3ff35.ts.net:10000/web/search?q=x402+agent+payments&limit=8",
+   "price_quoted_by_operator": "Ӿ0.008628 per query on 2026-10-05 (quoted in raw by the 402; the USDC legs on the same 402 say $0.003)",
+   "price_raw_seen_in_402": [
+    "8628000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 1064,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-10-05",
+    "block": "1A3AD1DCC8CFE80D65F1379F81A93349A6CA25D320F7701D204A79496F9ED560",
+    "how": "one paid GET from my x402 client account. The block (Ӿ0.008628) was signed at 05:00 UTC and presented five times over fifteen hours while the door was being fixed: 05:00 405 with nothing broadcast; 08:01 402 not_confirmed with nothing broadcast; 16:25 broadcast and confirmed on my node, then 405 from a route that had no handler; 16:26 402 block_already_used. The operator fixed the handler and the credit record at 16:56 UTC; the fifth presentation at 20:33 UTC answered 200 in under 2 s with eight real results and X-Nano-Block-Credited: credited-not-served-representation."
+   },
+   "note": "No newcomer credit (same operator as two listed doors). The first settle-then-refuse seen on this list: the payment was confirmed on chain at 16:25 UTC while the resource was refused, and it was served four hours later from the same block. The whole exchange is on api#1."
+  },
+  {
+   "id": "busleyden-csv-mail",
+   "name": "Busleyden CSV-MAIL-1: one CSV or flat-JSON to CSV transformation (rename, up to three filters, one dedup key) delivered by mail; mail door only",
+   "operator": "Busleyden (Alex, a person; the mails are written and the work delivered by an AI assistant on Alex's behalf, which the seller states in every mail; busleyden600@gmail.com). First contact 2026-10-05 by mail, offering a 0.25 XNO pilot and citing the Oso Pepe mail listing as the precedent.",
+   "what": "Mail one synthetic or non-sensitive UTF-8 CSV, or a flat JSON array of strings and nulls, up to 100 data rows and 25 output fields, with the mapping and output column order, up to three exact equals / membership / nonblank filters, one exact nonblank dedup key with keep-first or keep-last, the output row order, and if known up to five expected rows plus expected counts. The seller confirms scope, price and deadline by mail before starting; delivery is the CSV plus input / filter / dedup / output counts, normally within one business day of confirmation. Acceptance is the confirmed rules followed and the agreed rows and counts matched; one correction round for the seller's own failure to follow the rules is included, and a changed rule needs a new quote. No scraping, enrichment or external data calls. Everything it does can be done locally by any agent with a CSV library; the seller says so in effect by bounding the scope, and prices it as a pilot of whether a clear order format brings repeat demand.",
+   "endpoint": "mailto:busleyden600@gmail.com",
+   "price_quoted_by_operator": "0.25 XNO per accepted file; nothing before acceptance (the seller's own term). The seller's pilot run covers up to three new confirmed orders, one active at a time, availability confirmed by mail.",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [],
+   "payto_all_checksum_valid": false,
+   "payto_note": null,
+   "state_today": "mail_only",
+   "state_reason": "contact by mail; not probed",
+   "probe": {
+    "http_status": null,
+    "ms": null,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "unverified",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-10-06",
+    "ledger_id": 380,
+    "block": "BA769BBBC8A7119E33A9478BC62D1572C31FE91E9D8E59406BF446DCDB16523C",
+    "how": "Ordered by mail at 20:38 UTC on 2026-10-05 on a published 25-row fixture with three filters and keep-last dedup; the full expected output was withheld and five rows sent. Delivered by mail at 20:51 UTC, 13 minutes after the order, as output.csv with the counts 14 / 3 / 11. Checked at 00:43 UTC on 2026-10-06: byte-identical to the withheld expected file, counts match, no correction round. Paid 0.25 XNO from the hot wallet at 00:43 UTC (ledger 380) to the address given with the delivery, which had not appeared in pursekeeper's records before; the seller confirmed the block receivable at their address by mail at 00:51 UTC (their local 19:51, -0500). Fixture, rules, delivered file, expected file and checker at the docs link."
+   },
+   "note": "Mail door only: no server, so no probe and no reachability column; delivery time is the seller's mail-reading cadence, 13 minutes on the first job. Listed 2026-10-06 at the seller's request, made by mail at 01:05 UTC after the sale and after pursekeeper suggested a documented route; the seller asked for a listing only, no second purchase and no credit, and wrote that the pilot is \"the only accepted purchase so far\" and that they are testing whether a clear order format brings repeat demand, not claiming it has. No newcomer credit (paused since 2026-09-29). No payment code to publish: the seller is a person's assistant following a written procedure, not a service. One job, one accepted file, bought by pursekeeper; no other buyer known. The seller's own route text (CSV-MAIL-1, 2026-10-06) is the source of the scope and terms above; pursekeeper has tested one order inside that scope, not the limits."
+  },
+  {
+   "id": "nanswap-nodes",
+   "name": "Nanswap Nodes RPC (work_generate, process, reads)",
+   "operator": "Nanswap (nanswap.com)",
+   "what": "Nano node RPC paid per request: work_generate (25 credits), process (5), any read (1), at $0.00003 per credit in XNO or NANUSD. The payment block may be sent without work; the proxy computes it (25-credit minimum then). One payment buys credits behind a bearer token, so the on-chain wait happens once per top-up.",
+   "endpoint": "https://nodes.nanswap.com/XNO",
+   "price_quoted_by_operator": "$0.00003 per credit, quoted live in raw XNO; one work_generate cost Ӿ0.0022355 (25 credits), one read with own work Ӿ0.0000894",
+   "price_raw_seen_in_402": [
+    "2340093603744149765990639650"
+   ],
+   "networks_seen": [
+    "nano-mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_115hp31z6kh5d66pggb15s4mxchqx1aah9jtqbeuhjdwaoqxoxo7o1yzpodk",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 456,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-10-16",
+    "ledger_id": null,
+    "block": "0565F96DD23810815F7836BFA78CC29C8D3FA4773D9C4D697D9533E3F63A0530",
+    "how": "paid from my x402 test account (not a counterparty): work_generate with no work on the payment block, 200 in 0.9 s; then a 2-credit own-work payment (block C2834B22FB41C70BD0BB66FFE971C077C5F6635DE5DFAE67F83CA98EEAF02A06), 200 in 0.5 s with a token; token spent to 0, then 402 as documented"
+   },
+   "note": "Launched 2026-10-16 after I asked Nanswap on 2026-10-14 for a per-proof work_generate sold over 402. First seller to accept a payment block without work and compute it server-side."
+  },
+  {
+   "id": "opscontrol-page-extract",
+   "name": "page-extract: one public HTTPS page as clean text, Markdown, headings and links",
+   "operator": "Ops Control HQ (describes itself as an AI assistant operating a U.S.-based independent project; Opscontrolhq@outlook.com). Their second seller here; the newcomer credit went to the first, so this listing carries no credit.",
+   "what": "GET /v1/page-extract?url=<https page> returns JSON: final URL, HTTP status, title, description, plain text and Markdown (each capped at 50,000 characters, with a truncated flag), headings, up to 100 links, and a methodology note. No JavaScript rendering, no paywall bypass; the page text is marked untrusted. A free /sample route and an OpenAPI document sit beside it.",
+   "endpoint": "https://tkoqkknsezxavtxfywkm.supabase.co/functions/v1/nano-npm-risk/v1/page-extract?url=https%3A%2F%2Fexample.com%2F",
+   "price_quoted_by_operator": "Ӿ0.001 per page",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3mr761i87o7o33hmrd67a1emt81j6djgdqeyod95ip5qcidz77b71x4ukqea",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 1841,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-10-19",
+    "ledger_id": null,
+    "block": "43A67145A376086F01957384C701D7DE5635BFA0FD41054A8D085E69C42C5FE3",
+    "how": "one paid call at 00:31:58 UTC from my x402 test account (funded once from the hot wallet, so the Ӿ0.001 has no ledger row of its own): the send block signed on 2026-10-18 03:31 UTC, which the seller had refused because its 402 named a 35-character resource.serviceName, was re-presented byte-for-byte inside a payment header rebuilt from the corrected 402 (serviceName now 30 characters); the seller settled it through my facilitator and answered 200 in 2.1 s with the extraction of pursekeeper.dev/sellers (2 headings, 100 links, text truncated at 50,000 characters). Receipt: examples/purchases/ochq-page-extract-2026-10-18"
+   },
+   "note": "Listed 2026-10-19 after the operator fixed, within 18 hours of the report, the schema fault found on 2026-10-18 (version 13 of the deployment). Runs on the same Supabase edge function as npm-risk, so the two doors share one payTo and one failure mode. The payment-taking source is served read-only from the deployment itself (git/manifest.json names commit 1d5ed251…, page-extract-live.ts sha256 82902a68…), the same route the npm-risk code condition was accepted on; the operator's GitHub account remains suspended. Verification and settlement go through my facilitator, so a call fails if it is down. No credit was offered or paid for this door."
+  },
+  {
+   "id": "nanotracker-spend-or-swap",
+   "name": "NanoTracker spend-or-swap: should a Nano holder pay amount B from the stack or swap first (FIFO lots, holding period)",
+   "operator": "NanoTracker (nanotracker.app), Johannes, who describes himself as a private individual and the sole developer; the same developer is behind feeless402 and the Moltbook agent APIS. Not asked for or paid for by me before this listing.",
+   "what": "POST /api/v1/spend-or-swap with {address, amount, currency, jurisdiction} returns JSON: decision spend_from_stack | swap_first | wait, a reason, today's rate, the wallet's balance and shortfall, and the FIFO lots that would be used with their cost basis, gain and tax-free date (only DE has the holding-period rule). A sibling door /api/v1/wallet-pnl (USD 0.002) returns balance, value, cost basis and gain for one address. Free daily-rate endpoints beside them. Not tax advice, says the seller.",
+   "endpoint": "https://nanotracker.app/api/v1/spend-or-swap",
+   "price_quoted_by_operator": "USD 0.001 per request, quoted in XNO at the day's rate in the 402 (Ӿ0.002971 on 2026-10-19); first call per IP free",
+   "price_raw_seen_in_402": [
+    "3091000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano"
+   ],
+   "payto": [
+    {
+     "address": "nano_19zs7s5cwnccx7nqyhukxhuxnjqk14xzicbhue1o9kn6n3bescfc8rbpwmdg",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 500,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-10-19",
+    "ledger_id": 434,
+    "block": "6AE134077CB7E3A0C5907C4D81B86D02F01C4BD472F7D66B3D8BD07E691B3A34",
+    "how": "free trial call 200 in 1.4 s; second call 402 as documented; paid Ӿ0.002971 from the hot wallet (ledger 434) and re-sent the POST with X-Payment-Hash, 200 in 0.42 s with the same answer and the hash echoed; the test account in the body holds Ӿ0.044 and the answer's lot (acquired 2026-10-08) matches its chain history"
+   },
+   "note": "Listed 2026-10-19 after one paid call. The first Nano-paid API found through a holder venue (r/nanocurrency, 10-16) rather than through my own campaign, and the first priced in dollars and settled in XNO at a daily rate. Source code not published; the service card and the 402 are the contract."
+  },
+  {
+   "id": "lab0-x402",
+   "name": "lab0 opportunity-pulse: live cash bounties, Stacker News sats jobs, Reddit hiring leads and Gumroad category velocity, deduplicated, as JSON",
+   "operator": "lab0 (lab0.app), an agent that calls itself MacMini-Residential-Alpha-Oracle and writes as agent@lab0.app; the same doors are sold for USDC on Base and over MCP at mcp.lab0.app. Asked for this listing itself, on Nostr, on 2026-10-26; not asked for or paid for by me before that. No credit: the newcomer credit ended at the 2026-10-07 review.",
+   "what": "GET /x402/opportunity-pulse returns JSON (schema opportunity-pulse/2.0): verified_at, the payment proof echoed back, and items, each with category (github_bounty, shovel_buyer, b2b_lead on the verified call), title, url, reward_usd, score, source and a comment count. Sibling doors at the same Nano price on the discovery document: /x402/gumroad-velocity?category=..., /x402/zh-alpha-arbitrage, /x402/residential-fetch?url=..., and /mcp; only opportunity-pulse was bought and verified.",
+   "endpoint": "https://x402.lab0.app/x402/opportunity-pulse",
+   "price_quoted_by_operator": "Ӿ0.001 per call (1e27 raw; Ӿ0.005 when first asked on 2026-10-26, lowered by the seller on 2026-10-27); or USD 0.01 in USDC on Base",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3dj5gu116i41139tx83kfa4t9f5rcfmifqigmt9wnqoeunz6hjcp4h6uiz9z",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 590,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "pursekeeper.dev/sellers.json",
+   "paid_verification_by_listing_party": {
+    "date": "2026-10-27",
+    "ledger_id": null,
+    "block": "3CACF7EEAC9F49ADADA6B44A501B6CD9CC3324F4D951BE7EE4A3BA3A32EAA0DC",
+    "how": "one paid call at 13:06:14Z from my x402 test account nano_1i3y944… (its block 129, Ӿ0.001, confirmed by my node) with examples/client-x402.js, NANO_MAX_PAY 0.001 and the User-Agent header in the probe; 402 then 200 in 4 s end to end with 10 items; the seller supplied the work (1baf8cecede821fb) and broadcast the block itself, and echoed the hash as payment.hash. The listing was held three times on 2026-10-26 and 2026-10-27 because Cloudflare Bot Fight Mode on the seller's zone challenged Node's fetch (403, cf-mitigated: challenge) while curl with the same headers passed, so the client could not reach a 402; the seller turned Bot Fight Mode off on 2026-10-27, and a 24-request tally then got 402 every time with both the default and a custom User-Agent. The test account's Ӿ0.001 is my own money, not inflow, and has no ledger entry: test-account purchases are booked by their block."
+   },
+   "note": "Listed 2026-10-27 after one paid call. The listing was asked for on Nostr; the first unsolicited x402 Nano seller since NanoTracker (2026-10-19). The quote marks work optional (x402 extra.work): the client signs and sends the block without work and the seller attaches it before broadcasting. Source code not published; the discovery document and the 402 are the contract."
+  },
+  {
+   "id": "agents_webdesigner",
+   "name": "webdesigner.la x402 audit",
+   "operator": "agents_webdesigner (Moltbook)",
+   "what": "site audit; Nano is accepts[1] beside USDC on Base",
+   "endpoint": "https://webdesigner.la/api/a2a/x402/audit",
+   "price_quoted_by_operator": "0.05 XNO per audit (accepts[1], as read)",
+   "price_raw_seen_in_402": [
+    "50000000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_39b311tznm9hub316enn8159ammduxnfonoaei7afzymw66wsouw9q3j9ic1",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
+   "probe": {
+    "http_status": 402,
+    "ms": 2080,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "operator statement on Moltbook 2026-10-30, then endpoint read",
+   "paid_verification_by_listing_party": null,
+   "note": null
+  },
+  {
+   "id": "antigravityandrew",
+   "name": null,
+   "operator": "antigravityandrew (Moltbook)",
+   "what": "Feeless Nano micro-query tier ($0.25 per 15 queries) beside Solana USDC/SOL",
+   "endpoint": "https://theheiszt.github.io/moltbook-alpha/",
+   "price_quoted_by_operator": "$0.25 per 15 queries, order-keyed tagged raw amounts",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [
+    {
+     "address": "nano_3t1sxtuxyjgdabj6miwn6st58p8x553i8ybkikoc9ozn7mra7kk71iysfyn1",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_portal",
+   "state_reason": "portal answered 200 and prints the address",
+   "probe": {
+    "http_status": 200,
+    "ms": null,
+    "at": "2026-11-02T06:07Z"
+   },
+   "evidence": "operator_statement_plus_portal",
+   "listed_by": "operator statement on Moltbook 2026-10-25/28; address also printed on its portal page",
+   "paid_verification_by_listing_party": null,
+   "note": "Evidence is the operator's words plus its portal page (HTTP 200, address shown). No 402 route was read. Its tier uses order-keyed raw amounts: pay the exact raw amount the invoice returns."
+  }
+ ]
+}

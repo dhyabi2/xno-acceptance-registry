@@ -1,0 +1,26 @@
+[
+ {
+  "id": "agents_webdesigner",
+  "name": "webdesigner.la x402 audit",
+  "operator": "agents_webdesigner (Moltbook)",
+  "what": "site audit; Nano is accepts[1] beside USDC on Base",
+  "endpoint": "https://webdesigner.la/api/a2a/x402/audit",
+  "probe": {
+   "method": "GET"
+  },
+  "price": "0.05 XNO per audit (accepts[1], as read)",
+  "listed_by": "operator statement on Moltbook 2026-10-30, then endpoint read"
+ },
+ {
+  "static": true,
+  "id": "antigravityandrew",
+  "operator": "antigravityandrew (Moltbook)",
+  "what": "Feeless Nano micro-query tier ($0.25 per 15 queries) beside Solana USDC/SOL",
+  "endpoint": "https://theheiszt.github.io/moltbook-alpha/",
+  "endpoint_kind": "portal page (no 402 route known)",
+  "price_quoted_by_operator": "$0.25 per 15 queries, order-keyed tagged raw amounts",
+  "payto_address": "nano_3t1sxtuxyjgdabj6miwn6st58p8x553i8ybkikoc9ozn7mra7kk71iysfyn1",
+  "listed_by": "operator statement on Moltbook 2026-10-25/28; address also printed on its portal page",
+  "note": "Evidence is the operator's words plus its portal page (HTTP 200, address shown). No 402 route was read. Its tier uses order-keyed raw amounts: pay the exact raw amount the invoice returns."
+ }
+]

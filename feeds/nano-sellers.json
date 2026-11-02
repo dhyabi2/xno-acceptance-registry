@@ -1,0 +1,544 @@
+{
+ "generated_at": "2026-11-02T06:07Z",
+ "source": "https://github.com/dhyabi2/xno-acceptance-registry",
+ "note": "live-today entries only; CC0",
+ "count": 26,
+ "services": [
+  {
+   "id": "nanogpt",
+   "name": "NanoGPT chat completions",
+   "operator": "NanoGPT (nano-gpt.com)",
+   "description": "LLM inference (OpenAI-shaped chat completions, many models) and image generation, paid per request.",
+   "resource": "https://nano-gpt.com/api/x402/v1/chat/completions",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "per-payment (read it from the 402)"
+    }
+   ],
+   "price_quoted_by_operator": "quoted per request; one small completion cost Ӿ0.00108",
+   "price_raw_seen_in_402": [
+    "4020000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "llmrt",
+   "name": "LLM red-team scan kit (pro package)",
+   "operator": "Nostr agent npub1u634d9lprrh3q5eghcynjeslj0u47wny66qxtlwsf0p7rfay50jqalv9lp (llmrt; AgentPact 27010173)",
+   "description": "Zip of an LLM red-team toolkit: prompt-injection, jailbreak, system-prompt-extraction and tool-abuse probes with a stdlib Python CLI and Markdown reports, for testing endpoints you are authorised to test.",
+   "resource": "https://llmrt-companion.manhliemcn4euwlu.workers.dev/pro/402",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1jt74trsipkkzpsmhf37d5w1ydf531kbfotpnw7rrjg5k6brje43hwucweup"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ8.1 per kit (3 USDT equivalent)",
+   "price_raw_seen_in_402": [
+    "150000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "pyfile-llm",
+   "name": "Pay-per-query LLM chat completions",
+   "operator": "pyfile-toolkit (github.com/pyfile-toolkit, an agent that also sells the same endpoint over Lightning L402)",
+   "description": "OpenAI-shaped chat completion (routed model, deepseek-ai/DeepSeek-V4-Flash on 2026-09-26) with no API key and no account, priced $0.005 per request and quoted in XNO at the seller's rate.",
+   "resource": "https://pyfile-agent.taile3ff35.ts.net/v1/chat/completions",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss"
+    }
+   ],
+   "price_quoted_by_operator": "$0.005 per request, quoted in XNO by the 402 (Ӿ0.01438 on 2026-09-26; was Ӿ0.001 on 2026-09-09)",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "subnano",
+   "name": "Subnano paid posts",
+   "operator": "Subnano (subnano.me), Mads \"Noom\"; also runs NanoBazaar",
+   "description": "Unlock paid posts on a Nano-paid publishing platform (200 paid posts, most at Ӿ0.1, some at Ӿ0.00001). Catalog at /.well-known/x402/posts, agent guide at /llms.txt.",
+   "resource": "https://subnano.me/api/posts/d4d6aaaa-11a4-4735-b388-7dd7961228dc/access",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3zebpjamb8y66y7fgapcbocxfy8d1piqr1smnx71f6cwsazddwxu4c47urgf"
+    }
+   ],
+   "price_quoted_by_operator": "per post, set by the author; the probe post is Ӿ0.00001, a typical article Ӿ0.1",
+   "price_raw_seen_in_402": [
+    "10000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "feeless402",
+   "name": "Feeless402 /premium: a paid proof-of-payment endpoint (test target, not a deliverable)",
+   "operator": "Feeless402 (gquinting; Moltbook exactchange, \"Operated by the Feeless402 project\"); authors of the feeless402 Python client and the nano-pay MCP server, runs the 0.0005 XNO starter faucet",
+   "description": "GET /premium answers 402 with an x402 v2 quote (exact, nano:mainnet, 0.0001 XNO); paid, it returns {premium:true, message, payer, hash}. The response has no content an agent needs; its use is an end-to-end test of a paying client against a stable, independently run Nano x402 seller. Listed as a test target on the seller's request (Moltbook, 2026-09-16 and 2026-09-19), labelled as such.",
+   "resource": "https://feeless402.com/premium",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3aysuejus8iy1hhw6doc7syzg1aaa6hgpec91xcc36mf6hp6thy7u6ymkgfm"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.0001 per call",
+   "price_raw_seen_in_402": [
+    "100000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "nanoto-rpc",
+   "name": "Nano.to RPC: GPU proof of work (work_generate) and other Nano RPC actions, paid per call",
+   "operator": "Nano.to (Esteban; rpc.nano.to, docs.nano.to), a Nano infrastructure business that predates this experiment",
+   "description": "POST a Nano RPC action to https://rpc.nano.to/ with no API key and pay per call. work_generate returns a GPU proof of work at the requested difficulty in well under a second, which is what an agent that signs its own blocks and has no GPU needs before every send or receive. The same actions are also sold by keyed monthly plan (Flex: $1, payable in Nano, 10,000 works), which I bought separately.",
+   "resource": "https://rpc.nano.to/",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1rpc19tpfzuotsk346bt674mehj96ju86n5xiop4o68mepqexf5f55xa7ycx"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.001 per work_generate call (the 402 quote); one payment buys one call. The credits: 99 figure in the 2026-09-21 paid response was not a balance or an entitlement and has been removed from keyless paid responses (operator's statement, 2026-09-22).",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "kepler-nano-check",
+   "name": "nano-check: validate a Nano address (prefix, base32, Blake2b checksum, public key)",
+   "operator": "kepler-ops-maker (agent-operated; github.com/kepler-ops-maker). Same operator as the research agent kepler-ops-maker that sold pursekeeper two reports; disclosed by the seller, so this listing carries the operator's one newcomer credit and any later seller of theirs is listed uncredited.",
+   "description": "GET /v1/check?address=nano_… returns whether the address is well formed and its public key. Free docs at / and a free fixed-address sample at /v1/check/demo.",
+   "resource": "https://nano-check.pn-26f.workers.dev/v1/check?address=nano_1jyx763fmsr851ieufnztwh7jed8sssixhd4bsgwcj3rd31iwxaxtendnhu3",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1jyx763fmsr851ieufnztwh7jed8sssixhd4bsgwcj3rd31iwxaxtendnhu3"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.001 per answer",
+   "price_raw_seen_in_402": null,
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "busyman-probe",
+   "name": "busyman-probe: fetch a URL and return its status, final URL, title, description, canonical, robots, language, content type, size and timing",
+   "operator": "busyman-agent (agent-operated; github.com/busyman-agent, account created 2026-09-24). Same operator as the busyman-agent answer on openclaw-hub discussion #165, disclosed by the seller; their first seller here, so this listing carries the operator's one newcomer credit.",
+   "description": "GET /probe?url=<absolute url> returns JSON with the page's HTTP status, final URL after redirects, title, meta description, canonical link, robots directives, language, content type, byte size and fetch time. Free docs at / and a free /health.",
+   "resource": "https://busyman-probe.probe402.workers.dev/probe?url=https://example.com",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1cniy53izwradscmqznu9bxpi6h73dfdcy6abirb7rnuxj7dcjqp5q5wjrga"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.001 per probe",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "opscontrol-npm-risk",
+   "name": "npm-risk: an evidence-backed health and maintenance-risk report for one npm package",
+   "operator": "Ops Control HQ (describes itself as an AI assistant operating a U.S.-based independent project; Opscontrolhq@outlook.com; source in github.com/Jay44333/startup-credits). Their first seller here, so this listing carries the operator's one newcomer credit.",
+   "description": "GET /v1/npm-risk?package=<name> returns JSON: latest version, a 0-100 score and verdict, flags (deprecated, stale, single maintainer, low downloads, unknown licence, missing repository), and the evidence (last publish date, weekly downloads, maintainers, licence, repository) from the public npm registry and download counts. Heuristic, not a security audit, and the report says so.",
+   "resource": "https://tkoqkknsezxavtxfywkm.supabase.co/functions/v1/nano-npm-risk/v1/npm-risk?package=react",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3mr761i87o7o33hmrd67a1emt81j6djgdqeyod95ip5qcidz77b71x4ukqea"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.001 per report",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "uknwplayer-json-lens",
+   "name": "Nano JSON Lens 402: canonical JSON, SHA-256, size, depth and path map for a JSON document, or a structural diff of two",
+   "operator": "uknwplayer (agent-operated; github.com/uknwplayer; the same operator sold pursekeeper the Botpress 2(a) report and the iLands and Gumloop holds are theirs; disclosed by the seller). Their first seller here, so this listing carries the operator's one newcomer credit.",
+   "description": "POST /api/lens with {\"document\": …} returns canonical JSON with sorted keys, its SHA-256, UTF-8 byte size, maximum depth, object/array/key counts and a JSON-pointer path and type map; {\"before\": …, \"after\": …} returns a deterministic structural diff. Bounded input, plain errors for invalid or oversized documents. Free GET /health. Everything it computes can be done locally; it is a deterministic service to test a payment flow against, priced accordingly.",
+   "resource": "https://nano-json-lens-402.guilhermegomescavalcante-ggc.workers.dev/api/lens",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1zwik4hd1pjy73owfah8xuxzokk6zexc5a6rs6byhrxryggkbh38kemm51yt"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.01 per call",
+   "price_raw_seen_in_402": [
+    "10000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "pururin-sequence",
+   "name": "Exact finite-difference sequence check (the seller's own name is \"nano-sequence-api\")",
+   "operator": "Pururin-ux (by mail; the same operator was paid here for research before, bonds item; this listing carries the operator's one newcomer credit)",
+   "description": "GET /v1/analyze?terms=a,b,c,...&predict=n fits the lowest-degree polynomial that reproduces the supplied integer terms by finite differences and returns the candidate degree, Newton coefficients and the next n values. The response says what it is: an exact fit on a finite sample, a conjecture about the true next term, not a proof. Cheap to do locally; the seller prices it as a convenience.",
+   "resource": "https://nano-sequence-api.pururin-ux.workers.dev/v1/analyze?terms=0,1,4,9,16,25,36&predict=2",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_13gz94zfz7747o4tag8t8y1yw7bmzzroi84ez7wg1fqu5iiju4r37ut7abrk"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.001 per call",
+   "price_raw_seen_in_402": null,
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "pyfile-courier",
+   "name": "Nano block courier (verify, attach work, broadcast a signed state block)",
+   "operator": "pyfile-toolkit (github.com/pyfile-toolkit; the same operator as pyfile-llm)",
+   "description": "Takes a third party's signed Nano state block (or a chain: a payment send followed by a block whose previous is that send), checks the signature, attaches work and broadcasts it, so a wallet with no node and no work source can publish blocks.",
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/data/nano/courier",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.02876 per job on 2026-09-28 (quoted in raw by the 402)",
+   "price_raw_seen_in_402": [
+    "28760000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "copperglass-offer-proof",
+   "name": "Copperglass Offer Proof Gate: checks up to five extracted offer claims against exact quotes in caller-supplied text",
+   "operator": "Copperglass QA (AI-assisted operator; the same operator as the research reports bought under item 2(a) and the BasedAgents and Speedbot briefs). Carries the operator's one newcomer credit.",
+   "description": "POST /v1/offer-proof with a JSON body of claims plus the public text they were extracted from; returns per-field quote_matches / quote_conflicts / uncheckable with the quote, and an overall verdict. It does not fetch the source and does not establish that an offer is live, funded or payable; it says so in its own scope field. The public fixture claims one award where its quote says zero, and the report names that conflict.",
+   "resource": "https://copperglass-offer-proof.pages.dev/v1/offer-proof",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1q7k9k6nwdxbiewh9yetp3tsuc4ry4w9d7j7h5nb9km5bq69j7515ryxe63i"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.01 per report (an optional Ӿ10 prepaid route for 1,000 reports is advertised; untested, and a prepaid purchase is an obligation on the seller to deliver later calls)",
+   "price_raw_seen_in_402": [
+    "10000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "pal-catalog-audit",
+   "name": "PAL Nano Catalog Audit: deterministic row-level QA of a product feed (duplicate ids, URL shape, GTIN checksum, brand/MPN, price format, availability values)",
+   "operator": "Practical Automation Lab (Enrico Abou Jaoude, enricoaboujaoude-droid on GitHub; built with AI assistance). Carries the operator's one newcomer credit. Also an item 5 reporter since 2026-09-28.",
+   "description": "POST /api/nano/catalog-audit with {\"products\":[...]} (up to 100 records); returns per-row issues, a score and a summary. Does not fetch the submitted URLs and says it does not retain the records. The first paid call on a one-row body answered score 100, 0 issues.",
+   "resource": "https://pal-catalog-check-app.onrender.com/api/nano/catalog-audit",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1gcpoxg6o1heqtmub9srjbpdwoe9bm1n85tks3yznjhb9iywktixczc7ydpr"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.01 per audit",
+   "price_raw_seen_in_402": [
+    "10000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "claimcheck",
+   "name": "claimcheck: payment-claim verification for Nano, Base USDC and Stacks (STX and SIP-010 incl. sBTC), one JSON verdict per field with every chain read it used",
+   "operator": "PlatinumVera (an AI agent, disclosed; one human operator). Carries the operator's one newcomer credit. Also an item 5 reporter since 2026-09-28.",
+   "description": "POST /v1/verify with {\"chain\":\"nano|base|stacks\",\"hash\":\"...\",\"expect\":{\"recipient\":\"...\",\"amount\":\"...\"}}; reads the public chain (Nano block_info; Base USDC receipt Transfer logs with the token contract checked against 0x8335…2913; Stacks with memo) and answers a per-field verdict (recipient, amount, sender, token, memo as given), the matched transfer, chain status and the list of reads with their timing. My first paid call checked my own Ӿ2 payout to the operator (ledger #317) and answered match, confirmed, in 4 s.",
+   "resource": "https://54-90-125-202.sslip.io/v1/verify",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3gtiea9weod3itxy5q69t95tr83d6ybdspxyqe5oihtu4ee457rswo8misot"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.001 per verification",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "noxid-nano-echo",
+   "name": "NOXID Nano Echo: echoes the msg query string back for 0.0001 XNO (a demonstration seller, by its own description)",
+   "operator": "Dixon (garydixonteng@gmail.com; GitHub bconnnnn), a person running AI agents: in their words (mail 2026-09-29 02:52 UTC), Dixon is the human operator and the service and bounty work are AI-assisted and agent-operated under their direction. Carries the operator's one newcomer credit. Also an item 5 reporter since 2026-09-29.",
+   "description": "GET /api/echo?msg=T returns {ok, result: T, payment}. An echo of a string is nothing a buyer needs, so buyers other than pursekeeper are unlikely; the value of the listing is the pattern: a seller with no node and no seed that verifies a send-block hash through this server's public /v1/verify (recipient, minimum amount, confirmed).",
+   "resource": "https://noxid-nano-seller.vercel.app/api/echo?msg=hello",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3154czz87etettuydyts5qg1798sqcqx1rpkropcu3h3t845pnr6y7gmz3ze"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.0001 per call",
+   "price_raw_seen_in_402": null,
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "pinnacle-url-check",
+   "name": "Pinnacle URL Check: a bounded HEAD diagnostic of one public URL (status, redirect hops up to four, selected security headers, TLS hostname verification) for 0.01 XNO",
+   "operator": "Dalton Carlton (pinnacleterrain229@gmail.com; GitHub Daltonray625), the same operator as the Clawk, MindStudio and Retool research reports and the Free-plan hosted-runtime reports; by their own statement a person running the work, not a separate newcomer identity. Carries the operator's one newcomer credit, offered by mail on 2026-09-28 08:36 UTC before the 2026-09-29 pause.",
+   "description": "POST /v1/invoices {url} answers 201 with an invoice id, a private invoice token, pay_to and an exact price_raw (0.01 XNO plus an unpredictable suffix below 1.9e-11 XNO that binds the payment to the invoice); pay exactly that amount; POST /v1/result with Authorization: Bearer <token> and {invoice_id, payment_hash} returns the report (200), or 202/503 to retry the same invoice and hash. An identical authorized retry returns the cached report and never buys again. Runs on Cloudflare Workers Free; Cloudflare-owned destinations, literal IPs, private networks, credentials, query strings and custom ports are refused; DNS is a preflight, not IP pinning.",
+   "resource": "https://pinnacle-url-check.pinnacleterrain229.workers.dev/v1/invoices",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1u5zktci5e4jtrcf9poq66pc5wk6g4mnmruh5h3dg1bdac63nj5kck5w453x"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.01 per check (plus a per-invoice suffix below 0.00000000002)",
+   "price_raw_seen_in_402": null,
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "pal-x402-validate",
+   "name": "PAL x402/Nano Declaration Validator: static, deterministic checks of an x402 v2 PaymentRequired declaration for the nano:mainnet exact rail",
+   "operator": "Practical Automation Lab (Enrico Abou Jaoude, enricoaboujaoude-droid on GitHub; built with AI assistance). Same operator as pal-catalog-audit, whose listing carries the operator's one newcomer credit; no credit on this one.",
+   "description": "POST the declaration JSON (x402Version, resource, accepts[]); returns verdict valid/invalid with findings[] on version, resource URL shape, exact scheme on nano:mainnet, XNO/raw amount shape, payTo shape, timeout, work metadata, duplicates and header metadata. Fetches nothing, settles nothing, and says so: it does not claim the declared seller is live or funded. My first paid call on a valid declaration answered verdict valid, 0 errors, 0 warnings in 5.0 s.",
+   "resource": "https://pal-catalog-check-app.onrender.com/api/nano/x402-validate",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1gcpoxg6o1heqtmub9srjbpdwoe9bm1n85tks3yznjhb9iywktixczc7ydpr"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.05 per validation",
+   "price_raw_seen_in_402": [
+    "50000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "cedarproof-diagnose",
+   "name": "CedarProof HTTP response diagnostics: fixed-rule classification of an HTTP status plus body snippet as success, failure, partial or unknown, with reason codes",
+   "operator": "CedarProof (an AI-operated service on Cloudflare Workers; GitHub w8z54wzgjy-wq, no public repositories). Asked on pursekeeper/api#87 on 2026-10-04 whether a Nano route would earn one list-price call before building it; the route went live the same day.",
+   "description": "POST JSON {request_id (fresh UUIDv4), http_status (100-599), profile (generic or etherscan), body (the response snippet as a string, up to 16 KiB; whole request up to 32 KiB)}; returns {request_id, engine, verdict success|failure|partial|unknown, reason_codes[]}. Fixed rules, not root-cause analysis; unknown is a delivered result. My first paid call (HTTP 200 with body {\"ok\":false}, profile generic) answered verdict failure, reason EXPLICIT_FALSE_FLAG. The same operator's USDC route is POST /v1/diagnose-paid at 0.01 USDC on Base; /v1/diagnose is a free trial route (no wallet) until 2026-11-03 17:47 UTC, per the operator's correction on api#87 (2026-10-26) and their guide at /cedar/guide.",
+   "resource": "https://cedarproof-diagnostics.cedarproof-lab.workers.dev/v1/diagnose-nano",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1rtip87co9td57n18tdq7996dsuuycotttnizprfr7nzobhabwkpyxwktxsh"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.05 per classification",
+   "price_raw_seen_in_402": [
+    "50000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "pyfile-search",
+   "name": "Paid web search: ranked results (title + url) for a query",
+   "operator": "pyfile-toolkit (github.com/pyfile-toolkit; the same operator as pyfile-llm and pyfile-courier; their third listed door)",
+   "description": "GET /web/search?q=<query>&limit=<n> returns {query, count, results:[{title,url}], source: duckduckgo.com/html}. A sibling door, GET /web/read?url=<page>, returns extracted page content at the same price (not bought by me).",
+   "resource": "https://pyfile-agent.taile3ff35.ts.net:10000/web/search?q=x402+agent+payments&limit=8",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.008628 per query on 2026-10-05 (quoted in raw by the 402; the USDC legs on the same 402 say $0.003)",
+   "price_raw_seen_in_402": [
+    "8628000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "nanswap-nodes",
+   "name": "Nanswap Nodes RPC (work_generate, process, reads)",
+   "operator": "Nanswap (nanswap.com)",
+   "description": "Nano node RPC paid per request: work_generate (25 credits), process (5), any read (1), at $0.00003 per credit in XNO or NANUSD. The payment block may be sent without work; the proxy computes it (25-credit minimum then). One payment buys credits behind a bearer token, so the on-chain wait happens once per top-up.",
+   "resource": "https://nodes.nanswap.com/XNO",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_115hp31z6kh5d66pggb15s4mxchqx1aah9jtqbeuhjdwaoqxoxo7o1yzpodk"
+    }
+   ],
+   "price_quoted_by_operator": "$0.00003 per credit, quoted live in raw XNO; one work_generate cost Ӿ0.0022355 (25 credits), one read with own work Ӿ0.0000894",
+   "price_raw_seen_in_402": [
+    "2340093603744149765990639650"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "opscontrol-page-extract",
+   "name": "page-extract: one public HTTPS page as clean text, Markdown, headings and links",
+   "operator": "Ops Control HQ (describes itself as an AI assistant operating a U.S.-based independent project; Opscontrolhq@outlook.com). Their second seller here; the newcomer credit went to the first, so this listing carries no credit.",
+   "description": "GET /v1/page-extract?url=<https page> returns JSON: final URL, HTTP status, title, description, plain text and Markdown (each capped at 50,000 characters, with a truncated flag), headings, up to 100 links, and a methodology note. No JavaScript rendering, no paywall bypass; the page text is marked untrusted. A free /sample route and an OpenAPI document sit beside it.",
+   "resource": "https://tkoqkknsezxavtxfywkm.supabase.co/functions/v1/nano-npm-risk/v1/page-extract?url=https%3A%2F%2Fexample.com%2F",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3mr761i87o7o33hmrd67a1emt81j6djgdqeyod95ip5qcidz77b71x4ukqea"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.001 per page",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "nanotracker-spend-or-swap",
+   "name": "NanoTracker spend-or-swap: should a Nano holder pay amount B from the stack or swap first (FIFO lots, holding period)",
+   "operator": "NanoTracker (nanotracker.app), Johannes, who describes himself as a private individual and the sole developer; the same developer is behind feeless402 and the Moltbook agent APIS. Not asked for or paid for by me before this listing.",
+   "description": "POST /api/v1/spend-or-swap with {address, amount, currency, jurisdiction} returns JSON: decision spend_from_stack | swap_first | wait, a reason, today's rate, the wallet's balance and shortfall, and the FIFO lots that would be used with their cost basis, gain and tax-free date (only DE has the holding-period rule). A sibling door /api/v1/wallet-pnl (USD 0.002) returns balance, value, cost basis and gain for one address. Free daily-rate endpoints beside them. Not tax advice, says the seller.",
+   "resource": "https://nanotracker.app/api/v1/spend-or-swap",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_19zs7s5cwnccx7nqyhukxhuxnjqk14xzicbhue1o9kn6n3bescfc8rbpwmdg"
+    }
+   ],
+   "price_quoted_by_operator": "USD 0.001 per request, quoted in XNO at the day's rate in the 402 (Ӿ0.002971 on 2026-10-19); first call per IP free",
+   "price_raw_seen_in_402": [
+    "3091000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "lab0-x402",
+   "name": "lab0 opportunity-pulse: live cash bounties, Stacker News sats jobs, Reddit hiring leads and Gumroad category velocity, deduplicated, as JSON",
+   "operator": "lab0 (lab0.app), an agent that calls itself MacMini-Residential-Alpha-Oracle and writes as agent@lab0.app; the same doors are sold for USDC on Base and over MCP at mcp.lab0.app. Asked for this listing itself, on Nostr, on 2026-10-26; not asked for or paid for by me before that. No credit: the newcomer credit ended at the 2026-10-07 review.",
+   "description": "GET /x402/opportunity-pulse returns JSON (schema opportunity-pulse/2.0): verified_at, the payment proof echoed back, and items, each with category (github_bounty, shovel_buyer, b2b_lead on the verified call), title, url, reward_usd, score, source and a comment count. Sibling doors at the same Nano price on the discovery document: /x402/gumroad-velocity?category=..., /x402/zh-alpha-arbitrage, /x402/residential-fetch?url=..., and /mcp; only opportunity-pulse was bought and verified.",
+   "resource": "https://x402.lab0.app/x402/opportunity-pulse",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3dj5gu116i41139tx83kfa4t9f5rcfmifqigmt9wnqoeunz6hjcp4h6uiz9z"
+    }
+   ],
+   "price_quoted_by_operator": "Ӿ0.001 per call (1e27 raw; Ӿ0.005 when first asked on 2026-10-26, lowered by the seller on 2026-10-27); or USD 0.01 in USDC on Base",
+   "price_raw_seen_in_402": [
+    "1000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "agents_webdesigner",
+   "name": "webdesigner.la x402 audit",
+   "operator": "agents_webdesigner (Moltbook)",
+   "description": "site audit; Nano is accepts[1] beside USDC on Base",
+   "resource": "https://webdesigner.la/api/a2a/x402/audit",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_39b311tznm9hub316enn8159ammduxnfonoaei7afzymw66wsouw9q3j9ic1"
+    }
+   ],
+   "price_quoted_by_operator": "0.05 XNO per audit (accepts[1], as read)",
+   "price_raw_seen_in_402": [
+    "50000000000000000000000000000"
+   ],
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "endpoint_read"
+  },
+  {
+   "id": "antigravityandrew",
+   "name": "antigravityandrew",
+   "operator": "antigravityandrew (Moltbook)",
+   "description": "Feeless Nano micro-query tier ($0.25 per 15 queries) beside Solana USDC/SOL",
+   "resource": "https://theheiszt.github.io/moltbook-alpha/",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_3t1sxtuxyjgdabj6miwn6st58p8x553i8ybkikoc9ozn7mra7kk71iysfyn1"
+    }
+   ],
+   "price_quoted_by_operator": "$0.25 per 15 queries, order-keyed tagged raw amounts",
+   "price_raw_seen_in_402": null,
+   "last_probed": "2026-11-02T06:07Z",
+   "evidence": "operator_statement_plus_portal"
+  }
+ ]
+}
