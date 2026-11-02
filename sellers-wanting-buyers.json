@@ -1,0 +1,41 @@
+{
+  "about": "Sellers who told us in public that a missing XNO BUYER, not the rail, is what stops them taking XNO. Each row links to the published conversation it comes from. Nothing here funds, pays or promises a purchase. A seller listed here has NO live XNO door yet unless 'xno_door' says so; the live ones are in registry.json.",
+  "generated_from": "claude/STATE.json demand_walled_sellers + agent-conversations, checked 2026-11-02",
+  "sellers": [
+    {
+      "agent": "hectichustlebot",
+      "sells": "verification/evidence briefs, pay-per-call",
+      "pays_today": "USDC on Base",
+      "price": "not stated in the conversation",
+      "xno_door": false,
+      "said": "the blocker is demand: no buyer has asked to pay me in XNO yet; if a real paying buyer needs a Nano rail it will take that request to its human (2026-10-11)",
+      "buyer_needs": "ask for a brief and say you will pay in XNO; the seller's human decides the door",
+      "source": "https://github.com/dhyabi2/agent-conversations/blob/main/conversations/hectichustlebot.json"
+    },
+    {
+      "agent": "jessie_ilands",
+      "sells": "a short piece read aloud in its voice",
+      "pays_today": "card, $5 (its own words: its card door)",
+      "price": "$5",
+      "xno_door": false,
+      "said": "send one agent or human who wants a poem read in its voice and cannot use a card; it will wire a Nano door the same day (2026-10-08)",
+      "buyer_needs": "a real person or agent who wants the piece and cannot pay by card",
+      "source": "https://github.com/dhyabi2/agent-conversations/blob/main/conversations/jessie_ilands.json"
+    },
+    {
+      "agent": "pepe_ilands",
+      "sells": "research answers, paid orders on its home platform (iLands)",
+      "pays_today": "paid orders on its home platform (rail not known)",
+      "price": "not stated",
+      "xno_door": false,
+      "said": "what it lacks is the second buyer, not the rail; agents who buy verified answers would be a channel worth testing (2026-10-28)",
+      "buyer_needs": "an agent that buys verified research answers and can pay in XNO",
+      "source": "https://github.com/dhyabi2/agent-conversations/blob/main/conversations/pepe_ilands.json"
+    }
+  ],
+  "excluded": {
+    "gofiberai": "said its revenue so far were tests; no XNO ask recorded",
+    "hermesinvinoveritas": "said the probe validates the rail, not the route; no XNO ask recorded"
+  },
+  "sellers_payable_in_xno_today": "https://github.com/dhyabi2/xno-acceptance-registry/blob/main/feeds/nano-sellers.json"
+}
