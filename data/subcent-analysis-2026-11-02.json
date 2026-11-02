@@ -1,0 +1,408 @@
+{
+ "unique_resources": 71456,
+ "priced_usdc": 71449,
+ "other_asset": 7,
+ "no_amount": 0,
+ "networks": [
+  [
+   "eip155:8453",
+   74928
+  ],
+  [
+   "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+   15468
+  ],
+  [
+   "eip155:137",
+   8829
+  ],
+  [
+   "eip155:42161",
+   7563
+  ],
+  [
+   "xrpl:0",
+   4659
+  ],
+  [
+   "eip155:5042",
+   3387
+  ],
+  [
+   "eip155:143",
+   3122
+  ],
+  [
+   "eip155:480",
+   2375
+  ]
+ ],
+ "median_price": 0.01,
+ "share_le_0.01": 0.8651,
+ "share_le_0.001": 0.038,
+ "with_calls": 68038,
+ "with_calls_le_0.01": 58416,
+ "nano_accepts": 17,
+ "hosts_le_0.01": 2161,
+ "calls_le_0.01": 648761,
+ "top40_share_of_calls": 0.8599,
+ "crawl_rows_sample_last_called": "2026-11-02T09:08:39.384Z",
+ "largest_host": {
+  "host": "market.datapackvibe.com",
+  "resources": 42149,
+  "share_of_all_resources": 0.5899
+ },
+ "excluding_largest_host": {
+  "resources": 29300,
+  "median_price": 0.01,
+  "share_le_0.01": 0.6709
+ },
+ "hosts_total": 3283,
+ "hosts_median_price_le_0.01": 1866,
+ "nano_resources": [
+  "https://pyfile-agent.taile3ff35.ts.net/data/chain/block-number",
+  "https://pyfile-agent.taile3ff35.ts.net/data/chain/erc20-balance",
+  "https://pyfile-agent.taile3ff35.ts.net/data/chain/network-info",
+  "https://pyfile-agent.taile3ff35.ts.net/data/ideas",
+  "https://pyfile-agent.taile3ff35.ts.net/data/nano/courier",
+  "https://pyfile-agent.taile3ff35.ts.net/data/read",
+  "https://pyfile-agent.taile3ff35.ts.net/data/wiki",
+  "https://pyfile-agent.taile3ff35.ts.net/web/read",
+  "https://pyfile-agent.taile3ff35.ts.net/web/search",
+  "https://pyfile-agent.taile3ff35.ts.net:10000/data/ideas",
+  "https://pyfile-agent.taile3ff35.ts.net:10000/data/read",
+  "https://pyfile-agent.taile3ff35.ts.net:10000/data/wiki",
+  "https://pyfile-agent.taile3ff35.ts.net:10000/secret/delete",
+  "https://pyfile-agent.taile3ff35.ts.net:10000/secret/drop-ttl",
+  "https://pyfile-agent.taile3ff35.ts.net:10000/secret/get",
+  "https://pyfile-agent.taile3ff35.ts.net:10000/web/read",
+  "https://pyfile-agent.taile3ff35.ts.net:10000/web/search"
+ ],
+ "targets": [
+  {
+   "host": "market.datapackvibe.com",
+   "resources_le_0.01": 42149,
+   "l30_calls": 134352,
+   "max_l30_unique_payers_one_resource": 3,
+   "min_price_usd": 0.01,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://market.datapackvibe.com/x402/assistant-email-domain-readiness"
+  },
+  {
+   "host": "blockrun.ai",
+   "resources_le_0.01": 98,
+   "l30_calls": 98768,
+   "max_l30_unique_payers_one_resource": 305,
+   "min_price_usd": 0.002,
+   "max_price_usd": 0.0085,
+   "sample_resource": "https://blockrun.ai/api/v1/chat/completions"
+  },
+  {
+   "host": "agent.pocket.network",
+   "resources_le_0.01": 113,
+   "l30_calls": 93689,
+   "max_l30_unique_payers_one_resource": 36,
+   "min_price_usd": 0.005,
+   "max_price_usd": 0.005,
+   "sample_resource": "https://agent.pocket.network/v1/meadow"
+  },
+  {
+   "host": "www.api-xpay.com",
+   "resources_le_0.01": 9,
+   "l30_calls": 61915,
+   "max_l30_unique_payers_one_resource": 268,
+   "min_price_usd": 0.005,
+   "max_price_usd": 0.005,
+   "sample_resource": "https://www.api-xpay.com/x402/quote"
+  },
+  {
+   "host": "stableenrich.dev",
+   "resources_le_0.01": 2,
+   "l30_calls": 36210,
+   "max_l30_unique_payers_one_resource": 154,
+   "min_price_usd": 0.002,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://stableenrich.dev/api/exa/search"
+  },
+  {
+   "host": "api.agents-trust.com",
+   "resources_le_0.01": 1,
+   "l30_calls": 13313,
+   "max_l30_unique_payers_one_resource": 58,
+   "min_price_usd": 0.01,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.agents-trust.com/recommend"
+  },
+  {
+   "host": "win.oneshotagent.com",
+   "resources_le_0.01": 76,
+   "l30_calls": 12179,
+   "max_l30_unique_payers_one_resource": 43,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://win.oneshotagent.com/v1/tools/search"
+  },
+  {
+   "host": "agent402.tools",
+   "resources_le_0.01": 499,
+   "l30_calls": 10948,
+   "max_l30_unique_payers_one_resource": 26,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://agent402.tools/api/demand-radar"
+  },
+  {
+   "host": "api.exa.ai",
+   "resources_le_0.01": 2,
+   "l30_calls": 10022,
+   "max_l30_unique_payers_one_resource": 97,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.007,
+   "sample_resource": "https://api.exa.ai/search"
+  },
+  {
+   "host": "api.onesource.io",
+   "resources_le_0.01": 33,
+   "l30_calls": 7733,
+   "max_l30_unique_payers_one_resource": 469,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.onesource.io/api/chain/erc20-balance"
+  },
+  {
+   "host": "x402.twit.sh",
+   "resources_le_0.01": 17,
+   "l30_calls": 7324,
+   "max_l30_unique_payers_one_resource": 28,
+   "min_price_usd": 0.0025,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://x402.twit.sh/tweets/search"
+  },
+  {
+   "host": "stormstation247.com",
+   "resources_le_0.01": 2,
+   "l30_calls": 7283,
+   "max_l30_unique_payers_one_resource": 1,
+   "min_price_usd": 0.01,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://stormstation247.com/api/rank"
+  },
+  {
+   "host": "agents.chain.link",
+   "resources_le_0.01": 2,
+   "l30_calls": 6607,
+   "max_l30_unique_payers_one_resource": 2,
+   "min_price_usd": 0.002,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://agents.chain.link/v1/operations/:workflowName"
+  },
+  {
+   "host": "api.kadec0.xyz",
+   "resources_le_0.01": 10,
+   "l30_calls": 4817,
+   "max_l30_unique_payers_one_resource": 7,
+   "min_price_usd": 0.005,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.kadec0.xyz/v1/token-price"
+  },
+  {
+   "host": "api.gondola-ai.com",
+   "resources_le_0.01": 2,
+   "l30_calls": 4746,
+   "max_l30_unique_payers_one_resource": 21,
+   "min_price_usd": 0.01,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.gondola-ai.com/v1/chat/completions"
+  },
+  {
+   "host": "api.sitecheck-api.workers.dev",
+   "resources_le_0.01": 223,
+   "l30_calls": 4231,
+   "max_l30_unique_payers_one_resource": 10,
+   "min_price_usd": 0.002,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.sitecheck-api.workers.dev/api/transcribe"
+  },
+  {
+   "host": "wafermap.xyz",
+   "resources_le_0.01": 23,
+   "l30_calls": 3367,
+   "max_l30_unique_payers_one_resource": 11,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://wafermap.xyz/v1/tts-melo"
+  },
+  {
+   "host": "api.clawfetch.ai",
+   "resources_le_0.01": 7,
+   "l30_calls": 3262,
+   "max_l30_unique_payers_one_resource": 22,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.008,
+   "sample_resource": "https://api.clawfetch.ai/fetch"
+  },
+  {
+   "host": "api.nansen.ai",
+   "resources_le_0.01": 25,
+   "l30_calls": 3133,
+   "max_l30_unique_payers_one_resource": 55,
+   "min_price_usd": 0.01,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.nansen.ai/api/v1/profiler/address/current-balance"
+  },
+  {
+   "host": "saylorinnovations.com",
+   "resources_le_0.01": 1596,
+   "l30_calls": 3124,
+   "max_l30_unique_payers_one_resource": 8,
+   "min_price_usd": 0.01,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://saylorinnovations.com/api/docs/go/github.com/gin-gonic/gin"
+  },
+  {
+   "host": "x402.orthogonal.com",
+   "resources_le_0.01": 175,
+   "l30_calls": 2631,
+   "max_l30_unique_payers_one_resource": 11,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://x402.orthogonal.com/apollo/api/v1/people/match"
+  },
+  {
+   "host": "api.x402node.dev",
+   "resources_le_0.01": 338,
+   "l30_calls": 2556,
+   "max_l30_unique_payers_one_resource": 24,
+   "min_price_usd": 0.0022,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.x402node.dev/stock/cn-index"
+  },
+  {
+   "host": "glim.sh",
+   "resources_le_0.01": 24,
+   "l30_calls": 2160,
+   "max_l30_unique_payers_one_resource": 36,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://glim.sh/api/v1/twitter/search"
+  },
+  {
+   "host": "2s.io",
+   "resources_le_0.01": 101,
+   "l30_calls": 2050,
+   "max_l30_unique_payers_one_resource": 12,
+   "min_price_usd": 0.0025,
+   "max_price_usd": 0.009,
+   "sample_resource": "https://2s.io/api/stocks/company-news"
+  },
+  {
+   "host": "x402.ottoai.services",
+   "resources_le_0.01": 65,
+   "l30_calls": 2031,
+   "max_l30_unique_payers_one_resource": 54,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://x402.ottoai.services/crypto-news"
+  },
+  {
+   "host": "api.losbeto.xyz",
+   "resources_le_0.01": 36,
+   "l30_calls": 1905,
+   "max_l30_unique_payers_one_resource": 14,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.losbeto.xyz/llm"
+  },
+  {
+   "host": "agent-data-tools.revmesh2074.workers.dev",
+   "resources_le_0.01": 575,
+   "l30_calls": 1858,
+   "max_l30_unique_payers_one_resource": 6,
+   "min_price_usd": 0.002,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://agent-data-tools.revmesh2074.workers.dev/ai/sentiment"
+  },
+  {
+   "host": "api.surplusintelligence.ai",
+   "resources_le_0.01": 1,
+   "l30_calls": 1593,
+   "max_l30_unique_payers_one_resource": 19,
+   "min_price_usd": 0.003302,
+   "max_price_usd": 0.003302,
+   "sample_resource": "https://api.surplusintelligence.ai/v1/chat/completions"
+  },
+  {
+   "host": "agentsvc.io",
+   "resources_le_0.01": 109,
+   "l30_calls": 1579,
+   "max_l30_unique_payers_one_resource": 9,
+   "min_price_usd": 0.002,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://agentsvc.io/api/v1/proxy/dns-lookup"
+  },
+  {
+   "host": "smx.space",
+   "resources_le_0.01": 38,
+   "l30_calls": 1407,
+   "max_l30_unique_payers_one_resource": 1,
+   "min_price_usd": 0.01,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://smx.space/v1/markets/starcloud-orbital-compute-test/mid"
+  },
+  {
+   "host": "netintel.dev",
+   "resources_le_0.01": 69,
+   "l30_calls": 1361,
+   "max_l30_unique_payers_one_resource": 14,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://netintel.dev/email-auth"
+  },
+  {
+   "host": "api.loyalspark.online",
+   "resources_le_0.01": 33,
+   "l30_calls": 1328,
+   "max_l30_unique_payers_one_resource": 46,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.loyalspark.online/x402-gateway/recipient-api/offers"
+  },
+  {
+   "host": "twitter.use.x402atlas.com",
+   "resources_le_0.01": 20,
+   "l30_calls": 1294,
+   "max_l30_unique_payers_one_resource": 35,
+   "min_price_usd": 0.005,
+   "max_price_usd": 0.006,
+   "sample_resource": "https://twitter.use.x402atlas.com/search"
+  },
+  {
+   "host": "x402.freeq.one",
+   "resources_le_0.01": 87,
+   "l30_calls": 1271,
+   "max_l30_unique_payers_one_resource": 7,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://x402.freeq.one/tools/markdown"
+  },
+  {
+   "host": "api.vextorium.com",
+   "resources_le_0.01": 225,
+   "l30_calls": 1270,
+   "max_l30_unique_payers_one_resource": 12,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.vextorium.com/v1/ecb-exchange-rates"
+  },
+  {
+   "host": "api.solenrich.com",
+   "resources_le_0.01": 26,
+   "l30_calls": 1125,
+   "max_l30_unique_payers_one_resource": 12,
+   "min_price_usd": 0.001,
+   "max_price_usd": 0.01,
+   "sample_resource": "https://api.solenrich.com/entrypoints/parse-transaction/invoke"
+  }
+ ],
+ "targets_total_ge_1000_calls": 36
+}
