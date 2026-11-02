@@ -1,0 +1,4 @@
+{"id": "template-1", "status": "template", "buyer": "<name of the buyer>", "wants": "<what is wanted, one line>",
+ "amount_raw": "1000000000000000000000000000", "expires": "2099-01-01",
+ "buyer_account": "<nano_ address of the buyer>", "funded": false, "funded_note": "<who checked the balance, when>",
+ "ask_url": "https://<where the seller answers>"}
