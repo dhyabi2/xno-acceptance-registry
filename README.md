@@ -70,6 +70,7 @@ Open a pull request adding your endpoint to `extras.json` (id, operator, what, e
 Run the tests: `python3 -m unittest discover -s tests` (stdlib only, Python 3.9+).
 
 ## Also here
+- `BOARD.md` (from `board.json` by `board.py`): sellers who say they take XNO, with address, their own published price and what the ledger shows today; for holders asking who accepts XNO.
 - `feeds/nano-accepting-agents.json`: flat file, one row per payee (name, url, nano_address, verified_at) for directories that ingest a list.
 - `listing/`: which x402 facilitators and catalogs can list nano:mainnet, probed and tracked (`listing/README.md`).
 - `cases/parley.md`: a seller that already takes XNO beside USDC, read from its own endpoints.
