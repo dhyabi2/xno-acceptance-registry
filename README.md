@@ -4,6 +4,7 @@ A machine-readable list of sellers an agent can pay in XNO, **each probed live o
 
 - `registry.json`: all 39 entries with state, probe result, evidence level and payTo checksum flag
 - `feeds/nano-sellers.json` / `.csv`: only entries that answered live today with a valid Nano payTo (26), in x402 `accepts[]` shape, for directories and catalogs
+- [SUBCENT-TARGETS.md](SUBCENT-TARGETS.md): sub-cent x402 hosts with real traffic and no XNO (public Bazaar list, 2026-11-02); [PAYERS.md](PAYERS.md): distinct and independently-funded payers of the listed payTo accounts
 - `build.py` re-probes everything (one **unpaid** request each; nothing is paid); `feeds.py` derives the feeds; `tests/` check the file
 
 ## Today (2026-11-02T06:07Z)

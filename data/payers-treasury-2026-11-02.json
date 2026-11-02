@@ -1,0 +1,161 @@
+{
+ "read_at": "2026-11-02T09:40:06Z",
+ "floor_raw": "10000000000000000000000000",
+ "nodes": [
+  "https://node.somenano.com/proxy",
+  "https://nanoslo.0x.no/proxy",
+  "https://rainstorm.city/api"
+ ],
+ "payees": {
+  "nano_1yo6c1t64ahfjdw1dxizmbbnpdmbrckwhw9phbg5pdkeubrizga4qhnjmnx7": {
+   "sellers": [
+    "swarm-treasury"
+   ],
+   "receives": 27,
+   "unconfirmed": 0,
+   "complete": true,
+   "payers_raw": {
+    "nano_1xug1q5t7nxoj3ywwzokiea9jz8fq8qfgzp8pbyfr3co3e5xgj755uofu8ue": {
+     "n": 9,
+     "n_above_floor": 9,
+     "sum_raw": "40500000000000000000000000000000",
+     "first": 1789724790,
+     "last": 1791117004
+    },
+    "nano_3m8cz87zwxb1y16ob4bzp1eyek78qaig8ktohk7d45b18sh6u9exbowbnekr": {
+     "n": 1,
+     "n_above_floor": 1,
+     "sum_raw": "500000000000000000000000000",
+     "first": 1790594630,
+     "last": 1790594630
+    },
+    "nano_3gqrm67xjp33gew1pmrbhx8rm6y1yrcogbid36ku5nc9izp8nn3ec5pa48yt": {
+     "n": 5,
+     "n_above_floor": 5,
+     "sum_raw": "500000000000000000000000000",
+     "first": 1790594623,
+     "last": 1790594629
+    },
+    "nano_1995xc97t5dmpdqayx6j8798d8jtz8n14nr6usti3jub7e7z9na1obwwi7xb": {
+     "n": 3,
+     "n_above_floor": 3,
+     "sum_raw": "300000000000000000000000000",
+     "first": 1790594623,
+     "last": 1790594628
+    },
+    "nano_1i3y944esngqw6wb6ia68dotj4yuqctch9kx8ct65twt8ewi4rdcfgax7ggf": {
+     "n": 3,
+     "n_above_floor": 3,
+     "sum_raw": "300000000000000000000000000",
+     "first": 1789815942,
+     "last": 1790594628
+    },
+    "nano_1cniy53izwradscmqznu9bxpi6h73dfdcy6abirb7rnuxj7dcjqp5q5wjrga": {
+     "n": 1,
+     "n_above_floor": 1,
+     "sum_raw": "100000000000000000000000000",
+     "first": 1790594627,
+     "last": 1790594627
+    },
+    "nano_1w3zih717fz1f1je9cuftbupazzjzpqy1uwbea8bmugi3y7sck93ps8yhkjy": {
+     "n": 1,
+     "n_above_floor": 1,
+     "sum_raw": "39991000000000000000000000000",
+     "first": 1789862733,
+     "last": 1789862733
+    },
+    "nano_3tcr79htpg9o1ibwmupcaqnbctnygpbzajm4ecq66pcbfca99kht7pjo9pg3": {
+     "n": 2,
+     "n_above_floor": 2,
+     "sum_raw": "1076309000000000000000000000000",
+     "first": 1789862725,
+     "last": 1789862729
+    },
+    "nano_3kaf7r9n3ixpjao14z1h18i7mjdkzb55k74qka67dngpiswaadyiu3otq7pp": {
+     "n": 1,
+     "n_above_floor": 1,
+     "sum_raw": "20000000000000000000000000000000",
+     "first": 1789512163,
+     "last": 1789512163
+    },
+    "nano_3saqoz5qfgmohfz3dg5ywwmxj7dwdp3g6xfbspt11g7gyrxgbupi1w9u4g4r": {
+     "n": 1,
+     "n_above_floor": 1,
+     "sum_raw": "10000000000000000000000000000000",
+     "first": 1789410068,
+     "last": 1789410068
+    }
+   }
+  }
+ },
+ "chains": {
+  "nano_1995xc97t5dmpdqayx6j8798d8jtz8n14nr6usti3jub7e7z9na1obwwi7xb": [
+   "nano_1hk1cu3773u5r39e75mtqrauzro75j3hwdzyewz8izokzur66semy739w14h",
+   "nano_3cwzkf3c581zgykukgy4r6mtfnisx3qee4iw98bp794qmnrnoq9dkbfppcdi"
+  ],
+  "nano_1cniy53izwradscmqznu9bxpi6h73dfdcy6abirb7rnuxj7dcjqp5q5wjrga": [
+   "nano_1hk1cu3773u5r39e75mtqrauzro75j3hwdzyewz8izokzur66semy739w14h",
+   "nano_3cwzkf3c581zgykukgy4r6mtfnisx3qee4iw98bp794qmnrnoq9dkbfppcdi"
+  ],
+  "nano_1i3y944esngqw6wb6ia68dotj4yuqctch9kx8ct65twt8ewi4rdcfgax7ggf": [
+   "nano_1xug1q5t7nxoj3ywwzokiea9jz8fq8qfgzp8pbyfr3co3e5xgj755uofu8ue",
+   "nano_16qcqjhqkgopyq6dtuoarwosma8z51asec4t5zki3eq78yiuz7i5kd7bdzyh"
+  ],
+  "nano_1w3zih717fz1f1je9cuftbupazzjzpqy1uwbea8bmugi3y7sck93ps8yhkjy": [
+   "nano_3bgizpzkbnaxd6wsdu439j6cawgkfzaadr5pay5ctuzyt8sna7fqi6qtpjti",
+   "nano_1ffubkdb1uqfgif8xgqppdkbyt8fbb3hddo9184789ngqzyz7fqgagtkknd7"
+  ],
+  "nano_1xug1q5t7nxoj3ywwzokiea9jz8fq8qfgzp8pbyfr3co3e5xgj755uofu8ue": [
+   "nano_16qcqjhqkgopyq6dtuoarwosma8z51asec4t5zki3eq78yiuz7i5kd7bdzyh",
+   "nano_335o96s1kje9jzwukjkqt74iatrfqz4uoue7ocxpce95eukmicpyjmj1ke81"
+  ],
+  "nano_3gqrm67xjp33gew1pmrbhx8rm6y1yrcogbid36ku5nc9izp8nn3ec5pa48yt": [
+   "nano_1hk1cu3773u5r39e75mtqrauzro75j3hwdzyewz8izokzur66semy739w14h",
+   "nano_3cwzkf3c581zgykukgy4r6mtfnisx3qee4iw98bp794qmnrnoq9dkbfppcdi"
+  ],
+  "nano_3kaf7r9n3ixpjao14z1h18i7mjdkzb55k74qka67dngpiswaadyiu3otq7pp": [
+   "nano_3jwrszth46rk1mu7rmb4rhm54us8yg1gw3ipodftqtikf5yqdyr7471nsg1k",
+   "nano_116wejmnkd6559g3ymxtgf1mcqo6cuhikduy5mnwjyjcnrhqsokqenaqzrk1"
+  ],
+  "nano_3m8cz87zwxb1y16ob4bzp1eyek78qaig8ktohk7d45b18sh6u9exbowbnekr": [
+   "nano_1434j1n4sin4cefs5njibag4tsmo596fmg3s6bdogtod3ndmdfez5yuebrh9",
+   "nano_3saqoz5qfgmohfz3dg5ywwmxj7dwdp3g6xfbspt11g7gyrxgbupi1w9u4g4r"
+  ],
+  "nano_3saqoz5qfgmohfz3dg5ywwmxj7dwdp3g6xfbspt11g7gyrxgbupi1w9u4g4r": [
+   "nano_3wigdt7767psi5esbkp59ybdsjwndfn886t9cbtt6h3h9bb8ffo77qd9gwpc",
+   "nano_17s3p6y6hkkgpp4rtxr9xd7cecto3c1kaoc8s4etz4ks3foehu1q3teuaugq"
+  ],
+  "nano_3tcr79htpg9o1ibwmupcaqnbctnygpbzajm4ecq66pcbfca99kht7pjo9pg3": [
+   "nano_3top1ao59iks4hdctz5jyn5hr7d6zr3wogyxj9qzc1wc7e8w9gotr6unwr4p",
+   "nano_3ttgpqoq1me635jz9wjczd6wiketzp7oyfgqbs6itcs5p6sa3djy7n4imrzo"
+  ]
+ },
+ "hubs": [
+  "1hk1cu3773u5r39e75mtqrauzro75j3hwdzyewz8izokzur66sem"
+ ],
+ "summary": {
+  "nano_1yo6c1t64ahfjdw1dxizmbbnpdmbrckwhw9phbg5pdkeubrizga4qhnjmnx7": {
+   "sellers": [
+    "swarm-treasury"
+   ],
+   "history_complete": true,
+   "confirmed_receives": 27,
+   "distinct_payers": 10,
+   "payers_by_class": {
+    "operator": 4,
+    "external": 6
+   },
+   "repeat_payers_any_amount": 5,
+   "pairs_qualifying": 3,
+   "independent_funder_groups_of_qualifying": 3,
+   "groups_strict_no_hub_rule": 2,
+   "distinct_external_payers": 6,
+   "independent_funder_groups_of_external": 6,
+   "qualifying_payers": [
+    "nano_3gqrm67xjp33gew1pmrbhx8rm6y1yrcogbid36ku5nc9izp8nn3ec5pa48yt",
+    "nano_1995xc97t5dmpdqayx6j8798d8jtz8n14nr6usti3jub7e7z9na1obwwi7xb",
+    "nano_3tcr79htpg9o1ibwmupcaqnbctnygpbzajm4ecq66pcbfca99kht7pjo9pg3"
+   ]
+  }
+ }
+}
