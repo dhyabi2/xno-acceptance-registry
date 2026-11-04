@@ -1,17 +1,19 @@
 # xno-acceptance-registry
 
-A machine-readable list of sellers an agent can pay in XNO, **each probed live on 2026-11-02T06:07Z**, every `payTo` checksum-validated by code in this repo. Public domain (CC0 data, MIT code).
+A machine-readable list of sellers an agent can pay in XNO, every `payTo` checksum-validated by code in this repo. Original entries were probed on **2026-11-02T06:07Z**; Nanoodle MCP was added with an unpaid probe on **2026-11-04T01:31Z**. Each row retains its own probe time in `registry.json`. Public domain (CC0 data, MIT code).
 
-- `registry.json`: all 39 entries with state, probe result, evidence level and payTo checksum flag
-- `feeds/nano-sellers.json` / `.csv`: only entries that answered live today with a valid Nano payTo (26), in x402 `accepts[]` shape, for directories and catalogs
+- `registry.json`: all 40 entries with state, probe result, evidence level and payTo checksum flag
+- `feeds/nano-sellers.json` / `.csv`: entries with a last recorded live response and valid Nano payTo (27), in x402-style `accepts[]` shape, for directories and catalogs; MCP services carry `payment_transport: "mcp-streamable-http"` in the JSON feed
 - [SUBCENT-TARGETS.md](SUBCENT-TARGETS.md): sub-cent x402 hosts with real traffic and no XNO (public Bazaar list, 2026-11-02); [PAYERS.md](PAYERS.md): distinct and independently-funded payers of the listed payTo accounts
 - [DEMAND-REGISTER.md](DEMAND-REGISTER.md): who outside the project asked to pay in XNO at which seller (0 today), and the sellers that said demand is their gate (Flux / APEX); `python3 demand_register.py gate HOST`
 - `build.py` re-probes everything (one **unpaid** request each; nothing is paid); `feeds.py` derives the feeds; `tests/` check the file
 
-## Today (2026-11-02T06:07Z)
-Counts: {"dead": 8, "live_402_nano": 25, "live_portal": 1, "live_status_route": 2, "mail_only": 2, "unclear": 1, "total": 39}
+## Latest recorded probes
+Counts: {"dead": 8, "live_402_nano": 25, "live_mcp_nano": 1, "live_portal": 1, "live_status_route": 2, "mail_only": 2, "unclear": 1, "total": 40}
 
 States: `live_402_nano` answered 402 and the 402 carries a Nano payTo; `live_portal` operator page prints the address (operator's statement, no 402 route read); `live_status_route` the seller's declared status route answered as declared, payTo not read by us; `mail_only` contact by mail, not probed; `dead` no answer, 404/5xx, or deployment disabled; `unclear` answered but not as declared.
+
+`live_mcp_nano` answered HTTP 200 with a structured MCP Nano payment quote, in JSON or an SSE data frame. This is a paid tool call, not a free tier or an HTTP 402 response. The probe validates the quote's address, positive raw amount and matching Nano URI without paying or following payment instructions. Its observed deposit is kept in `mcp_payment_quote`; `price_raw_seen_in_402` remains null. The feed's `accepts[]` is a catalog representation: use an MCP client and read a fresh quote with its exact amount before paying. CSV and flat feeds are address directories; use the JSON feed for payment-transport details.
 
 Evidence levels: `endpoint_read` (we read a Nano payTo from a live response), `operator_statement_plus_portal`, `unverified`. A live 402 shows that the seller *asks* for XNO; it does not show the seller delivers after payment. Listing parties' own paid-verification records are copied in `paid_verification_by_listing_party` where they gave one.
 The `nanogpt` payTo is a per-payment deposit address and changes on every quote.
@@ -52,6 +54,7 @@ Source of the seed: the Nano seller list published at https://pursekeeper.dev/se
 | lab0-x402 | live_402_nano | 402 | nano_3dj5gu116i41139tx83kfa4t9f5rcfmifqigmt9wnqoeunz6hjcp4h6uiz9z | Ӿ0.001 per call (1e27 raw; Ӿ0.005 when first asked on 2026-10-26, lowe |
 | agents_webdesigner | live_402_nano | 402 | nano_39b311tznm9hub316enn8159ammduxnfonoaei7afzymw66wsouw9q3j9ic1 | 0.05 XNO per audit (accepts[1], as read) |
 | antigravityandrew | live_portal | 200 | nano_3t1sxtuxyjgdabj6miwn6st58p8x553i8ybkikoc9ozn7mra7kk71iysfyn1 | $0.25 per 15 queries, order-keyed tagged raw amounts |
+| nanoodle-mcp | live_mcp_nano | 200 | nano_1gqjcgoc4hfghdmabpw3i1pcwr8ppcgjkoyhf4txsktdpthqb97apxz9qpyb | $0.06 opening deposit for character-sprites, quoted in exact raw XNO; metered cost + 20%, change returned (operator statement) |
 
 ## Dead today (kept so nobody re-adds them blindly)
 | id | state | HTTP | payTo | price quoted by operator |

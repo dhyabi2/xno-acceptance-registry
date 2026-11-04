@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T06:07Z",
+ "generated_at": "2026-11-04T01:31Z",
  "source": "https://github.com/dhyabi2/xno-acceptance-registry",
  "license": "CC0",
  "note": "A live 402 shows the seller asks for XNO; it does not show it delivers after payment.",
@@ -202,6 +202,14 @@
    "nano_address": "nano_3t1sxtuxyjgdabj6miwn6st58p8x553i8ybkikoc9ozn7mra7kk71iysfyn1",
    "verified_at": "2026-11-02T06:07Z",
    "evidence": "operator_statement_plus_portal",
+   "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
+  },
+  {
+   "name": "Nanoodle MCP",
+   "url": "https://mcp.nanoodle.com/mcp",
+   "nano_address": "nano_1gqjcgoc4hfghdmabpw3i1pcwr8ppcgjkoyhf4txsktdpthqb97apxz9qpyb",
+   "verified_at": "2026-11-04T01:31Z",
+   "evidence": "endpoint_read",
    "how_verified": "one unpaid request answered with a Nano payTo; checksum validated"
   }
  ]

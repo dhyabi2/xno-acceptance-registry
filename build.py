@@ -9,6 +9,8 @@ from concurrent.futures import ThreadPoolExecutor
 PAYTO_KEYS = ('payto', 'pay_to', 'nano_address', 'x-nano-payto')
 def payto_of(r):
     seen = {}
+    if r.get('mcp_payment_quote'):
+        a = r['mcp_payment_quote']['address']; seen[a] = nanoaddr.is_valid(a)
     for p in r.get('address_paths', []):
         last = p['path'].rsplit('/', 1)[-1].lower()
         if last in PAYTO_KEYS:
@@ -19,6 +21,8 @@ def state(s, r):
     st = r.get('http_status')
     if st is None: return 'dead', 'no HTTP answer: ' + r.get('error', '')[:80]
     if 'DEPLOYMENT_DISABLED' in r.get('body_head', ''): return 'dead', 'Vercel deployment disabled'
+    if st == 200 and r.get('mcp_payment_quote'): return 'live_mcp_nano', 'HTTP 200 MCP result requires a Nano deposit; not a free tier or HTTP 402'
+    if st == 200 and r.get('mcp_payment_required'): return 'unclear', 'MCP payment result without a validated Nano quote'
     if r.get('expect') and st == r['expect'] and st != 402: return 'live_status_route', 'status route answered %d as the seller declared; Nano payTo not read by us' % st
     if r.get('payment_required_header') is None and st == 402 and not r.get('mentions_nano'):
         return 'dead' if 'DEPLOYMENT_DISABLED' in json.dumps(r) else 'unclear', '402 without any Nano mention'
@@ -36,7 +40,7 @@ def main(src, extras, out):
         stt, why = state(s, r); pt = payto_of(r)
         nets = sorted({n.get('network') for n in r.get('nano_accepts', []) if n.get('network')})
         raws = sorted({str(n.get('amount') or n.get('maxAmountRequired')) for n in r.get('nano_accepts', []) if (n.get('amount') or n.get('maxAmountRequired'))})
-        rows.append({
+        row = {
           'id': s['id'], 'name': s.get('name'), 'operator': s.get('operator'), 'what': s.get('what'),
           'endpoint': s['endpoint'], 'price_quoted_by_operator': s.get('price'),
           'price_raw_seen_in_402': raws or None, 'networks_seen': nets or None,
@@ -46,7 +50,9 @@ def main(src, extras, out):
           'evidence': ('endpoint_read' if pt and r.get('http_status') in (200, 402) else 'unverified'),
           'listed_by': s.get('listed_by', 'pursekeeper.dev/sellers.json'),
           'paid_verification_by_listing_party': s.get('verified'),
-          'note': s.get('note')})
+          'note': s.get('note')}
+        if r.get('mcp_payment_quote'): row['mcp_payment_quote'] = r['mcp_payment_quote']
+        rows.append(row)
     import urllib.request
     for s in statics:
         try: st = urllib.request.urlopen(urllib.request.Request(s['endpoint'], headers={'User-Agent': 'xno-acceptance-registry/0.1'}), timeout=20); code = st.status; page = st.read(400000).decode('utf-8', 'replace')

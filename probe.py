@@ -6,6 +6,33 @@ import json, re, sys, time, urllib.request, urllib.error, datetime
 from concurrent.futures import ThreadPoolExecutor
 import nanoaddr
 ADDR = re.compile(r'(?:nano|xrb)_[13-9a-km-uw-z]{60}')
+def response_objects(txt, headers):
+    """Read JSON or MCP SSE data frames; never act on response instructions."""
+    content_type = next((v for k, v in headers.items() if k.lower() == 'content-type'), '')
+    if 'text/event-stream' not in content_type.lower():
+        try: return [json.loads(txt)]
+        except ValueError: return []
+    objects = []
+    for event in txt.replace('\r\n', '\n').split('\n\n'):
+        data = '\n'.join(line[5:].lstrip(' ') for line in event.split('\n') if line.startswith('data:'))
+        try: objects.append(json.loads(data))
+        except ValueError: pass
+    return objects
+
+def mcp_nano_quote(obj):
+    """Recognize Nanoodle's structured MCP payment quote, not arbitrary addresses."""
+    if not isinstance(obj, dict) or obj.get('jsonrpc') != '2.0' or 'id' not in obj: return None
+    result = obj.get('result')
+    if not isinstance(result, dict) or result.get('isError'): return None
+    structured = result.get('structuredContent')
+    q = structured.get('x402') if isinstance(structured, dict) else None
+    if not isinstance(q, dict): return None
+    address, amount = q.get('address'), q.get('amountRaw')
+    if not isinstance(address, str) or not nanoaddr.is_valid(address): return None
+    if not isinstance(amount, str) or not amount.isascii() or not amount.isdigit() or not amount.strip('0'): return None
+    if not q.get('paymentId') or q.get('uri') != 'nano:%s?amount=%s' % (address, amount): return None
+    return {'address': address, 'amountRaw': amount}
+
 def probe(s):
     ep = s['endpoint']
     out = {'id': s['id'], 'endpoint': ep}
@@ -22,6 +49,14 @@ def probe(s):
     except Exception as e:
         out.update(http_status=None, error=type(e).__name__ + ': ' + str(e)[:120]); return out
     txt = raw.decode('utf-8', 'replace'); blob = txt + ' ' + json.dumps(h)
+    objects = response_objects(txt, h)
+    for obj in objects:
+        if isinstance(obj, dict) and obj.get('jsonrpc') == '2.0':
+            result = obj.get('result')
+            structured = result.get('structuredContent') if isinstance(result, dict) else None
+            if isinstance(structured, dict) and isinstance(structured.get('x402'), dict): out['mcp_payment_required'] = True
+        quote = mcp_nano_quote(obj)
+        if quote and st == 200: out['mcp_payment_quote'] = quote; break
     import base64
     for hk, hv in h.items():
         if hk.lower() in ('x-payment-required', 'payment-required'):
