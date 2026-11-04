@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-02T06:07Z",
+ "generated_at": "2026-11-04T01:31Z",
  "source": "https://github.com/dhyabi2/xno-acceptance-registry",
  "note": "live-today entries only; CC0",
- "count": 26,
+ "count": 27,
  "services": [
   {
    "id": "nanogpt",
@@ -539,6 +539,27 @@
    "price_raw_seen_in_402": null,
    "last_probed": "2026-11-02T06:07Z",
    "evidence": "operator_statement_plus_portal"
+  },
+  {
+   "id": "nanoodle-mcp",
+   "name": "Nanoodle MCP",
+   "operator": "nanoodlecom",
+   "description": "Image, video, audio and text workflows via MCP streamable HTTP; Nano deposit quoted in the tool result",
+   "resource": "https://mcp.nanoodle.com/mcp",
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "payTo": "nano_1gqjcgoc4hfghdmabpw3i1pcwr8ppcgjkoyhf4txsktdpthqb97apxz9qpyb"
+    }
+   ],
+   "price_quoted_by_operator": "$0.06 opening deposit for character-sprites, quoted in exact raw XNO; settles at metered model cost + 20%, change returned (operator statement)",
+   "price_raw_seen_in_402": null,
+   "last_probed": "2026-11-04T01:31Z",
+   "evidence": "endpoint_read",
+   "payment_transport": "mcp-streamable-http",
+   "note": "HTTP 200 carries an MCP payment quote in result.structuredContent.x402, usually in SSE data. Connect with an MCP client; use a fresh quote and its exact amount. No account or API key. No payment or delivery was tested."
   }
  ]
 }
