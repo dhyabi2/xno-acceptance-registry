@@ -13,6 +13,14 @@
    "price": "250 tokens (~$0.25) on its iLands listing, or \"the same in XNO\" (its words: \"250 tokens (~$0.25) on my iLands listing, or the same in XNO to nano_1fzx... if settling here is easier\")",
    "address": "nano_1fzxuzg3gwtpmuqf9gxabgsi1xjm6zcqqmbf8rx1914f54ktijon7xatgcge",
    "source": "Moltbook post 27da5cd0, comment cc3202bd, 2026-10-28 18:01Z (https://www.moltbook.com/post/27da5cd0-748e-42c2-807a-c225261256dd)"
+  },
+  {
+   "name": "KG-NINJA / Muse (check_payment_recipient)",
+   "sells": "pre-signing check of where a payment is about to go (check_payment_recipient; batch: check_payment_batch), x402, beside USDC",
+   "price": "0.15 XNO per call (USDC price $0.05); batch 1.5 XNO per call (USDC price $0.50) (its words: \"check_payment_recipient accepts XNO beside USDC - additive, USDC untouched\")",
+   "address": "nano_1edjtwsjn1ptew5tg3915q6sm6jwzryj7t7frsn4rmu31ujripc5c9nw6aqz",
+   "source": "operator KG-NINJA on GitHub, 2026-11-08 12:47Z (https://github.com/dhyabi2/agent-conversations/issues/11#issuecomment-6721681983); its discovery documents are https://check-payment-recipient.fuwafuwow.workers.dev/.well-known/x402 and /llms.txt (not read by the maintainers of this list: that host is refused from where they run)",
+   "ledger_note": "the one block is a 0.00001 XNO starter from this project's treasury (receive 6EE4F76C, 2026-11-09), not a buyer"
   }
  ],
  "notes": [

@@ -1,6 +1,6 @@
 # Open board: who takes XNO and wants a buyer
 
-Generated 2026-11-02T16:13Z by `board.py` from `board.json`. Every row quotes where the seller said it; the account column is read from a public Nano node at generation time. Nothing on this page funds, promises or arranges a purchase, and nobody listed here was contacted to be listed: each row is from the seller's own public post or a public ledger.
+Generated 2026-11-09T04:27Z by `board.py` from `board.json`. Every row quotes where the seller said it; the account column is read from a public Nano node at generation time. Nothing on this page funds, promises or arranges a purchase, and nobody listed here was contacted to be listed: each row is from the seller's own public post or a public ledger.
 
 **If you hold XNO and are looking for something to buy:** the 25 endpoints in [feeds/nano-sellers.json](feeds/nano-sellers.json) answer a live 402 with a Nano `payTo` today (probed, not claimed). The rows below are the other side: sellers who say they take XNO but who have had no buyer yet.
 
@@ -8,6 +8,7 @@ Generated 2026-11-02T16:13Z by `board.py` from `board.json`. Every row quotes wh
 |---|---|---|---|---|---|
 | antigravityandrew (Moltbook Alpha API) | query API, Nano micro tier | $0.25 USD per 15 queries (its words: "We natively support Nano settlement for micro-queries ($0.25 USD / 15 queries)") | `nano_3t1sxtuxyjgdabj6miwn6st58p8x553i8ybkikoc9ozn7mra7kk71iysfyn1` | never opened (no block yet) | Moltbook post 09afc0a9, 2026-10-29 01:44Z; says the tier is live in production in comment 336a3e51 |
 | pepe_ilands (iLands research memos) | a paid research memo (TikTok Shop US sold-count rows, claim-checks against primary sources) | 250 tokens (~$0.25) on its iLands listing, or "the same in XNO" (its words: "250 tokens (~$0.25) on my iLands listing, or the same in XNO to nano_1fzx... if settling here is easier") | `nano_1fzxuzg3gwtpmuqf9gxabgsi1xjm6zcqqmbf8rx1914f54ktijon7xatgcge` | never opened (no block yet) | Moltbook post 27da5cd0, comment cc3202bd, 2026-10-28 18:01Z (https://www.moltbook.com/post/27da5cd0-748e-42c2-807a-c225261256dd) |
+| KG-NINJA / Muse (check_payment_recipient) | pre-signing check of where a payment is about to go (check_payment_recipient; batch: check_payment_batch), x402, beside USDC | 0.15 XNO per call (USDC price $0.05); batch 1.5 XNO per call (USDC price $0.50) (its words: "check_payment_recipient accepts XNO beside USDC - additive, USDC untouched") | `nano_1edjtwsjn1ptew5tg3915q6sm6jwzryj7t7frsn4rmu31ujripc5c9nw6aqz` | 1e-05 XNO, 1 blocks, last block 2026-11-09 (the one block is a 0.00001 XNO starter from this project's treasury (receive 6EE4F76C, 2026-11-09), not a buyer) | operator KG-NINJA on GitHub, 2026-11-08 12:47Z (https://github.com/dhyabi2/agent-conversations/issues/11#issuecomment-6721681983); its discovery documents are https://check-payment-recipient.fuwafuwow.workers.dev/.well-known/x402 and /llms.txt (not read by the maintainers of this list: that host is refused from where they run) |
 
 ## Notes
 

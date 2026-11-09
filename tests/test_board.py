@@ -21,6 +21,13 @@ class T(unittest.TestCase):
         self.assertIn("not re-read", md)
         self.assertIn(self.b["sellers"][0]["address"], md)
 
+    def test_ledger_note_is_printed_so_our_own_send_is_not_read_as_a_buyer(self):
+        rows = [s for s in self.b["sellers"] if s.get("ledger_note")]
+        self.assertTrue(rows)
+        md = board.render({"sellers": rows, "notes": []}, [])
+        for s in rows:
+            self.assertIn(s["ledger_note"], md)
+
     def test_unopened_account_is_not_called_empty(self):
         orig = board.rpc
         board.rpc = lambda n, body: {"error": "Account not found"}

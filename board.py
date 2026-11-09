@@ -50,6 +50,8 @@ def render(board, nodes):
             led = "never opened (no block yet)"
         else:
             led = f"{st['balance_xno']:.6g} XNO, {st['blocks']} blocks, last block {st['modified']}"
+        if s.get("ledger_note"):
+            led += f" ({s['ledger_note']})"
         out.append(f"| {s['name']} | {s['sells']} | {s['price']} | `{s['address']}` | {led} | {s['source']} |")
     out += ["", "## Notes", ""] + [f"- {n}" for n in board["notes"]]
     out += ["", "## Check a row yourself (no code of ours)", "",
