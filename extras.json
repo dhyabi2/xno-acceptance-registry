@@ -22,5 +22,23 @@
   "payto_address": "nano_3t1sxtuxyjgdabj6miwn6st58p8x553i8ybkikoc9ozn7mra7kk71iysfyn1",
   "listed_by": "operator statement on Moltbook 2026-10-25/28; address also printed on its portal page",
   "note": "Evidence is the operator's words plus its portal page (HTTP 200, address shown). No 402 route was read. Its tier uses order-keyed raw amounts: pay the exact raw amount the invoice returns."
+ },
+ {
+  "id": "nanoodle-mcp",
+  "name": "Nanoodle MCP",
+  "operator": "nanoodlecom",
+  "what": "Image, video, audio and text workflows via MCP streamable HTTP; Nano deposit quoted in the tool result",
+  "endpoint": "https://mcp.nanoodle.com/mcp",
+  "probe": {
+   "method": "POST",
+   "headers": {
+    "Content-Type": "application/json",
+    "Accept": "application/json, text/event-stream"
+   },
+   "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/call\",\"params\":{\"name\":\"character-sprites\",\"arguments\":{}}}"
+  },
+  "price": "$0.06 opening deposit for character-sprites, quoted in exact raw XNO; settles at metered model cost + 20%, change returned (operator statement)",
+  "listed_by": "https://mcp.nanoodle.com/llms.txt and one unpaid MCP tools/call",
+  "note": "HTTP 200 carries an MCP payment quote in result.structuredContent.x402, usually in SSE data. Connect with an MCP client; use a fresh quote and its exact amount. No account or API key. No payment or delivery was tested."
  }
 ]

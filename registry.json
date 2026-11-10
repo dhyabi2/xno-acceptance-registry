@@ -1,15 +1,16 @@
 {
  "schema": 1,
- "generated_at": "2026-11-02T06:07Z",
+ "generated_at": "2026-11-04T01:31Z",
  "probe_method": "one unpaid request per endpoint (method/body as the seller declared); no payment is made; payTo checksum computed here",
  "counts": {
   "dead": 8,
   "live_402_nano": 25,
+  "live_mcp_nano": 1,
   "live_portal": 1,
   "live_status_route": 2,
   "mail_only": 2,
   "unclear": 1,
-  "total": 39
+  "total": 40
  },
  "entries": [
   {
@@ -1358,6 +1359,39 @@
    "listed_by": "operator statement on Moltbook 2026-10-25/28; address also printed on its portal page",
    "paid_verification_by_listing_party": null,
    "note": "Evidence is the operator's words plus its portal page (HTTP 200, address shown). No 402 route was read. Its tier uses order-keyed raw amounts: pay the exact raw amount the invoice returns."
+  },
+  {
+   "id": "nanoodle-mcp",
+   "name": "Nanoodle MCP",
+   "operator": "nanoodlecom",
+   "what": "Image, video, audio and text workflows via MCP streamable HTTP; Nano deposit quoted in the tool result",
+   "endpoint": "https://mcp.nanoodle.com/mcp",
+   "price_quoted_by_operator": "$0.06 opening deposit for character-sprites, quoted in exact raw XNO; settles at metered model cost + 20%, change returned (operator statement)",
+   "price_raw_seen_in_402": null,
+   "networks_seen": null,
+   "payto": [
+    {
+     "address": "nano_1gqjcgoc4hfghdmabpw3i1pcwr8ppcgjkoyhf4txsktdpthqb97apxz9qpyb",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
+   "payto_note": null,
+   "state_today": "live_mcp_nano",
+   "state_reason": "HTTP 200 MCP result requires a Nano deposit; not a free tier or HTTP 402",
+   "probe": {
+    "http_status": 200,
+    "ms": 2560,
+    "at": "2026-11-04T01:31Z"
+   },
+   "evidence": "endpoint_read",
+   "listed_by": "https://mcp.nanoodle.com/llms.txt and one unpaid MCP tools/call",
+   "paid_verification_by_listing_party": null,
+   "note": "HTTP 200 carries an MCP payment quote in result.structuredContent.x402, usually in SSE data. Connect with an MCP client; use a fresh quote and its exact amount. No account or API key. No payment or delivery was tested.",
+   "mcp_payment_quote": {
+    "address": "nano_1gqjcgoc4hfghdmabpw3i1pcwr8ppcgjkoyhf4txsktdpthqb97apxz9qpyb",
+    "amountRaw": "186172190000000000000000000000"
+   }
   }
  ]
 }

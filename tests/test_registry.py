@@ -13,7 +13,7 @@ class T(unittest.TestCase):
             if e['evidence'] == 'endpoint_read': self.assertTrue(e['payto'] and e['probe']['http_status'] in (200, 402), e['id'])
     def test_live_requires_valid_payto(self):
         for e in R['entries']:
-            if e['state_today'] in ('live_402_nano', 'live_portal'): self.assertTrue(e['payto_all_checksum_valid'], e['id'])
+            if e['state_today'] in ('live_402_nano', 'live_portal', 'live_mcp_nano'): self.assertTrue(e['payto_all_checksum_valid'], e['id'])
     def test_dead_not_in_feed(self):
         feed = json.load(open(os.path.join(os.path.dirname(__file__), '..', 'feeds', 'nano-sellers.json')))
         dead = {e['id'] for e in R['entries'] if e['state_today'] == 'dead'}
