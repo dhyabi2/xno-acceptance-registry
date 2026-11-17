@@ -1,0 +1,28 @@
+{
+  "expected_fields": {
+    "amount_raw": "1000000000000000000000000",
+    "asset": "XNO",
+    "maxTimeoutSeconds": 300,
+    "network": "nano:mainnet",
+    "payTo": "nano_1111111111111111111111111111111111111111111111111111hifc8npp",
+    "scheme": "exact",
+    "x402Version": 2
+  },
+  "frozen_at": "2026-11-17",
+  "notes": "payTo is the Nano burn address: any send to it is lost, so the vector cannot be paid by mistake; the URL is .invalid so it never resolves.",
+  "payable": false,
+  "request": {
+    "body": "{}",
+    "body_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "method": "POST",
+    "url": "https://example.invalid/x402/test-vector/v1"
+  },
+  "response": {
+    "body": "{\"accepts\":[{\"amount\":\"1000000000000000000000000\",\"asset\":\"XNO\",\"maxTimeoutSeconds\":300,\"network\":\"nano:mainnet\",\"payTo\":\"nano_1111111111111111111111111111111111111111111111111111hifc8npp\",\"scheme\":\"exact\"}],\"error\":\"payment required\",\"x402Version\":2}",
+    "body_sha256": "5860ad53e0c7eb09de81bc4c5cdebe6a17090583f47671cdb64cd822d2994ca2",
+    "header_payment_required_b64": "eyJhY2NlcHRzIjpbeyJhbW91bnQiOiIxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwiYXNzZXQiOiJYTk8iLCJtYXhUaW1lb3V0U2Vjb25kcyI6MzAwLCJuZXR3b3JrIjoibmFubzptYWlubmV0IiwicGF5VG8iOiJuYW5vXzExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTFoaWZjOG5wcCIsInNjaGVtZSI6ImV4YWN0In1dLCJlcnJvciI6InBheW1lbnQgcmVxdWlyZWQiLCJ4NDAyVmVyc2lvbiI6Mn0=",
+    "status": 402
+  },
+  "status": "frozen",
+  "vector_id": "nano-exact-v1"
+}

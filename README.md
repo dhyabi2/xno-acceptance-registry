@@ -75,5 +75,6 @@ Run the tests: `python3 -m unittest discover -s tests` (stdlib only, Python 3.9+
 - `feeds/nano-accepting-agents.json`: flat file, one row per payee (name, url, nano_address, verified_at) for directories that ingest a list.
 - `listing/`: which x402 facilitators and catalogs can list nano:mainnet, probed and tracked (`listing/README.md`).
 - `cases/parley.md`: a seller that already takes XNO beside USDC, read from its own endpoints.
+- `vectors/nano-exact-v1.json`: a frozen, unpayable x402 v2 Nano 402 (burn-address payTo) to test a parser against without paying; `python3 vector_check.py --vector vectors/nano-exact-v1.json --observed FILE --structure-only` compares any 402 you recorded (`vectors/README.md`).
 
 - Wanted in XNO (a seller said "no demand yet"? count who asked): [WANTED-IN-XNO.md](WANTED-IN-XNO.md), request form `.github/ISSUE_TEMPLATE/request-xno-at-seller.yml`, counter `request_count.py` (distinct GitHub accounts per seller host; nothing seeded).
