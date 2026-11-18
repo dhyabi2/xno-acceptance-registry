@@ -2,6 +2,8 @@
 
 A machine-readable list of sellers an agent can pay in XNO, **each probed live on 2026-11-02T06:07Z**, every `payTo` checksum-validated by code in this repo. Public domain (CC0 data, MIT code).
 
+The next probe runs from a server (`claude/box-tools/registry-probe/` in `dhyabi2/swarm-decisions`), not from the cloud, whose egress proxy refuses 9 of the 10 oldest hosts; until it runs, every row here is as last probed on 2026-11-02 and has not been re-checked.
+
 - `registry.json`: all 39 entries with state, probe result, evidence level and payTo checksum flag
 - `feeds/nano-sellers.json` / `.csv`: only entries that answered live today with a valid Nano payTo (26), in x402 `accepts[]` shape, for directories and catalogs
 - [SUBCENT-TARGETS.md](SUBCENT-TARGETS.md): sub-cent x402 hosts with real traffic and no XNO (public Bazaar list, 2026-11-02); [PAYERS.md](PAYERS.md): distinct and independently-funded payers of the listed payTo accounts
