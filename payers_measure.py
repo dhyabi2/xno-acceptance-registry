@@ -30,7 +30,8 @@ OPERATOR_ACCOUNTS = {
     # named "the operator" in swarm-decisions STATE.json xno_holders.rule (a funding source whose XNO does not count as outside demand)
     "nano_1xug1q5t7nxoj3ywwzokiea9jz8fq8qfgzp8pbyfr3co3e5xgj755uofu8u",
 }
-NODES = ["https://node.somenano.com/proxy", "https://nanoslo.0x.no/proxy", "https://rainstorm.city/api"]  # rpc.nano.to rate-limits (429 ban) a loop like this; add it back only with a pause
+NODES = ["https://node.somenano.com/proxy", "https://nanoslo.0x.no/proxy", "https://rainstorm.city/api",
+         "https://rpc.nano.to"]  # rpc.nano.to rate-limits (429 ban) a loop like this: last, and only after PAUSE_S
 PAUSE_S = 0.4
 
 
@@ -38,7 +39,7 @@ def body(a):
     return a.split("_", 1)[1][:52] if isinstance(a, str) and "_" in a else a
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--verify-dir", required=True)
     ap.add_argument("--registry", default="registry.json")
@@ -47,13 +48,15 @@ def main():
     ap.add_argument("--payee", help="measure this one account instead of the registry (with --label)")
     ap.add_argument("--label", default="payee")
     ap.add_argument("--reuse", help="recompute classes and groups from a previous --out file; no network")
-    a = ap.parse_args()
+    ap.add_argument("--node", action="append", help="node RPC URL, repeatable; replaces the built-in NODES list")
+    a = ap.parse_args(argv)
+    nodes = a.node or NODES
     sys.path.insert(0, a.verify_dir)
     import nano_settlement_verify as nsv
 
     def rpc(payload):
         last = None
-        for n in NODES:
+        for n in nodes:
             for attempt in range(2):
                 try:
                     time.sleep(PAUSE_S)
@@ -90,9 +93,9 @@ def main():
         result = json.load(open(a.reuse)); chains = result["chains"]
     else:
         result = {"read_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "floor_raw": str(FLOOR_RAW),
-                  "nodes": NODES, "payees": {}}
+                  "nodes": nodes, "payees": {}}
         for acct, ids in payees.items():
-            recv, head, pages, complete = [], None, 0, True
+            recv, head, pages, complete, read_err = [], None, 0, True, None
             while True:
                 pl = {"action": "account_history", "account": acct, "count": "500"}
                 if head:
@@ -102,6 +105,8 @@ def main():
                     if isinstance(r, dict) and "not found" in str(r.get("error", "")).lower():
                         break
                     complete = False
+                    if pages == 0:  # not one page read from any node: unread, not zero
+                        read_err = str(r.get("error") if isinstance(r, dict) else r)
                     break
                 h = r["history"]
                 if not isinstance(h, list):
@@ -116,6 +121,11 @@ def main():
                         complete = False
                     break
                 head = nxt
+            if read_err is not None:
+                result["payees"][acct] = {"sellers": ids, "history_read": False, "read_error": read_err,
+                                          "receives": None, "unconfirmed": None, "complete": False, "payers_raw": {}}
+                print("UNREAD", acct, ",".join(ids), read_err, file=sys.stderr)
+                continue
             by = {}
             unconfirmed = 0
             for b in recv:
@@ -124,7 +134,7 @@ def main():
                     continue
                 amt = int(b["amount"])
                 by.setdefault(b["account"], []).append((int(b.get("local_timestamp") or 0), amt))
-            result["payees"][acct] = {"sellers": ids, "receives": len(recv), "unconfirmed": unconfirmed,
+            result["payees"][acct] = {"sellers": ids, "history_read": True, "receives": len(recv), "unconfirmed": unconfirmed,
                                       "complete": complete, "payers_raw": {
                 p: {"n": len(v), "n_above_floor": sum(1 for _, x in v if x >= FLOOR_RAW),
                     "sum_raw": str(sum(x for _, x in v)), "first": min(t for t, _ in v), "last": max(t for t, _ in v)}
@@ -180,6 +190,10 @@ def main():
 
     summary = {}
     for acct, d in result["payees"].items():
+        if not d.get("history_read", True):
+            summary[acct] = {"sellers": d["sellers"], "history_read": False, "history_complete": False,
+                             "read_error": d.get("read_error"), "distinct_payers": None, "qualifying_payers": []}
+            continue
         rows = []
         for p, v in d["payers_raw"].items():
             k = body(p)
@@ -223,7 +237,7 @@ def main():
         for r in rows:
             cls_count[r[2]] = cls_count.get(r[2], 0) + 1
         summary[acct] = {
-            "sellers": d["sellers"], "history_complete": d["complete"],
+            "sellers": d["sellers"], "history_read": True, "history_complete": d["complete"],
             "confirmed_receives": d["receives"] - d["unconfirmed"],
             "distinct_payers": len(rows),
             "payers_by_class": cls_count,
@@ -238,7 +252,10 @@ def main():
     result["summary"] = summary
     json.dump(result, open(a.out, "w"), indent=1)
     print(json.dumps({k: {x: y for x, y in v.items() if x != 'qualifying_payers'} for k, v in summary.items()}, indent=0)[:6000])
+    if any(not d.get("history_read", True) for d in result["payees"].values()):
+        return 2
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
