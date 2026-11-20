@@ -1,14 +1,15 @@
 {
  "schema": 1,
- "generated_at": "2026-11-02T06:07Z",
+ "generated_at": "2026-11-20T13:03Z",
  "probe_method": "one unpaid request per endpoint (method/body as the seller declared); no payment is made; payTo checksum computed here",
  "counts": {
-  "dead": 8,
-  "live_402_nano": 25,
+  "dead": 9,
+  "live_402_nano": 22,
+  "live_free_tier": 1,
   "live_portal": 1,
-  "live_status_route": 2,
+  "live_status_route": 1,
   "mail_only": 2,
-  "unclear": 1,
+  "unclear": 3,
   "total": 39
  },
  "entries": [
@@ -38,14 +39,17 @@
    ],
    "payto_all_checksum_valid": true,
    "payto_note": "per-payment deposit address; moves per quote",
-   "state_today": "live_402_nano",
-   "state_reason": "answered 402 and mentions Nano",
+   "state_today": "unclear",
+   "state_reason": "HTTP 400 on our probe; route or method may differ from the seller declared",
    "probe": {
-    "http_status": 402,
-    "ms": 2056,
-    "at": "2026-11-02T06:07Z"
+    "http_status": 400,
+    "ms": 594,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
-   "evidence": "endpoint_read",
+   "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
    "paid_verification_by_listing_party": {
     "date": "2026-09-07",
@@ -71,8 +75,11 @@
    "state_reason": "HTTP 404 on the probe route",
    "probe": {
     "http_status": 404,
-    "ms": 1058,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1135,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -99,7 +106,7 @@
    ],
    "payto": [
     {
-     "address": "nano_1jt74trsipkkzpsmhf37d5w1ydf531kbfotpnw7rrjg5k6brje43hwucweup",
+     "address": "nano_3n7ss1u7aazzufryerh73cnw5xo9sdi7utapwbtcua6ak15wtmirgp815cr7",
      "checksum_valid": true
     }
    ],
@@ -109,8 +116,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 217,
-    "at": "2026-11-02T06:07Z"
+    "ms": 327,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -147,8 +159,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 1132,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1725,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -182,7 +199,11 @@
    "probe": {
     "http_status": null,
     "ms": null,
-    "at": "2026-11-02T06:07Z"
+    "at": "2026-11-20T13:03Z",
+    "result": "unreachable",
+    "nano_mainnet": false,
+    "networks": [],
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
    },
    "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -206,12 +227,15 @@
    "payto": [],
    "payto_all_checksum_valid": false,
    "payto_note": null,
-   "state_today": "live_status_route",
-   "state_reason": "status route answered 400 as the seller declared; Nano payTo not read by us",
+   "state_today": "unclear",
+   "state_reason": "HTTP 401 on our probe; route or method may differ from the seller declared",
    "probe": {
-    "http_status": 400,
-    "ms": 2185,
-    "at": "2026-11-02T06:07Z"
+    "http_status": 401,
+    "ms": 954,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -239,8 +263,11 @@
    "state_reason": "HTTP 503 on the probe route",
    "probe": {
     "http_status": 503,
-    "ms": 2083,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1916,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -268,8 +295,11 @@
    "state_reason": "HTTP 525 on the probe route",
    "probe": {
     "http_status": 525,
-    "ms": 851,
-    "at": "2026-11-02T06:07Z"
+    "ms": 886,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -296,7 +326,7 @@
    ],
    "payto": [
     {
-     "address": "nano_3zebpjamb8y66y7fgapcbocxfy8d1piqr1smnx71f6cwsazddwxu4c47urgf",
+     "address": "nano_14typc3d7zpzkxa6dokekpojnxeq59uszin1t6pc7bag7xh8am8hggx31ejn",
      "checksum_valid": true
     }
    ],
@@ -306,8 +336,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 862,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1220,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -335,8 +370,11 @@
    "state_reason": "Vercel deployment disabled",
    "probe": {
     "http_status": 402,
-    "ms": 428,
-    "at": "2026-11-02T06:07Z"
+    "ms": 549,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -365,7 +403,11 @@
    "probe": {
     "http_status": null,
     "ms": null,
-    "at": "2026-11-02T06:07Z"
+    "at": "2026-11-20T13:03Z",
+    "result": "unreachable",
+    "nano_mainnet": false,
+    "networks": [],
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
    },
    "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -384,19 +426,33 @@
    "what": "GET endpoints on paypercall.dev subdomains: /api/v1/extract (page to clean text and markdown), /api/v1/status (final HTTP status, redirects, TLS expiry, body hash), /api/v1/check-link, /api/v1/domain-info (DNS, WHOIS, TLS, headers), /api/v1/web-search (DuckDuckGo), /api/v1/geoip, /api/v1/nano-info (account balance, representative, frontier, weight). Manifest at extract.paypercall.dev/.well-known/x402, agent guide at /llms.txt, MCP server at extract.paypercall.dev/mcp. Five free real-data calls per IP per day before payment is asked (X-Trial-Remaining header).",
    "endpoint": "https://geoip.paypercall.dev/api/v1/geoip",
    "price_quoted_by_operator": "Ӿ0.0001 per call (extract, status, check-link, web-search, geoip); Ӿ0.0005 per call (domain-info, nano-info)",
-   "price_raw_seen_in_402": null,
-   "networks_seen": null,
-   "payto": [],
-   "payto_all_checksum_valid": false,
+   "price_raw_seen_in_402": [
+    "100000000000000000000000000"
+   ],
+   "networks_seen": [
+    "nano:mainnet"
+   ],
+   "payto": [
+    {
+     "address": "nano_3z335ug5oz6sxfgcfz3kdqdrgn5otx7ht3epuc3kuimka6hc59xqem1jrzqy",
+     "checksum_valid": true
+    }
+   ],
+   "payto_all_checksum_valid": true,
    "payto_note": null,
-   "state_today": "dead",
-   "state_reason": "no HTTP answer: URLError: <urlopen error timed out>",
+   "state_today": "live_402_nano",
+   "state_reason": "answered 402 and mentions Nano",
    "probe": {
-    "http_status": null,
-    "ms": null,
-    "at": "2026-11-02T06:07Z"
+    "http_status": 402,
+    "ms": 793,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
-   "evidence": "unverified",
+   "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
    "paid_verification_by_listing_party": {
     "date": "2026-09-19",
@@ -423,7 +479,11 @@
    "probe": {
     "http_status": null,
     "ms": null,
-    "at": "2026-11-02T06:07Z"
+    "at": "2026-11-20T13:03Z",
+    "result": "unreachable",
+    "nano_mainnet": false,
+    "networks": [],
+    "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
    },
    "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -460,8 +520,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 702,
-    "at": "2026-11-02T06:07Z"
+    "ms": 846,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -498,8 +563,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 414,
-    "at": "2026-11-02T06:07Z"
+    "ms": 693,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -532,8 +602,11 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 171,
-    "at": "2026-11-02T06:07Z"
+    "ms": 435,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -570,8 +643,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 163,
-    "at": "2026-11-02T06:07Z"
+    "ms": 400,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -604,8 +682,11 @@
    "state_reason": "status route answered 200 as the seller declared; Nano payTo not read by us",
    "probe": {
     "http_status": 200,
-    "ms": 468,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1120,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -642,8 +723,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 1731,
-    "at": "2026-11-02T06:07Z"
+    "ms": 2050,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -680,8 +766,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 814,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1021,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -709,8 +800,11 @@
    "state_reason": "HTTP 200 on our probe; route or method may differ from the seller declared",
    "probe": {
     "http_status": 200,
-    "ms": 702,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1394,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -743,8 +837,11 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 653,
-    "at": "2026-11-02T06:07Z"
+    "ms": 654,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": []
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -781,8 +878,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 920,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1252,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -823,8 +925,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 120,
-    "at": "2026-11-02T06:07Z"
+    "ms": 895,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -857,14 +964,17 @@
    ],
    "payto_all_checksum_valid": true,
    "payto_note": null,
-   "state_today": "live_402_nano",
-   "state_reason": "answered 402 and mentions Nano",
+   "state_today": "dead",
+   "state_reason": "HTTP 503 on the probe route",
    "probe": {
-    "http_status": 402,
-    "ms": 316,
-    "at": "2026-11-02T06:07Z"
+    "http_status": 503,
+    "ms": 301,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
-   "evidence": "endpoint_read",
+   "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
    "paid_verification_by_listing_party": {
     "date": "2026-09-28",
@@ -898,8 +1008,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 975,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1015,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -931,8 +1046,11 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 620,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1102,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": []
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -964,8 +1082,11 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 150,
-    "at": "2026-11-02T06:07Z"
+    "ms": 428,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": []
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -997,14 +1118,17 @@
    ],
    "payto_all_checksum_valid": true,
    "payto_note": null,
-   "state_today": "live_402_nano",
-   "state_reason": "answered 402 and mentions Nano",
+   "state_today": "dead",
+   "state_reason": "HTTP 503 on the probe route",
    "probe": {
-    "http_status": 402,
-    "ms": 250,
-    "at": "2026-11-02T06:07Z"
+    "http_status": 503,
+    "ms": 248,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
-   "evidence": "endpoint_read",
+   "evidence": "unverified",
    "listed_by": "pursekeeper.dev/sellers.json",
    "paid_verification_by_listing_party": {
     "date": "2026-09-30",
@@ -1067,8 +1191,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 666,
-    "at": "2026-11-02T06:07Z"
+    "ms": 787,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -1104,8 +1233,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 1064,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1560,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -1153,7 +1287,7 @@
    "endpoint": "https://nodes.nanswap.com/XNO",
    "price_quoted_by_operator": "$0.00003 per credit, quoted live in raw XNO; one work_generate cost Ӿ0.0022355 (25 credits), one read with own work Ӿ0.0000894",
    "price_raw_seen_in_402": [
-    "2340093603744149765990639650"
+    "2358490566037735849056603775"
    ],
    "networks_seen": [
     "nano-mainnet"
@@ -1170,8 +1304,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 456,
-    "at": "2026-11-02T06:07Z"
+    "ms": 763,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": [
+     "nano-mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -1208,8 +1347,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 1841,
-    "at": "2026-11-02T06:07Z"
+    "ms": 169,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -1242,12 +1386,15 @@
    ],
    "payto_all_checksum_valid": true,
    "payto_note": null,
-   "state_today": "live_402_nano",
-   "state_reason": "answered 402 and mentions Nano",
+   "state_today": "live_free_tier",
+   "state_reason": "200 with a Nano payTo (first call free or open route)",
    "probe": {
-    "http_status": 402,
-    "ms": 500,
-    "at": "2026-11-02T06:07Z"
+    "http_status": 200,
+    "ms": 1697,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -1284,8 +1431,13 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 590,
-    "at": "2026-11-02T06:07Z"
+    "ms": 956,
+    "at": "2026-11-20T13:03Z",
+    "result": "live",
+    "nano_mainnet": true,
+    "networks": [
+     "nano:mainnet"
+    ]
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -1322,8 +1474,11 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 2080,
-    "at": "2026-11-02T06:07Z"
+    "ms": 1008,
+    "at": "2026-11-20T13:03Z",
+    "result": "not_live",
+    "nano_mainnet": false,
+    "networks": []
    },
    "evidence": "endpoint_read",
    "listed_by": "operator statement on Moltbook 2026-10-30, then endpoint read",
