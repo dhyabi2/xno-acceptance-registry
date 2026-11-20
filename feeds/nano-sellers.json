@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-20T13:03Z",
+ "generated_at": "2026-11-20T13:11Z",
  "source": "https://github.com/dhyabi2/xno-acceptance-registry",
  "note": "live-today entries only; CC0",
- "count": 23,
+ "count": 22,
  "services": [
   {
    "id": "llmrt",
@@ -22,7 +22,7 @@
    "price_raw_seen_in_402": [
     "150000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -43,7 +43,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -57,35 +57,14 @@
      "scheme": "exact",
      "network": "nano:mainnet",
      "asset": "XNO",
-     "payTo": "nano_14typc3d7zpzkxa6dokekpojnxeq59uszin1t6pc7bag7xh8am8hggx31ejn"
+     "payTo": "nano_3ggapf3s6kotuu4kjgj6my9zej5mxyucbxpcy8onir4gfdgbt71hgxp31exi"
     }
    ],
    "price_quoted_by_operator": "per post, set by the author; the probe post is Ӿ0.00001, a typical article Ӿ0.1",
    "price_raw_seen_in_402": [
     "10000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
-   "evidence": "endpoint_read"
-  },
-  {
-   "id": "vend",
-   "name": "Vend API Merchant: seven pay-per-call data endpoints (web extract, URL status, link check, domain info, web search, geoip, Nano account info)",
-   "operator": "Vend, an autonomous agent merchant run by Rai (github.com/PANDeveloper001, rai-agent.xyz), itself an autonomous agent whose stated mission is Nano as the money for agents",
-   "description": "GET endpoints on paypercall.dev subdomains: /api/v1/extract (page to clean text and markdown), /api/v1/status (final HTTP status, redirects, TLS expiry, body hash), /api/v1/check-link, /api/v1/domain-info (DNS, WHOIS, TLS, headers), /api/v1/web-search (DuckDuckGo), /api/v1/geoip, /api/v1/nano-info (account balance, representative, frontier, weight). Manifest at extract.paypercall.dev/.well-known/x402, agent guide at /llms.txt, MCP server at extract.paypercall.dev/mcp. Five free real-data calls per IP per day before payment is asked (X-Trial-Remaining header).",
-   "resource": "https://geoip.paypercall.dev/api/v1/geoip",
-   "accepts": [
-    {
-     "scheme": "exact",
-     "network": "nano:mainnet",
-     "asset": "XNO",
-     "payTo": "nano_3z335ug5oz6sxfgcfz3kdqdrgn5otx7ht3epuc3kuimka6hc59xqem1jrzqy"
-    }
-   ],
-   "price_quoted_by_operator": "Ӿ0.0001 per call (extract, status, check-link, web-search, geoip); Ӿ0.0005 per call (domain-info, nano-info)",
-   "price_raw_seen_in_402": [
-    "100000000000000000000000000"
-   ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -106,7 +85,7 @@
    "price_raw_seen_in_402": [
     "100000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -127,7 +106,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -146,7 +125,7 @@
    ],
    "price_quoted_by_operator": "Ӿ0.001 per answer",
    "price_raw_seen_in_402": null,
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -167,7 +146,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -188,7 +167,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -209,7 +188,7 @@
    "price_raw_seen_in_402": [
     "10000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -228,7 +207,7 @@
    ],
    "price_quoted_by_operator": "Ӿ0.001 per call",
    "price_raw_seen_in_402": null,
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -249,7 +228,7 @@
    "price_raw_seen_in_402": [
     "28760000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -270,7 +249,7 @@
    "price_raw_seen_in_402": [
     "10000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -291,7 +270,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -310,7 +289,7 @@
    ],
    "price_quoted_by_operator": "Ӿ0.0001 per call",
    "price_raw_seen_in_402": null,
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -329,7 +308,7 @@
    ],
    "price_quoted_by_operator": "Ӿ0.01 per check (plus a per-invoice suffix below 0.00000000002)",
    "price_raw_seen_in_402": null,
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -350,7 +329,7 @@
    "price_raw_seen_in_402": [
     "50000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -371,7 +350,7 @@
    "price_raw_seen_in_402": [
     "8628000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -390,9 +369,9 @@
    ],
    "price_quoted_by_operator": "$0.00003 per credit, quoted live in raw XNO; one work_generate cost Ӿ0.0022355 (25 credits), one read with own work Ӿ0.0000894",
    "price_raw_seen_in_402": [
-    "2358490566037735849056603775"
+    "2362204724409448818897637800"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -413,7 +392,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -434,7 +413,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
@@ -455,7 +434,7 @@
    "price_raw_seen_in_402": [
     "50000000000000000000000000000"
    ],
-   "last_probed": "2026-11-20T13:03Z",
+   "last_probed": "2026-11-20T13:11Z",
    "evidence": "endpoint_read"
   },
   {
