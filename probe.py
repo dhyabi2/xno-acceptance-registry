@@ -5,6 +5,7 @@ Pays nothing. Records HTTP status, any nano_ addresses found in the 402 body/hea
 import json, re, sys, time, urllib.request, urllib.error, datetime
 from concurrent.futures import ThreadPoolExecutor
 import nanoaddr
+import dialect
 ADDR = re.compile(r'(?:nano|xrb)_[13-9a-km-uw-z]{60}')
 def probe(s):
     ep = s['endpoint']
@@ -22,6 +23,7 @@ def probe(s):
     except Exception as e:
         out.update(http_status=None, error=type(e).__name__ + ': ' + str(e)[:120]); return out
     txt = raw.decode('utf-8', 'replace'); blob = txt + ' ' + json.dumps(h)
+    if st == 402: out['raw402'] = dialect.capture(h, txt)
     import base64
     for hk, hv in h.items():
         if hk.lower() in ('x-payment-required', 'payment-required'):

@@ -1,0 +1,55 @@
+{
+  "_about": "Buyer clients that are not ours and install today, and what each needs from a seller's 402 to pay it. Read by client_fit.py. Each field cites the source line it was read from (strategist 2026-11-21 05:5xZ; lane 3 05:4xZ for the extra finding). x402-dotnet-client added by the strategist 2026-11-21 16:5xZ (GUIDE 16Z), from source.",
+  "nano-pay": {
+    "source": "Feeless402/feeless402 nano_pay/x402.py (x402_pay, build_payment_header:293 payload.block), PyPI feeless402 0.2.13. Network rule read at fab7f69 nano_pay/x402.py:250-257 (pick_nano_offer): any accept whose network starts with \"nano\" or whose asset is xno/nano, case-insensitive, so `nano-mainnet` is paid (PR agent run 439, GUIDE 19Z). `network` stays as the value a fix text names.",
+    "scheme": "exact",
+    "network": "nano:mainnet",
+    "network_rule": "nano-prefix",
+    "installed": "PyPI feeless402 0.2.13 wheel (feeless402-0.2.13-py3-none-any.whl, sha256 54dfb1bc85b56e50..., read by PR agent run 440): nano_pay/x402.py:250-257 pick_nano_offer, the same rule as fab7f69 (startswith \"nano\" :255, asset xno/nano :256); the non-exact fallback `return nano_offers[0]` is :274. A stranger installs this release, not HEAD.",
+    "where": [
+      "header:PAYMENT-REQUIRED",
+      "body"
+    ],
+    "cap_raw": "50000000000000000000000000000",
+    "needs_extra": false
+  },
+  "kilkelly-mcp": {
+    "source": "kilkelly/nano-currency-mcp-server@403b0cd x402_payment_signature_exact_scheme_create (nano-currency.js:436-500); it depends on @x402nano/exact ^0.1.1 (package.json, package-lock.json:92-95, npm nano-currency-mcp-server 1.1.0), which resolves to 0.1.1 and never to 1.x; 0.1.1 dist/cjs/client/index.js:58-79 reads only payTo and amount, so no `extra` is needed (PR agent run 434). The extra.workOptional TypeError is @x402nano/exact 1.1.0's.",
+    "scheme": "exact",
+    "network": "nano:mainnet",
+    "where": [
+      "header:PAYMENT-REQUIRED",
+      "body"
+    ],
+    "cap_raw": "10000000000000000000000000000",
+    "needs_extra": false
+  },
+  "kilkelly-mcp+extra": {
+    "source": "a kilkelly built on @x402nano/exact 1.x WITH the client fix `paymentRequirements?.extra?.workOptional` (src/typescript/client/scheme.ts:55), rail run 160 dhyabi2/exact feat/nano-exact c3901274a. PR agent run 434: kilkelly 1.1.0 installs 0.1.1, so this row equals kilkelly-mcp today; the fix matters to 1.x clients, not to kilkelly.",
+    "pending": "not merged or released upstream; never counted as installable until x402nano/exact ships it",
+    "scheme": "exact",
+    "network": "nano:mainnet",
+    "where": [
+      "header:PAYMENT-REQUIRED",
+      "body"
+    ],
+    "cap_raw": "10000000000000000000000000000",
+    "needs_extra": false
+  },
+  "x402-dotnet-client": {
+    "source": "michielpost/x402-dotnet@127c1fd (read only, never run; src/x402.Client.Nano unchanged at 4375ecc), NuGet x402.Client.Nano 0.0.3. Quote read only from the PAYMENT-REQUIRED header, base64 JSON, kept only when x402Version == 2, no body fallback (src/x402.Client/v2/PaymentRequiredV2Handler.cs:116-138). PaymentRequiredResponse.Resource is `required` (src/x402.Core/Models/v2/PaymentRequiredResponse.cs:13), so a header without `resource` fails to deserialize and is dropped (net11.0 System.Text.Json). Accept checks in NanoWallet.Check (src/x402.Client.Nano/NanoWallet.cs:138-160): scheme exact, network == wallet network (default nano:mainnet, NanoNetworks.cs:9), asset XNO case-insensitive, payTo nano_/xrb_ format, Amount digits > 0; `Amount` is a required member (PaymentRequirements.cs:25), so maxAmountRequired alone is not read. Cap: NanoAllowance set by the host (NanoWallet.cs:162-173); no allowance set pays nothing. `extra` is never read.",
+    "scheme": "exact",
+    "network": "nano:mainnet",
+    "where": [
+      "header:PAYMENT-REQUIRED"
+    ],
+    "versions": [
+      2
+    ],
+    "needs_resource": true,
+    "asset": "XNO",
+    "amount_key": "amount",
+    "cap_raw": null,
+    "needs_extra": false
+  }
+}

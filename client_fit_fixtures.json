@@ -1,0 +1,171 @@
+[
+ {
+  "id": "feeless402",
+  "source": "Feeless402/feeless402 nano_pay/server.py:398-412 payment_required_body at HEAD (no extra key)",
+  "headers": {
+   "PAYMENT-REQUIRED": "eyJ4NDAyVmVyc2lvbiI6IDIsICJyZXNvdXJjZSI6IHsidXJsIjogIi9wcmVtaXVtIn0sICJhY2NlcHRzIjogW3sic2NoZW1lIjogImV4YWN0IiwgIm5ldHdvcmsiOiAibmFubzptYWlubmV0IiwgImFzc2V0IjogIlhOTyIsICJhbW91bnQiOiAiMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwgInBheVRvIjogIm5hbm9fM2F5c3VlanVzOGl5MWhodzZkb2M3c3l6ZzFhYWE2aGdwZWM5MXhjYzM2bWY2aHA2dGh5N3U2eW1rZ2ZtIiwgIm1heFRpbWVvdXRTZWNvbmRzIjogNjB9XX0="
+  },
+  "body": {
+   "x402Version": 2,
+   "resource": {
+    "url": "/premium"
+   },
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "amount": "100000000000000000000000000",
+     "payTo": "nano_3aysuejus8iy1hhw6doc7syzg1aaa6hgpec91xcc36mf6hp6thy7u6ymkgfm",
+     "maxTimeoutSeconds": 60
+    }
+   ]
+  },
+  "expect": {
+   "dialect": "exact",
+   "nano-pay": "yes",
+   "kilkelly-mcp": "yes"
+  }
+ },
+ {
+  "id": "busyman-probe",
+  "source": "busyman-agent/probe402 @ d8eed15 src/index.js (USAGE.md lane 3 05:4xZ)",
+  "headers": {
+   "PAYMENT-REQUIRED": "eyJ4NDAyVmVyc2lvbiI6IDIsICJhY2NlcHRzIjogW3sic2NoZW1lIjogImV4YWN0IiwgIm5ldHdvcmsiOiAibmFubzptYWlubmV0IiwgImFzc2V0IjogIlhOTyIsICJhbW91bnQiOiAiMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsICJwYXlUbyI6ICJuYW5vXzFjbml5NTNpendyYWRzY21xem51OWJ4cGk2aDczZGZkY3k2YWJpcmI3cm51eGo3ZGNqcXA1cTV3anJnYSIsICJtYXhUaW1lb3V0U2Vjb25kcyI6IDYwfV19"
+  },
+  "body": "",
+  "expect": {
+   "dialect": "exact",
+   "nano-pay": "yes",
+   "kilkelly-mcp": "yes"
+  }
+ },
+ {
+  "id": "cedarproof-diagnose",
+  "source": "pursekeeper/api examples/purchases unpaid-402.body.json (10-04)",
+  "headers": {},
+  "body": {
+   "x402Version": 2,
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "amount": "50000000000000000000000000000",
+     "payTo": "nano_1rtip87co9td57n18tdq7996dsuuycotttnizprfr7nzobhabwkpyxwktxsh",
+     "maxTimeoutSeconds": 30,
+     "extra": {
+      "work": "required",
+      "workThreshold": "fffffff800000000"
+     }
+    }
+   ]
+  },
+  "expect": {
+   "dialect": "exact",
+   "nano-pay": "yes",
+   "kilkelly-mcp": "no:cap"
+  }
+ },
+ {
+  "id": "opscontrol-page-extract",
+  "source": "pursekeeper/api examples/purchases unpaid-402.body.json (10-18)",
+  "headers": {},
+  "body": {
+   "x402Version": 2,
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano:mainnet",
+     "asset": "XNO",
+     "amount": "1000000000000000000000000000",
+     "payTo": "nano_3mr761i87o7o33hmrd67a1emt81j6djgdqeyod95ip5qcidz77b71x4ukqea",
+     "maxTimeoutSeconds": 300,
+     "extra": {}
+    }
+   ]
+  },
+  "expect": {
+   "dialect": "exact",
+   "nano-pay": "yes",
+   "kilkelly-mcp": "yes"
+  }
+ },
+ {
+  "id": "noxid-nano-echo",
+  "source": "bconnnnn/noxid-nano-seller @ 6cbd0ce lib/payment.js quote()",
+  "headers": {},
+  "body": {
+   "error": "payment_required",
+   "payment": {
+    "scheme": "nano-send-hash",
+    "network": "nano:mainnet",
+    "amount_raw": "100000000000000000000000000",
+    "pay_to": "nano_3154czz87etettuydyts5qg1798sqcqx1rpkropcu3h3t845pnr6y7gmz3ze",
+    "retry_header": "X-Nano-Payment: <send hash>"
+   }
+  },
+  "expect": {
+   "dialect": "send-hash",
+   "nano-pay": "no:scheme",
+   "kilkelly-mcp": "no:scheme"
+  }
+ },
+ {
+  "id": "pururin-sequence",
+  "source": "Pururin-ux/nano-sequence-api @ 2441b71 src/index.mjs paymentRequired()",
+  "headers": {},
+  "body": {
+   "error": "payment required",
+   "network": "nano:mainnet",
+   "price_raw": "1000000000000000000000000000",
+   "pay_to": "nano_13gz94zfz7747o4tag8t8y1yw7bmzzroi84ez7wg1fqu5iiju4r37ut7abrk",
+   "pay_header": "X-Nano-Payment: <confirmed send block hash>"
+  },
+  "expect": {
+   "dialect": "send-hash",
+   "nano-pay": "no:scheme",
+   "kilkelly-mcp": "no:scheme"
+  }
+ },
+ {
+  "id": "pinnacle-url-check",
+  "source": "Daltonray625/pinnacle-url-check @ 107b978 src/app.js GET /v1/check",
+  "headers": {},
+  "body": {
+   "error": "payment_required",
+   "network": "nano:mainnet",
+   "base_price_raw": "10000000000000000000000000000",
+   "pay_to": "nano_1u5zktci5e4jtrcf9poq66pc5wk6g4mnmruh5h3dg1bdac63nj5kck5w453x",
+   "next": "POST /v1/invoices, pay price_raw exactly, POST /v1/result with invoice_id, payment_hash and invoice_token"
+  },
+  "expect": {
+   "dialect": "invoice",
+   "nano-pay": "no:invoice",
+   "kilkelly-mcp": "no:invoice"
+  }
+ },
+ {
+  "id": "nanswap-nodes",
+  "source": "registry.json networks_seen nano-mainnet (USAGE.md 11-21 03:5xZ matrix)",
+  "headers": {},
+  "body": {
+   "x402Version": 1,
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "nano-mainnet",
+     "asset": "XNO",
+     "amount": "2568493150684931506849315075",
+     "payTo": "nano_115hp31z6kh5d66pggb15s4mxchqx1aah9jtqbeuhjdwaoqxoxo7o1yzpodk",
+     "maxTimeoutSeconds": 60
+    }
+   ]
+  },
+  "expect": {
+   "dialect": "exact",
+   "nano-pay": "yes",
+   "kilkelly-mcp": "no:network"
+  }
+ }
+]

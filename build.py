@@ -5,6 +5,7 @@ nothing is paid), every payTo checksum-validated here. Usage:
 stdlib only."""
 import json, sys, datetime
 import probe, nanoaddr
+import dialect
 from concurrent.futures import ThreadPoolExecutor
 PAYTO_KEYS = ('payto', 'pay_to', 'nano_address', 'x-nano-payto')
 def payto_of(r):
@@ -62,5 +63,6 @@ def main(src, extras, out):
     reg = {'schema': 1, 'generated_at': now, 'probe_method': 'one unpaid request per endpoint (method/body as the seller declared); no payment is made; payTo checksum computed here',
            'counts': {k: sum(1 for x in rows if x['state_today'] == k) for k in sorted({x['state_today'] for x in rows})}, 'entries': rows}
     reg['counts']['total'] = len(rows)
+    dialect.apply(reg, dict(zip([s['id'] for s in sellers], res)))
     json.dump(reg, open(out, 'w'), indent=1, ensure_ascii=False); print(reg['counts'], len(rows))
 if __name__ == '__main__': main(*sys.argv[1:4])
