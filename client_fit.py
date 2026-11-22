@@ -5,33 +5,91 @@ B17 / B18 (CAMPAIGN.md), spec `specs/agent-tool-registry-dialect.md`, expert GUI
 Pure functions, no network. Input is one unpaid 402 as the seller sent it (its headers and its body);
 output is one dialect and one verdict per client in `clients.json`:
 
-    dialect_of(parsed)        -> "exact" | "send-hash" | "invoice" | "UNKNOWN"
-    client_fit(accept, client, where) -> "yes" | "no:<first field that fails>"
-    verdicts(headers, body, clients)  -> {"dialect": ..., "where": ..., "x402Version": ...,
-                                          "accepts": [...], "payable_by": {client: verdict}}
+    dialect_of(parsed)        -> "exact" | "rep-binding" | "send-hash" | "invoice" | "UNKNOWN"
+    client_fit(accept, client, where, buyer=None) -> "yes" | "no:<first field that fails>"
+    verdicts(headers, body, clients, buyer=None)  -> {"dialect": ..., "where": ..., "x402Version": ...,
+                                          "accepts": [...], "payable_by": {client: verdict},
+                                          "mcp": {...} only for an MCP payment-required result}
 
 The verdict order is fixed, so `no:<field>` always names the FIRST thing that fails:
-where, version, resource (whole quote, only for a client row with `versions`), then per accept: scheme, network,
-where, asset, amount_key, payTo, amount_ambiguous, cap, extra.
+bridge (an MCP offer handed raw to a header-only wallet), where, version, resource (whole quote, only for a
+client row with `versions`), then per accept: scheme, network, binding, where, asset, amount_key, payTo,
+amount_ambiguous, cap, spend_controls, extra. With no accept that fits, the verdict is the first failure of
+the first accept that passes scheme and network (the client's own chain), else of the first with a valid
+nano_ payTo, else of the first accept; a
+quote with one accept (every fixture before the 11th) is judged exactly as before.
 
 Optional client keys (strategist 2026-11-21 16:5xZ, for x402-dotnet-client; a row without them is
 checked exactly as before): `versions` (the x402Version values it parses), `needs_resource` (the quote
 must carry a `resource` key), `asset` (required asset, case-insensitive), `amount_key` (the accept key
 the amount must arrive under). `cap_raw` null means the cap is the host's own allowance: only a
 positive integer amount is checked.
+Keys of the buyer_plan row (ours, the 7th row, expert GUIDE 2026-11-22T12:50Z; no other row has them, so
+the other six are checked exactly as before): `networks` (the network strings our buyer_plan planner reads,
+instead of `network`), `bound_networks` (kept only for an accept whose binding the row builds),
+`bindings` (as above), `flat_dialects` (send-hash / invoice quotes with no accepts list, checked by
+flat_fit as the planner reads them). The planner itself is not part of this repository: its row is
+judged here by these rules alone, and nothing here imports it.
 
     "UNKNOWN"   - the 402 carried no parsable terms (an undecodable header, a body that is not JSON).
     "no:scheme" - the terms are readable and speak another dialect (send-hash: pay first, then present
                   the block hash in X-Nano-Payment). Neither client sends that.
     "no:invoice"- a private invoice flow (POST an invoice, pay an exact amount with a random suffix).
+    "rep-binding" (dialect) / "no:binding" (verdict) - xno-binding v1 option C, read from
+                  profullstack/x402-gateway 0.18.2 (README.md:86, :277, src/x402.js:140, src/nano.js:166-189,
+                  :293-311; PR agent run 454, expert GUIDE 2026-11-22T11Z): an `exact` accept whose
+                  `extra` carries binding "xno-binding/v1/rep" and an orderId (22-128 of A-Za-z0-9_-,
+                  nano.js:167). The payer must sign its send with representative = the account encoding
+                  of SHA-256("xno-binding/v1/rep|" + orderId + "|" + payTo + "|" + amountRaw) and present
+                  payload.orderId with payload.blockHash; an unbound block is refused. A client pays it
+                  only when its row lists the binding in `bindings`: buyer_plan (ours, its bound-order
+                  planner, expert GUIDE 2026-11-22T12:50Z) is the one row that does. The dialect is
+                  read only from that pair in extra: `binding` without a well-formed orderId is not it
+                  (the gateway never sends one without the other), and every other quote is read as before;
+                  for a row with `bindings` such a malformed binding is `no:binding` (buyer_plan refuses it).
+                  Formula, read in 0.18.2 (package.json:3): text = BINDING|orderId|payTo|amount joined by
+                  "|" (nano.js:182-185 orderCommitment), SHA-256 of its UTF-8, 32 bytes -> accountFromKey
+                  (nano.js:133-141, :188-190 orderRepresentative). payTo is canonicalAccount(offer payTo)
+                  (nano.js:297; the offer already writes it canonical, x402.js:120 nanoPayee) and amount is
+                  String(offer amount), raw digits matching /^[1-9]\d*$/ (nano.js:168, :298-299).
+                  WHICH orderId: either. One 402 carries two (the body's receipt and the PAYMENT-REQUIRED
+                  header each call offer(), src/index.js:345 and :380, and buildOffer draws a fresh
+                  newOrderId() each time, x402.js:140, nano.js:170-176). The seller stores no issued
+                  orderId: settleNano checks the proof statelessly - isOrderId (nano.js:293-296), the
+                  representative recomputed from payload.orderId and the offer's payTo/amount (:307-310),
+                  and expectedFor reads only amount/payTo of a fresh offer (x402.js:270-283, index.js:604)
+                  - and the only state is the claim taken AFTER the block checks out, unique on block hash
+                  and on orderId (nano.js:312, memoryClaims :261-273). So the payer may bind to the header's
+                  orderId, the body's, or its own (x402.js:134-138); it must present the one it signed for.
 
 `extra` is needed by no listed client today. @x402nano/exact 1.1.0's client/index.js:67 reads
 `paymentRequirements?.extra.workOptional`, a TypeError when a quote has no `extra` (lane 3 05:4xZ), but
 kilkelly 1.1.0 depends on @x402nano/exact ^0.1.1 = 0.1.1, whose client reads only payTo and amount
 (PR agent run 434: package.json, package-lock.json:92-95, npm deps). `no:extra` stays for a client
-row with needs_extra true.
+row with needs_extra true: x402-mcp-wrapper+x402nano-exact-1.1.0 installs 1.1.0 itself (B19).
 
-Usage: python3 claude/tools/client_fit.py FIXTURES.json   (a list of {"id", "headers", "body"})
+MCP-binding offers (B19, xmcp #805 head e3fcfca): an unpaid MCP tools/call can be answered with a
+JSON-RPC result whose `isError` is true and whose terms sit in `structuredContent` (or JSON in
+content[0].text). parse_402 never reads them, so the four HTTP-era rows keep their verdicts. Two row keys
+say who takes such an offer:
+    a `where` entry "mcp:structuredContent" / "mcp:content[0].text": the client reads the tool result
+        itself (@x402/mcp 2.32.0 x402MCPClient.extractPaymentRequiredFromResult, dist/esm/index.mjs:714-742);
+    `mcp_bridge` "base64-header": the client takes the offer only as a base64 PAYMENT-REQUIRED string (a
+        tool argument), so the host must encode structuredContent for it (kilkelly-mcp).
+The buyer's own configuration is the optional `buyer` argument (default {} = nothing configured):
+    buyer["mcp_handoff"]  None (default: the host hands a tool result to no header-only wallet; the
+                          verdict is the HTTP view, UNKNOWN for a JSON-RPC body), "raw" (it hands
+                          structuredContent over unencoded: `no:bridge`), "base64-header" (the host bridge:
+                          base64(JSON(structuredContent)) is read as a PAYMENT-REQUIRED header).
+    buyer["spendControls"] the @x402/core x402Client spendControls (default {} as the constructor sets it,
+                          core dist/esm/client/index.mjs:69); read only by a row with `spend_controls`.
+`no:spend_controls` (after cap, before extra): @x402/core applySpendControls (client/index.mjs:503-527)
+keeps an accept only when its scheme client has a default asset (findDefaultAsset) or an
+spendControls.allowedAssets entry matches its network (glob) and asset; ExactNanoScheme has no
+findDefaultAsset, so {} refuses every Nano accept. An entry's maxAmountPerPayment is an atomic cap
+(:39-51, :554-575). spendControls false or allowedAssets true keep every accept.
+
+Usage: python3 client_fit.py FIXTURES.json   (a list of {"id", "headers", "body"})
 """
 import base64
 import hashlib
@@ -43,6 +101,8 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 HEADER_NAMES = ("PAYMENT-REQUIRED", "X-PAYMENT-REQUIRED")
 ALPHABET = "13456789abcdefghijkmnopqrstuwxyz"
+REP_BINDING = "xno-binding/v1/rep"  # x402-gateway src/nano.js:166 BINDING
+ORDER_ID = re.compile(r"[A-Za-z0-9_-]{22,128}")  # src/nano.js:167, fullmatch
 
 
 def load_clients(path=None, include_pending=False):
@@ -75,6 +135,18 @@ def nano_checksum_ok(address):
     return hashlib.blake2b(key, digest_size=5).digest()[::-1] == check
 
 
+def account_from_key(key):
+    """32 bytes -> the nano_ account that encodes them: the key as 52 base32 chars (4 zero bits first),
+    then blake2b-40 of the key, byte-reversed, as 8 chars. The inverse of nano_checksum_ok's decode;
+    x402-gateway 0.18.2 src/nano.js:112, :117-121 (encode32), :130 (checksumOf), :133-141 (accountFromKey)."""
+    if not isinstance(key, (bytes, bytearray)) or len(key) != 32:
+        raise ValueError("an account is 32 bytes")
+    k = int.from_bytes(bytes(key), "big")
+    c = int.from_bytes(hashlib.blake2b(bytes(key), digest_size=5).digest()[::-1], "big")
+    enc = lambda v, n: "".join(ALPHABET[(v >> (5 * i)) & 31] for i in range(n - 1, -1, -1))  # noqa: E731
+    return "nano_" + enc(k, 52) + enc(c, 8)
+
+
 def _header(headers, name):
     for k, v in (headers or {}).items():
         if k.lower() == name.lower():
@@ -102,7 +174,7 @@ def _norm_accept(a):
         amount_raw = str(amount if amount is not None else mar) if (amount is not None or mar is not None) else None
         ambiguous = False
     pay_to = a.get("payTo")
-    return {
+    out = {
         "scheme": a.get("scheme"),
         "network": a.get("network"),
         "asset": a.get("asset"),
@@ -113,6 +185,23 @@ def _norm_accept(a):
         "has_extra": isinstance(a.get("extra"), dict),
         "keys": sorted(k for k in a if isinstance(k, str)),
     }
+    if rep_binding_of(a):
+        out["binding"] = REP_BINDING  # only then, so every other accept normalises exactly as before
+    elif isinstance(a.get("extra"), dict) and "binding" in a["extra"]:
+        # a binding this table cannot build (unknown name, or no well-formed orderId): read only by a row
+        # with `bindings` (buyer_plan refuses it by name); every other row sees the accept as before
+        out["binding_malformed"] = True
+    return out
+
+
+def rep_binding_of(a):
+    """True when a raw accept carries xno-binding/v1/rep in extra: binding AND a well-formed orderId
+    (x402-gateway src/x402.js:140 sets both together; src/nano.js:167 ORDER_ID)."""
+    extra = a.get("extra") if isinstance(a, dict) else None
+    if not isinstance(extra, dict) or extra.get("binding") != REP_BINDING:
+        return False
+    oid = extra.get("orderId")
+    return isinstance(oid, str) and ORDER_ID.fullmatch(oid) is not None
 
 
 def parse_402(headers, body):
@@ -150,11 +239,145 @@ def parse_402(headers, body):
     return out
 
 
+MCP_WHERE = ("mcp:structuredContent", "mcp:content[0].text")
+
+
+def _is_terms(doc):
+    return isinstance(doc, dict) and "x402Version" in doc and isinstance(doc.get("accepts"), list)
+
+
+def parse_mcp(body):
+    """An MCP payment-required tool result -> the parse_402 shape with where "mcp:...", plus "doc" (the
+    terms object). None when the body is no such result. Never raises.
+
+    Follows @x402/mcp 2.32.0 extractPaymentRequiredFromResult (dist/esm/index.mjs:714-742): only an
+    isError result; structuredContent first, then JSON in content[0].text. A JSON-RPC envelope
+    ({"jsonrpc", "id", "result"}) or a bare tool result are both read."""
+    doc = _json(body)
+    if not isinstance(doc, dict):
+        return None
+    res = doc.get("result") if isinstance(doc.get("result"), dict) else doc
+    if res.get("isError") is not True:
+        return None
+    terms, where = None, None
+    if _is_terms(res.get("structuredContent")):
+        terms, where = res["structuredContent"], MCP_WHERE[0]
+    else:
+        content = res.get("content")
+        first = content[0] if isinstance(content, list) and content else None
+        if isinstance(first, dict) and first.get("type") == "text" and isinstance(first.get("text"), str):
+            inner = _json(first["text"])
+            if _is_terms(inner):
+                terms, where = inner, MCP_WHERE[1]
+    if terms is None:
+        return None
+    return {"where": where, "x402Version": terms.get("x402Version"),
+            "accepts": [_norm_accept(a) for a in terms["accepts"] if isinstance(a, dict)],
+            "parsed": True, "body_json": terms, "has_resource": "resource" in terms, "doc": terms}
+
+
+def bridge_header(doc):
+    """What a host bridge hands a header-only wallet: base64 of the terms' JSON (kilkelly-mcp's
+    x402_payment_required_header argument)."""
+    return base64.b64encode(json.dumps(doc, separators=(",", ":")).encode("utf-8")).decode("ascii")
+
+
+def client_view(client, p, mcp, buyer=None):
+    """(terms as this client is handed them, None) or (None, verdict) when it is refused before any field
+    is read. `p` is parse_402's view, `mcp` parse_mcp's (or None)."""
+    if mcp is None or p["parsed"]:
+        return p, None
+    if any(w in MCP_WHERE for w in client["where"]):
+        return mcp, None
+    handoff = (buyer or {}).get("mcp_handoff")
+    if client.get("mcp_bridge") and handoff == "raw":
+        return None, "no:bridge"  # an object where a base64 string argument is required
+    if client.get("mcp_bridge") and handoff == client["mcp_bridge"]:
+        bridged = parse_402({HEADER_NAMES[0]: bridge_header(mcp["doc"])}, None)
+        bridged["doc"] = mcp["doc"]
+        return bridged, None
+    return p, None
+
+
+def _glob(pattern, value):
+    if not isinstance(pattern, str) or not isinstance(value, str):
+        return False
+    return re.fullmatch(".*".join(re.escape(s) for s in pattern.split("*")), value) is not None
+
+
+def _usd_to_atomic(money, decimals):
+    """@x402/core 2.32.0 parseMoney + convertToTokenAmount (chunk-XW2CWVLZ.mjs:22-60): "$1", "1", "1.5",
+    "2 USD" -> the decimal string padded/truncated to `decimals`; anything else throws (None here)."""
+    if isinstance(money, bool) or not isinstance(money, (str, int)):
+        return None
+    m = re.fullmatch(r"\$?\s*(\d+(?:\.\d+)?)(?:\s+(USD))?", str(money).strip(), re.I)
+    if not m:
+        return None
+    whole, _, frac = m.group(1).partition(".")
+    return int((whole + frac.ljust(decimals, "0")[:decimals]).lstrip("0") or "0")
+
+
+def default_asset_for(accept, default_asset):
+    """A scheme client's findDefaultAsset (clients.json `default_asset`). dhyabi2/exact
+    feat/nano-default-asset 199f9ba src/typescript/client/scheme.ts:52-57: asset EXACTLY "XNO" (case-sensitive)
+    on a network that starts with "nano:" -> {asset XNO, decimals 30, symbol XNO}; else undefined."""
+    if not default_asset:
+        return None
+    asset, net = accept.get("asset"), accept.get("network")
+    if asset == default_asset["asset"] and isinstance(net, str) and net.startswith(default_asset["network_prefix"]):
+        return default_asset
+    return None
+
+
+def spend_controls_ok(accept, buyer=None, default_asset=None):
+    """@x402/core 2.32.0 applySpendControls: client/index.mjs:25-57 (asset entry, atomic cap, the default
+    "$1" cap read in the default asset's decimals), :503-527 (allowlist: a default asset passes),
+    :528-575 (cap). With no default asset (ExactNanoScheme 1.1.0) {} refuses every Nano accept."""
+    sc = (buyer or {}).get("spendControls", {})
+    if sc is False:
+        return True
+    if not isinstance(sc, dict):
+        sc = {}
+    da = default_asset_for(accept, default_asset)
+    allow_any = sc.get("allowedAssets") is True
+    entries = sc.get("allowedAssets") if isinstance(sc.get("allowedAssets"), list) else []
+    asset = accept.get("asset")
+
+    def matches(e):
+        if not (isinstance(e, dict) and _glob(e.get("network"), accept.get("network"))
+                and isinstance(e.get("asset"), str) and isinstance(asset, str)):
+            return False
+        return e["asset"].lower() == asset.lower() or (da is not None and da["symbol"].lower() == e["asset"].lower())
+
+    entry = None if allow_any else next((e for e in entries if matches(e)), None)
+    if not allow_any and da is None and entry is None:
+        return False
+    amt = accept.get("amount_raw")
+    atomic_amt = amt is not None and re.fullmatch(r"[0-9]+", str(amt)) is not None
+    cap = entry.get("maxAmountPerPayment") if entry else None
+    if cap is not None:
+        if not re.fullmatch(r"[0-9]+", str(cap)) or not atomic_amt:
+            return False  # core throws on a non-atomic cap (:44-49) and refuses a non-atomic amount (:540-544)
+        return int(amt) <= int(cap)
+    usd = sc.get("maxAmountPerPayment", "$1")
+    if da is None or usd is False:
+        return True
+    cap = _usd_to_atomic(usd, da["decimals"])
+    if cap is None:
+        return False  # parseMoney throws
+    if not atomic_amt:  # core :545-550: a decimal amount is compared with the USD cap, both at 18 decimals
+        a18, c18 = _usd_to_atomic(amt, 18), _usd_to_atomic(usd, 18)
+        return a18 is not None and a18 <= c18
+    return int(amt) <= cap
+
+
 def _text(doc):
     return json.dumps(doc).lower() if doc is not None else ""
 
 
 def dialect_of(parsed):
+    if any(a.get("scheme") == "exact" and a.get("binding") == REP_BINDING for a in parsed["accepts"]):
+        return "rep-binding"
     if any(a.get("scheme") == "exact" for a in parsed["accepts"]):
         return "exact"
     t = _text(parsed.get("body_json"))
@@ -179,14 +402,48 @@ def network_ok(accept, client):
         net = str(net).lower() if net is not None else ""
         asset = str(asset).lower() if asset is not None else ""
         return net.startswith("nano") or asset in ("xno", "nano")
+    if client.get("networks") is not None:
+        # a row with a list (buyer_plan: the networks it plans for); `bound_networks` are kept only for an
+        # accept whose extra names a binding, read or malformed, when the row builds bindings (buyer_plan:
+        # x402-gateway names XNO `nano`; a malformed one then fails `binding`, as buyer_plan refuses it)
+        allowed = list(client["networks"])
+        if client.get("bindings") and (accept.get("binding") is not None or accept.get("binding_malformed")):
+            allowed += client.get("bound_networks") or []
+        return isinstance(accept.get("network"), str) and accept["network"] in allowed
     return accept.get("network") == client["network"]
 
 
-def client_fit(accept, client, where):
+def flat_fit(doc, dialect, client):
+    """A send-hash or invoice quote (no accepts list) for a row whose `flat_dialects` names the dialect:
+    the terms buyer_plan reads from a flat quote (top level, or under `payment`), checked in its order: network,
+    payTo checksum, amount (ASCII digits, not 0), cap. Only buyer_plan has `flat_dialects`."""
+    if not isinstance(doc, dict):
+        return "UNKNOWN"
+    t = dict(doc)
+    if isinstance(doc.get("payment"), dict):
+        t.update(doc["payment"])
+    if not network_ok({"network": t.get("network")}, client):
+        return "no:network"
+    if not nano_checksum_ok(t.get("pay_to") or t.get("payTo")):
+        return "no:payTo"
+    amt = (t.get("amount_raw") or t.get("price_raw")) if dialect == "send-hash" \
+        else (t.get("price_raw") or t.get("base_price_raw"))
+    cap = client.get("cap_raw")
+    if amt is None or not re.fullmatch(r"[0-9]+", str(amt)) or int(amt) == 0 \
+            or (cap is not None and int(amt) > int(cap)):
+        return "no:cap"
+    return "yes"
+
+
+def client_fit(accept, client, where, buyer=None):
     if accept.get("scheme") != client["scheme"]:
         return "no:scheme"
     if not network_ok(accept, client):
         return "no:network"
+    if accept.get("binding") is not None and accept["binding"] not in (client.get("bindings") or []):
+        return "no:binding"  # it cannot sign the representative the seller holds the block to
+    if accept.get("binding_malformed") and client.get("bindings"):
+        return "no:binding"  # a row that builds bindings refuses one it cannot read (as buyer_plan does)
     if where not in client["where"]:
         return "no:where"
     if client.get("asset") is not None and \
@@ -205,19 +462,30 @@ def client_fit(accept, client, where):
     if amt is None or not re.fullmatch(r"[0-9]+", str(amt)) or int(amt) == 0 \
             or (cap is not None and int(amt) > int(cap)):
         return "no:cap"
+    if client.get("spend_controls") and not spend_controls_ok(accept, buyer, client.get("default_asset")):
+        return "no:spend_controls"
     if client.get("needs_extra") and not accept.get("has_extra"):
         return "no:extra"
     return "yes"
 
 
-def verdicts(headers, body, clients=None):
+def verdicts(headers, body, clients=None, buyer=None):
+    """`buyer` (default {}): see the module docstring. Without it every row is checked as before."""
     clients = clients if clients is not None else load_clients()
-    p = parse_402(headers, body)
-    d = dialect_of(p)
+    p0 = parse_402(headers, body)
+    d = dialect_of(p0)
+    mcp = parse_mcp(body) if not p0["parsed"] else None
     payable = {}
     for name, c in clients.items():
+        p, refused = client_view(c, p0, mcp, buyer)
+        if refused is not None:
+            payable[name] = refused
+            continue
         if not p["parsed"] or not p["accepts"]:
-            payable[name] = {"send-hash": "no:scheme", "invoice": "no:invoice"}.get(d, "UNKNOWN")
+            if d in (c.get("flat_dialects") or ()) and p["where"] in c["where"]:
+                payable[name] = flat_fit(p.get("body_json"), d, c)
+                continue
+            payable[name] ={"send-hash": "no:scheme", "invoice": "no:invoice"}.get(d, "UNKNOWN")
             continue
         if c.get("versions") is not None and p["where"] not in c["where"]:
             payable[name] = "no:where"  # it never reads that place, so nothing else there matters
@@ -228,10 +496,20 @@ def verdicts(headers, body, clients=None):
         if c.get("needs_resource") and not p["has_resource"]:
             payable[name] = "no:resource"
             continue
-        fits = [client_fit(a, c, p["where"]) for a in p["accepts"]]
-        payable[name] = "yes" if "yes" in fits else fits[0]
-    return {"dialect": d, "where": p["where"], "x402Version": p["x402Version"],
-            "accepts": p["accepts"], "payable_by": payable}
+        fits = [client_fit(a, c, p["where"], buyer) for a in p["accepts"]]
+        # no fit: the reason of the first accept on the client's own chain, else of the first with a
+        # nano_ payee, else of the first accept (identical for a one-accept quote; the 11th fixture
+        # lists USDC before its XNO entry)
+        own = [f for f in fits if f not in ("no:scheme", "no:network")]
+        nano = [f for f, a in zip(fits, p["accepts"]) if a.get("payTo_checksum_valid")]
+        payable[name] = "yes" if "yes" in fits else (own or nano or fits)[0]
+    out = {"dialect": d, "where": p0["where"], "x402Version": p0["x402Version"],
+           "accepts": p0["accepts"], "payable_by": payable}
+    if mcp is not None:
+        # the MCP-binding view; the keys above stay the HTTP view, as before
+        out["mcp"] = {"where": mcp["where"], "x402Version": mcp["x402Version"],
+                      "dialect": dialect_of(mcp), "accepts": mcp["accepts"]}
+    return out
 
 
 def count_payable(rows):

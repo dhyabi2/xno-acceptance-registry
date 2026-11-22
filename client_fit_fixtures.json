@@ -24,7 +24,8 @@
   "expect": {
    "dialect": "exact",
    "nano-pay": "yes",
-   "kilkelly-mcp": "yes"
+   "kilkelly-mcp": "yes",
+   "buyer_plan": "yes"
   }
  },
  {
@@ -37,7 +38,8 @@
   "expect": {
    "dialect": "exact",
    "nano-pay": "yes",
-   "kilkelly-mcp": "yes"
+   "kilkelly-mcp": "yes",
+   "buyer_plan": "yes"
   }
  },
  {
@@ -64,7 +66,8 @@
   "expect": {
    "dialect": "exact",
    "nano-pay": "yes",
-   "kilkelly-mcp": "no:cap"
+   "kilkelly-mcp": "no:cap",
+   "buyer_plan": "yes"
   }
  },
  {
@@ -88,7 +91,8 @@
   "expect": {
    "dialect": "exact",
    "nano-pay": "yes",
-   "kilkelly-mcp": "yes"
+   "kilkelly-mcp": "yes",
+   "buyer_plan": "yes"
   }
  },
  {
@@ -108,7 +112,8 @@
   "expect": {
    "dialect": "send-hash",
    "nano-pay": "no:scheme",
-   "kilkelly-mcp": "no:scheme"
+   "kilkelly-mcp": "no:scheme",
+   "buyer_plan": "yes"
   }
  },
  {
@@ -125,7 +130,8 @@
   "expect": {
    "dialect": "send-hash",
    "nano-pay": "no:scheme",
-   "kilkelly-mcp": "no:scheme"
+   "kilkelly-mcp": "no:scheme",
+   "buyer_plan": "yes"
   }
  },
  {
@@ -142,7 +148,8 @@
   "expect": {
    "dialect": "invoice",
    "nano-pay": "no:invoice",
-   "kilkelly-mcp": "no:invoice"
+   "kilkelly-mcp": "no:invoice",
+   "buyer_plan": "yes"
   }
  },
  {
@@ -165,7 +172,234 @@
   "expect": {
    "dialect": "exact",
    "nano-pay": "yes",
-   "kilkelly-mcp": "no:network"
+   "kilkelly-mcp": "no:network",
+   "buyer_plan": "yes"
   }
+ },
+ {
+  "id": "xmcp-65be4ee",
+  "source": "basementstudio/xmcp @ 65be4ee (merge of PR #803) examples/x402-http word-count (src/tools/word-count.ts:15-16 paid({network: nano, price: 0.001})), read only, never run. The unpaid tools/call is answered HTTP 200, not 402, with a JSON-RPC result whose structuredContent and content[0].text carry the terms (packages/plugins/x402/src/provider.ts:105-108, 200-216); no PAYMENT-REQUIRED header is set. sendPaymentRequired defaults isV2Format=false (provider.ts:204), so the first offer is V1: x402Version 1 and error (verify.ts:126-130), network = the name \"nano\" and maxAmountRequired, no amount key (verify.ts:97-109). amount = priceToAtomicUnits(0.001, 30) = 1e27 raw (verify.ts:33-51, 74-75; constants.ts:36-40 asset XNO, decimals 30). maxTimeoutSeconds 300 (verify.ts:103-104, types.ts:87). resource/mimeType/description (verify.ts:105-107; the tool options carry no description). extra = networkConfig.extra {name XNO, decimals 30} with requireBinding off, so no binding and no orderId (verify.ts:78-81, 121-124; constants.ts:40). payTo = nano.wallet ?? wallet (verify.ts:77) = X402_NANO_WALLET ?? X402_WALLET (examples/x402-http/src/middleware.ts:4, 13): env-dependent, PLACEHOLDER here = the plugin's own test wallet (packages/plugins/x402/test/requirements.test.cts:8-9). JSON-RPC id 1 is the caller's request id (provider.ts:178-183). Payment is read only from params._meta[x402/payment] or arguments.paymentAuthorization (provider.ts:157-176), never from an HTTP header; payload.block (signed state send block) or payload.blockHash (verify.ts:253-261).",
+  "headers": {},
+  "body": {
+   "jsonrpc": "2.0",
+   "id": 1,
+   "result": {
+    "isError": true,
+    "structuredContent": {
+     "x402Version": 1,
+     "error": "Payment required",
+     "accepts": [
+      {
+       "scheme": "exact",
+       "network": "nano",
+       "maxAmountRequired": "1000000000000000000000000000",
+       "payTo": "nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3",
+       "asset": "XNO",
+       "maxTimeoutSeconds": 300,
+       "resource": "mcp://tool/word-count",
+       "mimeType": "application/json",
+       "description": "Access to word-count tool",
+       "extra": {
+        "name": "XNO",
+        "decimals": 30
+       }
+      }
+     ]
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "{\"x402Version\":1,\"error\":\"Payment required\",\"accepts\":[{\"scheme\":\"exact\",\"network\":\"nano\",\"maxAmountRequired\":\"1000000000000000000000000000\",\"payTo\":\"nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3\",\"asset\":\"XNO\",\"maxTimeoutSeconds\":300,\"resource\":\"mcp://tool/word-count\",\"mimeType\":\"application/json\",\"description\":\"Access to word-count tool\",\"extra\":{\"name\":\"XNO\",\"decimals\":30}}]}"
+     }
+    ]
+   }
+  },
+  "expect": {
+   "dialect": "UNKNOWN",
+   "nano-pay": "UNKNOWN",
+   "kilkelly-mcp": "UNKNOWN",
+   "x402-dotnet-client": "UNKNOWN",
+   "kilkelly-mcp+extra": "UNKNOWN",
+   "x402-mcp-wrapper+x402nano-exact-1.1.0": "no:version",
+   "x402-mcp-wrapper+x402nano-exact-findDefaultAsset": "no:version",
+   "buyer_plan": "no:network"
+  }
+ },
+ {
+  "id": "xmcp-e3fcfca-v2",
+  "source": "basementstudio/xmcp PR #805 head e3fcfca (dhyabi2/xmcp), examples/x402-http word-count (src/tools/word-count.ts:15-16 paid({network: nano, price: 0.001})) with the example provider's nano.x402Version 2 (examples/x402-http/src/middleware.ts:18-19), read only, never run. The unpaid tools/call (no params._meta[x402/payment], no arguments.paymentAuthorization: provider.ts:105-108, 157-176) is answered HTTP 200, not 402, by sendPaymentRequired (provider.ts:200-218): a JSON-RPC result with isError true (provider.ts:213), the terms in structuredContent (:214) and as JSON.stringify in content[0].text (:215); no PAYMENT-REQUIRED header is set. createPaymentRequiredResponse(undefined, undefined) takes the version from offerUsesV2Format: nano.x402Version 2 and network nano:mainnet (verify.ts:117-123, 129-134; types.ts:80-88), so the offer is v2 with a top-level resource {url mcp://tool/<name>, description, mimeType} (verify.ts:141-155). The accept is the v2 form (verify.ts:83-93): network nano:mainnet (constants.ts:17, 37), amount = priceToAtomicUnits(0.001, 30) = 1e27 raw (verify.ts:33-51, 74-75), asset XNO (constants.ts:38), maxTimeoutSeconds 300 (verify.ts:90-91), extra = networkConfig.extra {name XNO, decimals 30} (constants.ts:40) with requireBinding off (middleware.ts:17 env unset), so no binding and no orderId (verify.ts:78-81, 136-139). description = `Access to word-count tool` (verify.ts:150; the paid() options carry none). Key order is the JS insertion order. payTo = nano.wallet ?? wallet (verify.ts:77) = X402_NANO_WALLET (middleware.ts:13): env-dependent, PLACEHOLDER here = the plugin's own test wallet (packages/plugins/x402/test/requirements.test.cts:8-9), as for xmcp-65be4ee. Same shape as the plugin's own test (test/nano-offer.test.cts:146-171). JSON-RPC id 1 is the caller's request id (provider.ts:178-183). The payment is read from params._meta[x402/payment] (or x402.payment) or arguments.paymentAuthorization; an object is encoded to the base64 header form, a string passed through (provider.ts:166-167, 170-171; payment-header.ts:12-23).",
+  "headers": {},
+  "body": {
+   "jsonrpc": "2.0",
+   "id": 1,
+   "result": {
+    "isError": true,
+    "structuredContent": {
+     "x402Version": 2,
+     "error": "Payment required",
+     "resource": {
+      "url": "mcp://tool/word-count",
+      "description": "Access to word-count tool",
+      "mimeType": "application/json"
+     },
+     "accepts": [
+      {
+       "scheme": "exact",
+       "network": "nano:mainnet",
+       "amount": "1000000000000000000000000000",
+       "payTo": "nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3",
+       "asset": "XNO",
+       "maxTimeoutSeconds": 300,
+       "extra": {
+        "name": "XNO",
+        "decimals": 30
+       }
+      }
+     ]
+    },
+    "content": [
+     {
+      "type": "text",
+      "text": "{\"x402Version\":2,\"error\":\"Payment required\",\"resource\":{\"url\":\"mcp://tool/word-count\",\"description\":\"Access to word-count tool\",\"mimeType\":\"application/json\"},\"accepts\":[{\"scheme\":\"exact\",\"network\":\"nano:mainnet\",\"amount\":\"1000000000000000000000000000\",\"payTo\":\"nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3\",\"asset\":\"XNO\",\"maxTimeoutSeconds\":300,\"extra\":{\"name\":\"XNO\",\"decimals\":30}}]}"
+     }
+    ]
+   }
+  },
+  "expect": {
+   "dialect": "UNKNOWN",
+   "nano-pay": "UNKNOWN",
+   "kilkelly-mcp": "UNKNOWN",
+   "x402-dotnet-client": "UNKNOWN",
+   "kilkelly-mcp+extra": "UNKNOWN",
+   "x402-mcp-wrapper+x402nano-exact-1.1.0": "no:spend_controls",
+   "x402-mcp-wrapper+x402nano-exact-findDefaultAsset": "yes",
+   "buyer_plan": "yes"
+  },
+  "expect_buyer": [
+   {
+    "buyer": {
+     "mcp_handoff": "raw"
+    },
+    "client": "kilkelly-mcp",
+    "verdict": "no:bridge"
+   },
+   {
+    "buyer": {
+     "mcp_handoff": "base64-header"
+    },
+    "client": "kilkelly-mcp",
+    "verdict": "yes",
+    "label": "yes via host bridge"
+   },
+   {
+    "buyer": {
+     "spendControls": {
+      "allowedAssets": [
+       {
+        "network": "nano:mainnet",
+        "asset": "XNO"
+       }
+      ]
+     }
+    },
+    "client": "x402-mcp-wrapper+x402nano-exact-1.1.0",
+    "verdict": "yes"
+   },
+   {
+    "buyer": {},
+    "client": "x402-mcp-wrapper+x402nano-exact-1.1.0",
+    "verdict": "no:spend_controls"
+   },
+   {
+    "buyer": {},
+    "client": "x402-mcp-wrapper+x402nano-exact-findDefaultAsset",
+    "verdict": "yes",
+    "label": "default {} admits Nano on feat/nano-default-asset 199f9ba (pending)"
+   }
+  ]
+ },
+ {
+  "id": "x402-gateway-0.18.2-rep",
+  "source": "profullstack/x402-gateway package.json:3 version 0.18.2 (the GUIDE named 0.18.1; the clone at HEAD reads 0.18.2), read only, nothing run. README.md:86 (`nano` option: XNO on network `nano`, raw = 10^30 per XNO, rounded up), README.md:258-280 (XNO checked by your own node; :277 `extra` carries binding \"xno-binding/v1/rep\" and a random orderId, the send's representative = account(SHA-256(\"xno-binding/v1/rep|\" + orderId + \"|\" + payTo + \"|\" + amountRaw)), proof = payload.orderId + payload.blockHash). Offer built by src/x402.js:105-159 buildOffer (USDC METHODS :43-62 first, XNO last; src/x402.js:140 extra with BINDING and newOrderId() only when nano.binding); nano.binding = Boolean(nano.rpcUrl), src/index.js:329; header by paymentRequiredHeader src/x402.js:231-251 (resource at top :236-240, accepts :241-249 keep scheme, network, amount, asset, payTo, maxTimeoutSeconds, extra). Body and header each call offer() (src/index.js:334, :344, :378), so each carries its own fresh orderId. Checked on proof: src/nano.js:293-311 (orderId 22-128 of A-Za-z0-9_- :167, representative recomputed :307-309). Values the README leaves open are placeholders: siteUrl https://site.example, EVM payTo 0x00..00, Nano payTo the all-ones burn account (valid checksum), priceCents 100 (README.md:87 default), rate 0.8 (README.md:270 example) so 1.25 XNO = 1250000000000000000000000000000 raw (xnoRaw, src/x402.js:89-97), the two orderIds. Left out: the body's `pass` and `powerKey` keys (src/index.js:344-364; not terms, and their values are config the README does not fix), and the 402's other headers (cache-control, vary, access-control-expose-headers).",
+  "headers": {
+   "PAYMENT-REQUIRED": "eyJ4NDAyVmVyc2lvbiI6IDIsICJyZXNvdXJjZSI6IHsidXJsIjogImh0dHBzOi8vc2l0ZS5leGFtcGxlL2NyYXdsIiwgImRlc2NyaXB0aW9uIjogIjE0NDAgbWludXRlcyBvZiBjcmF3bCBhY2Nlc3MgdG8gaHR0cHM6Ly9zaXRlLmV4YW1wbGUiLCAibWltZVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiJ9LCAiYWNjZXB0cyI6IFt7InNjaGVtZSI6ICJleGFjdCIsICJuZXR3b3JrIjogImVpcDE1NTo4NDUzIiwgImFtb3VudCI6ICIxMDAwMDAwIiwgImFzc2V0IjogIjB4ODMzNTg5ZkNENmVEYjZFMDhmNGM3QzMyRDRmNzFiNTRiZEEwMjkxMyIsICJwYXlUbyI6ICIweDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCAibWF4VGltZW91dFNlY29uZHMiOiAzMDAsICJleHRyYSI6IHsibmFtZSI6ICJVU0QgQ29pbiIsICJ2ZXJzaW9uIjogIjIifX0sIHsic2NoZW1lIjogImV4YWN0IiwgIm5ldHdvcmsiOiAiZWlwMTU1OjEzNyIsICJhbW91bnQiOiAiMTAwMDAwMCIsICJhc3NldCI6ICIweDNjNDk5YzU0MmNFRjVFMzgxMWUxMTkyY2U3MGQ4Y0MwM2Q1YzMzNTkiLCAicGF5VG8iOiAiMHgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwgIm1heFRpbWVvdXRTZWNvbmRzIjogMzAwLCAiZXh0cmEiOiB7Im5hbWUiOiAiVVNEIENvaW4iLCAidmVyc2lvbiI6ICIyIn19LCB7InNjaGVtZSI6ICJleGFjdCIsICJuZXR3b3JrIjogImVpcDE1NToxIiwgImFtb3VudCI6ICIxMDAwMDAwIiwgImFzc2V0IjogIjB4QTBiODY5OTFjNjIxOGIzNmMxZDE5RDRhMmU5RWIwY0UzNjA2ZUI0OCIsICJwYXlUbyI6ICIweDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCAibWF4VGltZW91dFNlY29uZHMiOiAzMDAsICJleHRyYSI6IHsibmFtZSI6ICJVU0QgQ29pbiIsICJ2ZXJzaW9uIjogIjIifX0sIHsic2NoZW1lIjogImV4YWN0IiwgIm5ldHdvcmsiOiAibmFubyIsICJhbW91bnQiOiAiMTI1MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsICJhc3NldCI6ICJYTk8iLCAicGF5VG8iOiAibmFub18xMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExaGlmYzhucHAiLCAibWF4VGltZW91dFNlY29uZHMiOiAzMDAsICJleHRyYSI6IHsiZGVjaW1hbHMiOiAzMCwgImJpbmRpbmciOiAieG5vLWJpbmRpbmcvdjEvcmVwIiwgIm9yZGVySWQiOiAiSG40cFk4c0RrMldqNmVMeDBSdlQ1ZyJ9fV19"
+  },
+  "body": {
+   "x402Version": 2,
+   "accepts": [
+    {
+     "scheme": "exact",
+     "network": "eip155:8453",
+     "amount": "1000000",
+     "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+     "payTo": "0x0000000000000000000000000000000000000000",
+     "resource": "https://site.example/crawl",
+     "description": "1440 minutes of crawl access to https://site.example",
+     "mimeType": "application/json",
+     "maxTimeoutSeconds": 300,
+     "extra": {
+      "name": "USD Coin",
+      "version": "2"
+     }
+    },
+    {
+     "scheme": "exact",
+     "network": "eip155:137",
+     "amount": "1000000",
+     "asset": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+     "payTo": "0x0000000000000000000000000000000000000000",
+     "resource": "https://site.example/crawl",
+     "description": "1440 minutes of crawl access to https://site.example",
+     "mimeType": "application/json",
+     "maxTimeoutSeconds": 300,
+     "extra": {
+      "name": "USD Coin",
+      "version": "2"
+     }
+    },
+    {
+     "scheme": "exact",
+     "network": "eip155:1",
+     "amount": "1000000",
+     "asset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+     "payTo": "0x0000000000000000000000000000000000000000",
+     "resource": "https://site.example/crawl",
+     "description": "1440 minutes of crawl access to https://site.example",
+     "mimeType": "application/json",
+     "maxTimeoutSeconds": 300,
+     "extra": {
+      "name": "USD Coin",
+      "version": "2"
+     }
+    },
+    {
+     "scheme": "exact",
+     "network": "nano",
+     "amount": "1250000000000000000000000000000",
+     "asset": "XNO",
+     "payTo": "nano_1111111111111111111111111111111111111111111111111111hifc8npp",
+     "resource": "https://site.example/crawl",
+     "description": "1440 minutes of crawl access to https://site.example",
+     "mimeType": "application/json",
+     "maxTimeoutSeconds": 300,
+     "extra": {
+      "decimals": 30,
+      "binding": "xno-binding/v1/rep",
+      "orderId": "q3V9cJ0x2LwKfR7mTzA1bQ"
+     }
+    }
+   ]
+  },
+  "expect": {
+   "dialect": "rep-binding",
+   "nano-pay": "no:binding",
+   "kilkelly-mcp": "no:network",
+   "kilkelly-mcp+extra": "no:network",
+   "x402-dotnet-client": "no:network",
+   "x402-mcp-wrapper+x402nano-exact-1.1.0": "no:where",
+   "x402-mcp-wrapper+x402nano-exact-findDefaultAsset": "no:where",
+   "buyer_plan": "yes"
+  },
+  "notes": "Which orderId binds: either. The body and the header are two offer() calls (src/index.js:345, :380), each with its own newOrderId() (src/x402.js:140); the seller stores no issued orderId and checks the proof statelessly (src/nano.js:293-310: isOrderId, then the representative recomputed from payload.orderId and the offer's payTo/amount), claiming the block hash and orderId only after the block checks out (src/nano.js:312, memoryClaims :261-273). Present the orderId the send was signed for."
  }
 ]

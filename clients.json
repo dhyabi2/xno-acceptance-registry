@@ -1,5 +1,5 @@
 {
-  "_about": "Buyer clients that are not ours and install today, and what each needs from a seller's 402 to pay it. Read by client_fit.py. Each field cites the source line it was read from (strategist 2026-11-21 05:5xZ; lane 3 05:4xZ for the extra finding). x402-dotnet-client added by the strategist 2026-11-21 16:5xZ (GUIDE 16Z), from source.",
+  "_about": "Buyer clients that install today (all but `buyer_plan`, ours, are not ours; `buyer_plan` is not published, so it is `pending` and never counted here), and what each needs from a seller's 402 to pay it. Read by client_fit.py. Each field cites the source line it was read from (strategist 2026-11-21 05:5xZ; lane 3 05:4xZ for the extra finding). x402-dotnet-client added by the strategist 2026-11-21 16:5xZ (GUIDE 16Z), from source.",
   "nano-pay": {
     "source": "Feeless402/feeless402 nano_pay/x402.py (x402_pay, build_payment_header:293 payload.block), PyPI feeless402 0.2.13. Network rule read at fab7f69 nano_pay/x402.py:250-257 (pick_nano_offer): any accept whose network starts with \"nano\" or whose asset is xno/nano, case-insensitive, so `nano-mainnet` is paid (PR agent run 439, GUIDE 19Z). `network` stays as the value a fix text names.",
     "scheme": "exact",
@@ -22,6 +22,8 @@
       "body"
     ],
     "cap_raw": "10000000000000000000000000000",
+    "mcp_bridge": "base64-header",
+    "mcp_bridge_source": "B19: x402_payment_signature_exact_scheme_create takes the quote only as the base64 string argument x402_payment_required_header (nano-currency.js:436-500), so an MCP-binding offer (result.structuredContent) is paid only through a host bridge that base64-encodes structuredContent into that argument and puts the returned base64 PAYMENT-SIGNATURE in params._meta[\"x402/payment\"] (xmcp e3fcfca payment-header.ts:12-13 passes a string through; provider.ts:166-167). Handed the object raw: no:bridge.",
     "needs_extra": false
   },
   "kilkelly-mcp+extra": {
@@ -34,6 +36,7 @@
       "body"
     ],
     "cap_raw": "10000000000000000000000000000",
+    "mcp_bridge": "base64-header",
     "needs_extra": false
   },
   "x402-dotnet-client": {
@@ -49,6 +52,77 @@
     "needs_resource": true,
     "asset": "XNO",
     "amount_key": "amount",
+    "cap_raw": null,
+    "needs_extra": false
+  },
+  "x402-mcp-wrapper+x402nano-exact-1.1.0": {
+    "source": "B19, lane 3 (FRONTIER row 75), confirmed by the PR agent from the npm tarballs (npm pack, read only, nothing run): @x402/mcp 2.32.0 wrapMCPClientWithPayment(mcpClient, x402Client) (dist/esm/index.mjs:777-779) with @x402/core 2.32.0 x402Client and @x402nano/exact 1.1.0 ExactNanoScheme registered by register(\"nano:mainnet\", ...) (core dist/esm/client/index.mjs:106-108: the current x402Version, 2, only). The offer is read only from an MCP tool result with isError true: structuredContent, else JSON in content[0].text (mcp index.mjs:714-742), validated by @x402/core parsePaymentRequired (mcp index.mjs:753-756; core dist/esm/chunk-Z7WXFCST.mjs:56-62: v2 needs `resource` {url} and accepts with `amount`); an HTTP header or body is never read. A v1 offer parses but createPaymentPayload throws `No client registered for x402 version: 1` (core client/index.mjs:254-256). selectPaymentRequirements (:437-493): network/scheme registered (:442-448), a non-empty asset (:467-474), then applySpendControls (:503-527): ExactNanoScheme has no findDefaultAsset, so with the default spendControls {} (:69) every Nano accept is refused (:523-527) unless spendControls.allowedAssets has an entry matching network (glob, core chunk-XW2CWVLZ.mjs:66) and asset (:25-37), or allowedAssets is true, or spendControls is false; an entry's maxAmountPerPayment is an atomic cap (:39-51, :554-575). No other cap (no default asset, so no USD cap). ExactNanoScheme.createPaymentPayload needs payTo and amount (exact dist/cjs/client/index.js:61-66) and reads `paymentRequirements?.extra.workOptional` (dist/cjs/client/index.js:67), a TypeError when the accept has no `extra`. The payment goes back as the PaymentPayload object in params._meta[\"x402/payment\"] (mcp index.mjs:509, :540-542, MCP_PAYMENT_META_KEY :98).",
+    "scheme": "exact",
+    "network": "nano:mainnet",
+    "where": [
+      "mcp:structuredContent",
+      "mcp:content[0].text"
+    ],
+    "versions": [
+      2
+    ],
+    "needs_resource": true,
+    "amount_key": "amount",
+    "cap_raw": null,
+    "spend_controls": "x402-core-2.32.0",
+    "needs_extra": true
+  },
+  "x402-mcp-wrapper+x402nano-exact-findDefaultAsset": {
+    "source": "PR agent run 452 (GUIDE 09Z): the fifth client with ExactNanoScheme from dhyabi2/exact feat/nano-default-asset 199f9ba4e2a4 (rail FRONTIER row 77 (b), stacked on feat/nano-exact c390127), read only: findDefaultAsset (src/typescript/client/scheme.ts:52-57) returns {asset XNO, decimals 30, symbol XNO} for asset exactly \"XNO\" on a \"nano:\" network. @x402/core 2.32.0 applySpendControls then keeps the accept on the default spendControls {} (client/index.mjs:518-519) and caps it at the default \"$1\" read as 1 whole XNO, 10^30 raw (:21, :55-56). The branch also carries c390127 `extra?.workOptional` (scheme.ts:90), so an accept with no extra is no TypeError. Everything else as the 1.1.0 row.",
+    "pending": "branch only (199f9ba, not opened, not merged, not released); never counted as installable until x402nano/exact ships findDefaultAsset",
+    "scheme": "exact",
+    "network": "nano:mainnet",
+    "where": [
+      "mcp:structuredContent",
+      "mcp:content[0].text"
+    ],
+    "versions": [
+      2
+    ],
+    "needs_resource": true,
+    "amount_key": "amount",
+    "cap_raw": null,
+    "spend_controls": "x402-core-2.32.0",
+    "needs_extra": false,
+    "default_asset": {
+      "asset": "XNO",
+      "network_prefix": "nano:",
+      "decimals": 30,
+      "symbol": "XNO"
+    }
+  },
+  "buyer_plan": {
+    "source": "OURS: the buyer_plan planner, plan.py (package xno-buyer-plan 0.1.0; not part of this registry repository and not on PyPI; this row is judged by client_fit.py's own rules, which never import it), the 7th row (expert GUIDE 2026-11-22T12:50Z). It plans, it does not sign or send: `yes` means plan_402 or plan_mcp returns a plan. plan_402 reads the PAYMENT-REQUIRED or X-PAYMENT-REQUIRED header, else the body (client_fit.parse_402); plan_mcp reads an MCP isError result's structuredContent, else content[0].text. Accepts: scheme exact (plan_402 loop), network in NETWORKS {nano:mainnet, nano-mainnet}, plus `nano` for a bound accept only (BOUND_NETWORKS; x402-gateway src/x402.js:126 names its XNO entry `nano`); payTo checksum; amount == maxAmountRequired, ASCII digits > 0; no version, resource, asset or extra required. Cap: cap_raw is a required argument the caller sets (DEFAULT_CAP_RAW 10^29 when it passes none), so as for x402-dotnet the cap is the host's own: only a positive integer amount is checked here. Bindings: xno-binding/v1/rep (_plan_bound); any other binding is refused by name. Send-hash and invoice quotes are planned from their flat terms (_plan_flat; client_fit.flat_fit). The MCP profile defaults to `spec`, so xmcp's v1 network `nano` (unbound) is no:network unless the caller names profile xmcp.",
+    "ours": true,
+    "pending": "ours and not published: the planner is not in this repository and not on PyPI, so a reader cannot install or check it; never counted as installable here until it is published",
+    "scheme": "exact",
+    "network": "nano:mainnet",
+    "networks": [
+      "nano:mainnet",
+      "nano-mainnet"
+    ],
+    "bound_networks": [
+      "nano"
+    ],
+    "bindings": [
+      "xno-binding/v1/rep"
+    ],
+    "flat_dialects": [
+      "send-hash",
+      "invoice"
+    ],
+    "where": [
+      "header:PAYMENT-REQUIRED",
+      "header:X-PAYMENT-REQUIRED",
+      "body",
+      "mcp:structuredContent",
+      "mcp:content[0].text"
+    ],
     "cap_raw": null,
     "needs_extra": false
   }
