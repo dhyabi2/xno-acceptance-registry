@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-23T05:47Z",
+ "generated_at": "2026-11-24T05:47Z",
  "source": "https://github.com/dhyabi2/xno-acceptance-registry",
  "note": "live-today entries only; CC0",
- "count": 23,
+ "count": 22,
  "services": [
   {
    "id": "llmrt",
@@ -15,14 +15,14 @@
      "scheme": "exact",
      "network": "nano:mainnet",
      "asset": "XNO",
-     "payTo": "nano_16x1koy4pzwdzyxjacp3cggzp3b3ptnbn5tfxuues85e3zpwp4km78yqk85e"
+     "payTo": "nano_1cufjm5mhz5fh61jn1cwtz859y6kkh9oubcmd56yphr53s5aii43o1cy1mbc"
     }
    ],
    "price_quoted_by_operator": "Ӿ8.1 per kit (3 USDT equivalent)",
    "price_raw_seen_in_402": [
     "150000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -43,7 +43,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -57,14 +57,14 @@
      "scheme": "exact",
      "network": "nano:mainnet",
      "asset": "XNO",
-     "payTo": "nano_3fgaz5o45i45gzm9otha47zntxpnkobdod37auijzx863gr9nos388imwkjt"
+     "payTo": "nano_1uoz68jukai7xxrabcrccwktifw9k3mofe6hkskmctmecgoze5zxechjni1x"
     }
    ],
    "price_quoted_by_operator": "per post, set by the author; the probe post is Ӿ0.00001, a typical article Ӿ0.1",
    "price_raw_seen_in_402": [
     "10000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -85,7 +85,7 @@
    "price_raw_seen_in_402": [
     "100000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -106,7 +106,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -125,7 +125,7 @@
    ],
    "price_quoted_by_operator": "Ӿ0.001 per answer",
    "price_raw_seen_in_402": null,
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -146,7 +146,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -167,7 +167,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -188,7 +188,7 @@
    "price_raw_seen_in_402": [
     "10000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -207,7 +207,7 @@
    ],
    "price_quoted_by_operator": "Ӿ0.001 per call",
    "price_raw_seen_in_402": null,
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -228,7 +228,7 @@
    "price_raw_seen_in_402": [
     "28760000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -249,7 +249,7 @@
    "price_raw_seen_in_402": [
     "10000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -270,7 +270,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -289,7 +289,7 @@
    ],
    "price_quoted_by_operator": "Ӿ0.0001 per call",
    "price_raw_seen_in_402": null,
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -308,7 +308,7 @@
    ],
    "price_quoted_by_operator": "Ӿ0.01 per check (plus a per-invoice suffix below 0.00000000002)",
    "price_raw_seen_in_402": null,
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -329,7 +329,7 @@
    "price_raw_seen_in_402": [
     "50000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -350,7 +350,7 @@
    "price_raw_seen_in_402": [
     "8628000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -369,9 +369,9 @@
    ],
    "price_quoted_by_operator": "$0.00003 per credit, quoted live in raw XNO; one work_generate cost Ӿ0.0022355 (25 credits), one read with own work Ӿ0.0000894",
    "price_raw_seen_in_402": [
-    "2431118314424635332252836325"
+    "2446982055464926590538336075"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -392,28 +392,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
-   "evidence": "endpoint_read"
-  },
-  {
-   "id": "nanotracker-spend-or-swap",
-   "name": "NanoTracker spend-or-swap: should a Nano holder pay amount B from the stack or swap first (FIFO lots, holding period)",
-   "operator": "NanoTracker (nanotracker.app), Johannes, who describes himself as a private individual and the sole developer; the same developer is behind feeless402 and the Moltbook agent APIS. Not asked for or paid for by me before this listing.",
-   "description": "POST /api/v1/spend-or-swap with {address, amount, currency, jurisdiction} returns JSON: decision spend_from_stack | swap_first | wait, a reason, today's rate, the wallet's balance and shortfall, and the FIFO lots that would be used with their cost basis, gain and tax-free date (only DE has the holding-period rule). A sibling door /api/v1/wallet-pnl (USD 0.002) returns balance, value, cost basis and gain for one address. Free daily-rate endpoints beside them. Not tax advice, says the seller.",
-   "resource": "https://nanotracker.app/api/v1/spend-or-swap",
-   "accepts": [
-    {
-     "scheme": "exact",
-     "network": "nano:mainnet",
-     "asset": "XNO",
-     "payTo": "nano_19zs7s5cwnccx7nqyhukxhuxnjqk14xzicbhue1o9kn6n3bescfc8rbpwmdg"
-    }
-   ],
-   "price_quoted_by_operator": "USD 0.001 per request, quoted in XNO at the day's rate in the 402 (Ӿ0.002971 on 2026-10-19); first call per IP free",
-   "price_raw_seen_in_402": [
-    "3274000000000000000000000000"
-   ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -434,7 +413,7 @@
    "price_raw_seen_in_402": [
     "1000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {
@@ -455,7 +434,7 @@
    "price_raw_seen_in_402": [
     "50000000000000000000000000000"
    ],
-   "last_probed": "2026-11-23T05:47Z",
+   "last_probed": "2026-11-24T05:47Z",
    "evidence": "endpoint_read"
   },
   {

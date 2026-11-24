@@ -1,10 +1,11 @@
 {
  "schema": 1,
- "generated_at": "2026-11-23T05:47Z",
+ "generated_at": "2026-11-24T05:47Z",
  "probe_method": "one unpaid request per endpoint (method/body as the seller declared); no payment is made; payTo checksum computed here",
  "counts": {
   "dead": 10,
-  "live_402_nano": 22,
+  "live_402_nano": 21,
+  "live_free_tier": 1,
   "live_portal": 1,
   "live_status_route": 1,
   "mail_only": 2,
@@ -39,11 +40,11 @@
    "payto_all_checksum_valid": true,
    "payto_note": "per-payment deposit address; moves per quote",
    "state_today": "unclear",
-   "state_reason": "HTTP 400 on our probe; route or method may differ from the seller declared",
+   "state_reason": "HTTP 410 on our probe; route or method may differ from the seller declared",
    "probe": {
-    "http_status": 400,
-    "ms": 451,
-    "at": "2026-11-23T05:47Z",
+    "http_status": 410,
+    "ms": 434,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -74,8 +75,8 @@
    "state_reason": "HTTP 404 on the probe route",
    "probe": {
     "http_status": 404,
-    "ms": 380,
-    "at": "2026-11-23T05:47Z",
+    "ms": 320,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -105,7 +106,7 @@
    ],
    "payto": [
     {
-     "address": "nano_16x1koy4pzwdzyxjacp3cggzp3b3ptnbn5tfxuues85e3zpwp4km78yqk85e",
+     "address": "nano_1cufjm5mhz5fh61jn1cwtz859y6kkh9oubcmd56yphr53s5aii43o1cy1mbc",
      "checksum_valid": true
     }
    ],
@@ -115,8 +116,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 3328,
-    "at": "2026-11-23T05:47Z",
+    "ms": 2467,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -158,8 +159,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 911,
-    "at": "2026-11-23T05:47Z",
+    "ms": 859,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -198,7 +199,7 @@
    "probe": {
     "http_status": null,
     "ms": null,
-    "at": "2026-11-23T05:47Z",
+    "at": "2026-11-24T05:47Z",
     "result": "unreachable",
     "nano_mainnet": false,
     "networks": [],
@@ -230,8 +231,8 @@
    "state_reason": "HTTP 401 on our probe; route or method may differ from the seller declared",
    "probe": {
     "http_status": 401,
-    "ms": 565,
-    "at": "2026-11-23T05:47Z",
+    "ms": 620,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -262,8 +263,8 @@
    "state_reason": "HTTP 503 on the probe route",
    "probe": {
     "http_status": 503,
-    "ms": 711,
-    "at": "2026-11-23T05:47Z",
+    "ms": 646,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -294,8 +295,8 @@
    "state_reason": "HTTP 525 on the probe route",
    "probe": {
     "http_status": 525,
-    "ms": 312,
-    "at": "2026-11-23T05:47Z",
+    "ms": 323,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -325,7 +326,7 @@
    ],
    "payto": [
     {
-     "address": "nano_3fgaz5o45i45gzm9otha47zntxpnkobdod37auijzx863gr9nos388imwkjt",
+     "address": "nano_1uoz68jukai7xxrabcrccwktifw9k3mofe6hkskmctmecgoze5zxechjni1x",
      "checksum_valid": true
     }
    ],
@@ -335,8 +336,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 906,
-    "at": "2026-11-23T05:47Z",
+    "ms": 819,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -369,8 +370,8 @@
    "state_reason": "Vercel deployment disabled",
    "probe": {
     "http_status": 402,
-    "ms": 203,
-    "at": "2026-11-23T05:47Z",
+    "ms": 227,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -402,7 +403,7 @@
    "probe": {
     "http_status": null,
     "ms": null,
-    "at": "2026-11-23T05:47Z",
+    "at": "2026-11-24T05:47Z",
     "result": "unreachable",
     "nano_mainnet": false,
     "networks": [],
@@ -444,7 +445,7 @@
    "probe": {
     "http_status": null,
     "ms": null,
-    "at": "2026-11-23T05:47Z",
+    "at": "2026-11-24T05:47Z",
     "result": "unreachable",
     "nano_mainnet": false,
     "networks": [],
@@ -477,7 +478,7 @@
    "probe": {
     "http_status": null,
     "ms": null,
-    "at": "2026-11-23T05:47Z",
+    "at": "2026-11-24T05:47Z",
     "result": "unreachable",
     "nano_mainnet": false,
     "networks": [],
@@ -518,8 +519,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 203,
-    "at": "2026-11-23T05:47Z",
+    "ms": 231,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -561,8 +562,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 99,
-    "at": "2026-11-23T05:47Z",
+    "ms": 172,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -600,8 +601,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 174,
-    "at": "2026-11-23T05:47Z",
+    "ms": 91,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -641,8 +642,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 77,
-    "at": "2026-11-23T05:47Z",
+    "ms": 66,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -680,8 +681,8 @@
    "state_reason": "status route answered 200 as the seller declared; Nano payTo not read by us",
    "probe": {
     "http_status": 200,
-    "ms": 182,
-    "at": "2026-11-23T05:47Z",
+    "ms": 177,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -721,8 +722,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 1501,
-    "at": "2026-11-23T05:47Z",
+    "ms": 1494,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -764,8 +765,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 899,
-    "at": "2026-11-23T05:47Z",
+    "ms": 782,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -798,8 +799,8 @@
    "state_reason": "HTTP 200 on our probe; route or method may differ from the seller declared",
    "probe": {
     "http_status": 200,
-    "ms": 421,
-    "at": "2026-11-23T05:47Z",
+    "ms": 410,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -835,8 +836,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 301,
-    "at": "2026-11-23T05:47Z",
+    "ms": 192,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": []
@@ -876,8 +877,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 706,
-    "at": "2026-11-23T05:47Z",
+    "ms": 698,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -923,8 +924,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 458,
-    "at": "2026-11-23T05:47Z",
+    "ms": 481,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -966,8 +967,8 @@
    "state_reason": "HTTP 503 on the probe route",
    "probe": {
     "http_status": 503,
-    "ms": 196,
-    "at": "2026-11-23T05:47Z",
+    "ms": 192,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -1006,8 +1007,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 167,
-    "at": "2026-11-23T05:47Z",
+    "ms": 170,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -1044,8 +1045,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 691,
-    "at": "2026-11-23T05:47Z",
+    "ms": 702,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": []
@@ -1080,8 +1081,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 212,
-    "at": "2026-11-23T05:47Z",
+    "ms": 173,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": []
@@ -1120,8 +1121,8 @@
    "state_reason": "HTTP 503 on the probe route",
    "probe": {
     "http_status": 503,
-    "ms": 164,
-    "at": "2026-11-23T05:47Z",
+    "ms": 160,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
@@ -1189,8 +1190,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 408,
-    "at": "2026-11-23T05:47Z",
+    "ms": 446,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -1231,8 +1232,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 761,
-    "at": "2026-11-23T05:47Z",
+    "ms": 672,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -1285,7 +1286,7 @@
    "endpoint": "https://nodes.nanswap.com/XNO",
    "price_quoted_by_operator": "$0.00003 per credit, quoted live in raw XNO; one work_generate cost Ӿ0.0022355 (25 credits), one read with own work Ӿ0.0000894",
    "price_raw_seen_in_402": [
-    "2431118314424635332252836325"
+    "2446982055464926590538336075"
    ],
    "networks_seen": [
     "nano-mainnet"
@@ -1302,8 +1303,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 497,
-    "at": "2026-11-23T05:47Z",
+    "ms": 583,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": [
@@ -1345,8 +1346,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 647,
-    "at": "2026-11-23T05:47Z",
+    "ms": 675,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -1384,17 +1385,15 @@
    ],
    "payto_all_checksum_valid": true,
    "payto_note": null,
-   "state_today": "live_402_nano",
-   "state_reason": "answered 402 and mentions Nano",
+   "state_today": "live_free_tier",
+   "state_reason": "200 with a Nano payTo (first call free or open route)",
    "probe": {
-    "http_status": 402,
-    "ms": 590,
-    "at": "2026-11-23T05:47Z",
+    "http_status": 200,
+    "ms": 2423,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
-    "networks": [
-     "nano"
-    ]
+    "networks": []
    },
    "evidence": "endpoint_read",
    "listed_by": "pursekeeper.dev/sellers.json",
@@ -1431,8 +1430,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 102,
-    "at": "2026-11-23T05:47Z",
+    "ms": 181,
+    "at": "2026-11-24T05:47Z",
     "result": "live",
     "nano_mainnet": true,
     "networks": [
@@ -1474,8 +1473,8 @@
    "state_reason": "answered 402 and mentions Nano",
    "probe": {
     "http_status": 402,
-    "ms": 302,
-    "at": "2026-11-23T05:47Z",
+    "ms": 345,
+    "at": "2026-11-24T05:47Z",
     "result": "not_live",
     "nano_mainnet": false,
     "networks": []
